@@ -36,7 +36,7 @@ def ncd_screening():
 @app.route('/ncdRapid')
 def ncd_rapid():
 	data = get_rapid_json()
-	return template('templates/aassessment_rapid_home.tpl', data=data)
+	return template('templates/assessment_rapid_home.tpl', data=data)
 
 @app.route('/ncdFeasibility')
 def ncd_feasibility():
