@@ -43,7 +43,7 @@ def ncd_feasibility():
 	data = get_feasibility_json()
 	return template('templates/assessment_feasibility_home.tpl', data=data)
 
-@app.route('/ncd_home')
+@app.route('/ncdhome')
 def ncd_home():
 	#data = get_stress_json()
     # to be created
