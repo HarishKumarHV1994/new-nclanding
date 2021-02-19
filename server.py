@@ -18,38 +18,10 @@ db = client.cas
 
 ##################### Stress App #####################
 
-from bottle import *
-from pymongo import MongoClient
-from bson.json_util import dumps
-from datetime import datetime
-import time
-import json
-import os
-
-from config_vars import *
-from all_functions import *
-from offline_functions import *
-from ncd_data_json import *
-
-app = Bottle(__name__)
-
-# client = MongoClient(MONGODB_URI)
-# db = client.cas
-
-# @app.route('/hello/<name>')
-# def index(name):
-#     return template('<b>Hello {{name}}</b>!', name=name)
-
 @app.route('/')
 def root():
 	# return template('templates/login.tpl', msg='')
 	return static_file('ncdlanding.html', root='templates/')
-
-@app.route('/ncdhome')
-def ncd_home():
-	#data = get_stress_json()
-    # to be created
-	return static_file('ncd_home.html', root='templates/')
 
 @app.route('/ncdStress')
 def ncd_stress():
@@ -64,13 +36,18 @@ def ncd_screening():
 @app.route('/ncdRapid')
 def ncd_rapid():
 	data = get_rapid_json()
-	return template('templates/assessment_rapid_home.tpl', data=data)
+	return template('templates/aassessment_rapid_home.tpl', data=data)
 
 @app.route('/ncdFeasibility')
 def ncd_feasibility():
 	data = get_feasibility_json()
 	return template('templates/assessment_feasibility_home.tpl', data=data)
 
+@app.route('/ncd_home')
+def ncd_home():
+	#data = get_stress_json()
+    # to be created
+	return static_file('ncd_home.html', root='templates/')
 
 @app.route('/ncdscreening_score')
 def ncdStress_score():
@@ -88,6 +65,25 @@ def ncdRapid_score():
 def assessment_score():
 	return static_file('assessment_stress_score.html', root='templates/')
 
+
+@app.route('/policy')
+def policy():
+	return static_file('policy.pdf', root='templates/')
+
+#/ncd_home -- NCD Home page
+
+#/ncd_screening 
+
+#/ncd_rapid
+
+#/ncd_feasibility
+
+#/ncd_workstress
+
+####Other assessments to be added here #######
+
+##################### Stress App #####################
+
 @app.post('/add_ncdstress_assessment')
 def add_ncd_Stress():
 
@@ -99,7 +95,7 @@ def add_ncd_Stress():
 	except Exception as e:
 		print(e)
 
-	#cur = db.stress_assessments.insert({'ncd_stress_data': assessment_data, 'time_stamp': time_stamp})
+	cur = db.stress_assessments.insert({'ncd_stress_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
 @app.post('/add_ncdfeasibility_assessment')
@@ -113,10 +109,10 @@ def add_ncd_feasibility():
 	except Exception as e:
 		print(e)
 
-	#cur = db.stress_assessments.insert({'ncd_stress_data': assessment_data, 'time_stamp': time_stamp})
+	cur = db.stress_assessments.insert({'ncd_stress_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
-@app.ost('/add_ncdrapid_assessment')
+@app.post('/add_ncdrapid_assessment')
 def add_ncd_rapid():
 
 	assessment_data = request.forms.get('data')
@@ -127,7 +123,7 @@ def add_ncd_rapid():
 	except Exception as e:
 		print(e)
 
-	#cur = db.stress_assessments.insert({'ncd_rapid_data': assessment_data, 'time_stamp': time_stamp})
+	cur = db.stress_assessments.insert({'ncd_rapid_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
 @app.post('/add_ncdscreening_assessment')
@@ -141,9 +137,28 @@ def add_ncd_screening():
 	except Exception as e:
 		print(e)
 
-	#cur = db.stress_assessments.insert({'ncd_screening_data': assessment_data, 'time_stamp': time_stamp})
+	cur = db.stress_assessments.insert({'ncd_screening_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
+
+
+######################### Static Routes Start #########################
+
+# @app.route('/<filename:re:.*\.js>')
+# def javascripts(filename):
+#     return static_file(filename, root='static')
+
+# @app.route('/<filename:re:.*\.css>')
+# def stylesheets(filename):
+#     return static_file(filename, root='static')
+
+# @app.route('/<filename:re:.*\.(jpg|png|gif|ico|svg)>')
+# def images(filename):
+#     return static_file(filename, root='static')
+
+# @app.route('/<filename:re:.*\.(eot|ttf|woff|svg)>')
+# def fonts(filename):
+#     return static_file(filename, root='static')
 
 @app.route('/<filename:re:.*\.*>')
 def javascripts(filename):
@@ -155,5 +170,4 @@ def enable_cors():
 	response.headers['Access-Control-Allow-Methods'] = 'PUT, GET, POST, DELETE, OPTIONS'
 	response.headers['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token'
 
-#run(host='localhost', port=8080)
 ######################### Static Routes End #########################
