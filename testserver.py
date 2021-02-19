@@ -1,27 +1,24 @@
-import bottle
 from bottle import *
-#from pymongo import MongoClient
-#from bson.json_util import dumps
+from pymongo import MongoClient
+from bson.json_util import dumps
 from datetime import datetime
 import time
 import json
 import os
 
-
 from config_vars import *
-#from all_functions import *
-#from offline_functions import *
+from all_functions import *
+from offline_functions import *
 from ncd_data_json import *
 
 app = Bottle(__name__)
 
-#client = MongoClient(MONGODB_URI)
-#db = client.cas
+# client = MongoClient(MONGODB_URI)
+# db = client.cas
 
-
-@app.route('/hello/<name>')
-def index(name):
-    return template('<b>Hello {{name}}</b>!', name=name)
+# @app.route('/hello/<name>')
+# def index(name):
+#     return template('<b>Hello {{name}}</b>!', name=name)
 
 @app.route('/')
 def root():
