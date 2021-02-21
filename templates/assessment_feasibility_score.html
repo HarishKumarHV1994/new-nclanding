@@ -125,6 +125,17 @@
 
     })  
   </script>
+  
+<style>
+table, td, th {
+  border: 1px solid pink;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+</style>
 
 </head>
 
@@ -141,267 +152,183 @@
               <h4 class="card-title">ASSESSMENT RESULTS</h4>
               <!-- <p><strong>District and Taluk Selection</strong></p> -->
             </div>
-          </div>
-        <br>
-        <br>
-            
-            
-          <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">MACRO LEVEL INTERVENTIONS</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
             <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="macro_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="macro_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
+             
+             <table>
+                    <tr>
+                        <th>
+                            <center><p style="padding-left: 15px; font-size: 0.8em;">SECTION</p></center>
+                        </th>
+                        <th>
+                            <center><p style="padding-left: 15px; font-size: 0.8em;">STATOMETER READING</p></center>
+                        </th>
+                        <th>
+                            <center><p style="padding-left: 15px; font-size: 0.8em;">FEASOMETER READING</p></center>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">MACRO LEVEL INTERVENTIONS</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="macro_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="macro_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                     <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">SITUATIONAL ASSESSMENT AND SCREENING</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="screening_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="screening_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">SYSTEMS AND SERVICE LEVEL INTERVENTIONS</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="system_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="system_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                    
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - TOBACCO USE</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="tobacco_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="tobacco_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - ALCOHOL USE</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="alcohol_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="alcohol_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - PHYSICAL INACTIVITY</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="inactivity_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="inactivity_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - HEALTHY DIET</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="diet_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="diet_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - OVERWEIGHT</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="ow_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="ow_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - BLOOD SUGAR, BP, CHOLESTROL</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="sugar_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="sugar_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - HARMFUL WORK STRESS</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="stress_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="stress_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - COMMON MENTAL DISORDERS</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="mental_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="mental_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - SURVEILLANCE</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="surv_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="surv_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 0.8em;">INTERVENTIONS - SUSTAINABILITY</p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="sust_score" style=" font-size: 0.8em;">12</span></p></center>
+                        </th>
+                        <th>
+                            <center><p style="font-size: 0.8em;"><span id="sust_fasibility" style=" font-size: 0.8em;">8</span></p></center>
+                        </th>
+                    </tr>
+                 
+                 
+                 
+                 
+                </table>
+             </div>
+             
           </div>
-        <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SITUATIONAL ASSESSMENT AND SCREENING</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="screening_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="screening_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-        <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="system_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="system_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - TOBACCO USE</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="tobacco_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="tobacco_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - ALCOHOL USE</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="alcohol_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="alcohol_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - PHYSICAL INACTIVITY</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="inactivity_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="inactivity_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - HEALTHY DIET</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="diet_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="diet_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - OVERWEIGHT</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="ow_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="ow_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - BLOOD SUGAR, BP, CHOLESTROL</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="sugar_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="sugar_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - HARMFUL WORK STRESS</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="stress_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="stress_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - COMMON MENTAL DISORDERS</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="mental_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="mental_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - SURVEILLANCE</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="surv_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="surv_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
-            
-            <br>
-        <br>
-        <div class="card card-login">
-            <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">SYSTEMS AND SERVICE LEVEL INTERVENTIONS - SUSTAINABILITY</h4>
-              <!-- <p><strong>District and Taluk Selection</strong></p> -->
-            </div>
-            <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-
-              <br>
-              
-              <left><p style="padding-left: 15px; font-size: 1.2em;">Score: <span id="sust_score" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-              <br>
-                <left><p style="padding-left: 15px; font-size: 1.2em;">Feasibility of execution or implementation on a scale of 10: <span id="sust_fasibility" style="font-weight: bold; padding-left: 15px; font-size: 1.2em;"></span></p></left>
-                <span style=" padding-left: 15px; color: red; font-size: 0.75em;">0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible</span>
-
-
-            </div>
-          </div>
+        
             
              <div class="row" style="margin-top: 15px; margin-bottom: 50px;">
         <div class="col-md-6 ml-auto mr-auto text-center">
