@@ -17,7 +17,39 @@
   <link href="../assets/css/material-kit.css?v=2.0.7" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
 </head>
+    
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+      
+        document.getElementById('NCD-STATOMETER').style.display = 'none'
+        document.getElementById('NCD-SCREEN').style.display = 'none'
+        document.getElementById('STRESS-APPRAISAL').style.display = 'none'
+        document.getElementById('STRESS-METER').style.display = 'none'
+        var user_type = localStorage.getItem('_user_type')
+        //document.getElementById('Orgaisation_name').innerHTML=localStorage.getItem('_orgName')
+        if(parseInt(user_type)==2){
+            
+            document.getElementById('NCD-STATOMETER').style.display = 'block'
+            document.getElementById('STRESS-APPRAISAL').style.display = 'block'
+            document.getElementById('title').innerHTML = "NCD-METER FOR WORKPLACES"
+            
+        }else{
+            
+            document.getElementById('NCD-SCREEN').style.display = 'block'
+            document.getElementById('STRESS-METER').style.display = 'block'
+            document.getElementById('title').innerHTML = "NCD-METER FOR EMPLOYEES/INDIVIDUALS"
+            
+        }
+
+    })  
+  </script>
+    
+
 
 <body class="landing-page sidebar-collapse">
   
@@ -29,206 +61,75 @@
             
             <!--<img src="img/gok.png" style="width: 100px;">
             <br>-->
-            <img src="img/nimhans.png" style="width: 100px;">
-            <img src="img/cph.png" style="width: 100px;">
+            <img src="img/who.png" style="width: 75px;">
+                  <img src="img/nimhans.png" style="width: 75px;">
+                  <img src="img/cph.png" style="width: 75px;">
+              <!--PREVENTION OF NON COMMUNICABLE DISEASES IN WORK PLACES-->
 
-            <h2 class="title">PREVENTION OF NON COMMUNICABLE DISEASES IN WORK PLACES</h2>
+            <h2 class="title"><span id="title"></span></h2>
 
           </div>
         </div>
+          
+          
         <div class="features">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3" id="NCD-STATOMETER">
               <div class="info">
                 <div class="icon icon-info">
                   <i class="material-icons">apartment</i>
                 </div>
-                <h4 class="info-title">NCD-METER</h4>
+                <h4 class="info-title">NCD-STATOMETER</h4>
                 <a href="/ncdFeasibility">
                 <button class="btn btn-primary btn-raised">
                   Start Assessment
                 </button>
                 </a>
-                <h5 class="info-title">Appraisal of status and feasibility of implementing minumum set of guidelines for prevention of NCD risks in work places</h5>
+                <h5 class="info-title">Check status and monitor interventions to reduce NCDs, NCD risk factors and mental disorders in your workplace</h5>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" id="NCD-SCREEN">
               <div class="info">
                 <div class="icon icon-success">
                   <i class="material-icons">group_work</i>
                 </div>
-                <h4 class="info-title">SCREENING FOR NCDs</h4>
+                <h4 class="info-title">NCD-SCREEN</h4>
                 <a href="/ncdScreening">
                 <button class="btn btn-primary btn-raised">
                   Start Assessment
                 </button>
                 </a>
-                <h5 class="info-title">Assessing NCD risk factors and psychological distress at an Employee level</h5>
+                <h5 class="info-title">Screen for NCDs, NCD risk factors and common mental disorders among Employees/Individuals</h5>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" id="STRESS-APPRAISAL">
               <div class="info">
                 <div class="icon icon-danger">
                   <i class="material-icons">check_box</i>
                 </div>
-                <h4 class="info-title">RAPID APPRAISAL </h4>
+                <h4 class="info-title">STRESS-APPRAISAL </h4>
                 <a href="/ncdRapid">
                 <button class="btn btn-primary btn-raised">
                   Start Assessment
                 </button>
                 </a>
-                <h5 class="info-title">Checklist for rapid appraisal of harmful stress related interventions at an Organizational level</h5>
+                <h5 class="info-title">Checklist for rapid appraisal of stress reduction interventions</h5>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" id="STRESS-METER">
               <div class="info">
                 <div class="icon icon-warning">
                   <i class="material-icons">group</i>
                 </div>
-                <h4 class="info-title">WORK STRESS MEASURE</h4>
+                <h4 class="info-title">STRESS-METER</h4>
                 <a href="/ncdStress">
                 <button class="btn btn-primary btn-raised">
                   Start Assessment
                 </button>
                 </a>
-                  <h5 class="info-title">Assess and classify the work stress for Employees</h5>
+                  <h5 class="info-title">Assess and classify harmful work-stress among Employees/Individuals</h5>
               </div>
             </div>
-              
-
-           <!-- <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-info">
-                  <i class="material-icons">directions_boat</i>
-                </div>
-                <h4 class="info-title">Sea Port</h4>
-                <a href="/ques?q=seaport">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-success">
-                  <i class="material-icons">flight_takeoff</i>
-                </div>
-                <h4 class="info-title">Airport</h4>
-                <a href="/ques?q=airport">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-danger">
-                  <i class="material-icons">train</i>
-                </div>
-                <h4 class="info-title">Railway Station</h4>
-                <a href="/ques?q=railway_station">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-warning">
-                  <i class="material-icons">directions_bus</i>
-                </div>
-                <h4 class="info-title">Bus Stand</h4>
-                <a href="/ques?q=bus_stop">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-info">
-                  <i class="material-icons">medical_services</i>
-                </div>
-                <h4 class="info-title">DCHC</h4>
-                <a href="/ques?q=dchc">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-success">
-                  <i class="material-icons">location_city</i>
-                </div>
-                <h4 class="info-title">COVID Hospital</h4>
-                <a href="/ques?q=covid_hospital">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-danger">
-                  <i class="material-icons">apartment</i>
-                </div>
-                <h4 class="info-title">Quarantine Centre</h4>
-                <a href="/ques?q=quarantine_centre">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-warning">
-                  <i class="material-icons">biotech</i>
-                </div>
-                <h4 class="info-title">Testing Lab</h4>
-                <a href="/ques?q=lab_facility">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-info">
-                  <i class="material-icons">group</i>
-                </div>
-                <h4 class="info-title">District Level</h4>
-                <a href="/ques?q=district_level">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="info">
-                <div class="icon icon-success">
-                  <i class="material-icons">group_work</i>
-                </div>
-                <h4 class="info-title">Miscellaneous</h4>
-                <a href="/ques?q=misc">
-                <button class="btn btn-primary btn-raised">
-                  Start Assessment
-                </button>
-                </a>
-              </div>
-            </div>-->
-
           </div>
         </div>
       </div>
