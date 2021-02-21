@@ -23,6 +23,11 @@ def root():
 	# return template('templates/login.tpl', msg='')
 	return static_file('ncdlanding.html', root='templates/')
 
+@app.route('/ncdlanding')
+def root():
+	# return template('templates/login.tpl', msg='')
+	return static_file('ncdlanding.html', root='templates/')
+
 @app.route('/ncdStress')
 def ncd_stress():
 	data = get_stress_json()
@@ -64,6 +69,17 @@ def ncdRapid_score():
 @app.route('/ncdStress_score')
 def assessment_score():
 	return static_file('assessment_stress_score.html', root='templates/')
+
+@app.route('/ncdFeasometer')
+def ncd_feasometer():
+	data = get_feasometer()
+	return template('templates/assessment_feasometer_home.tpl', data=data)
+
+@app.route('/ncdOrgRegistration')
+def ncd_orgReg():
+	data = get_org_json()
+	return template('templates/ncd_org_Reg_home.tpl', data=data)
+
 
 
 @app.route('/policy')
@@ -140,6 +156,19 @@ def add_ncd_screening():
 	#cur = db.stress_assessments.insert({'ncd_screening_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
+@app.post('/add_ncdfeasometer_assessment')
+def add_feasometer():
+
+	assessment_data = request.forms.get('data')
+	time_stamp = time.time()
+
+	try:
+		assessment_data = json.loads(assessment_data)
+	except Exception as e:
+		print(e)
+
+	#cur = db.stress_assessments.insert({'ncd_feasometer_data': assessment_data, 'time_stamp': time_stamp})
+	return {'status': 'ok'}
 
 
 ######################### Static Routes Start #########################
