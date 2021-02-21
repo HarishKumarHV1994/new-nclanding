@@ -26,7 +26,7 @@
   <script type="text/javascript">   
     $(document).ready(function(){ 
 
-      document.getElementById('q_19_q').style.display = 'none'
+     /* document.getElementById('q_19_q').style.display = 'none'
       document.getElementById('q_19_ig').style.display = 'none'
         document.getElementById('q_19_q_summary').style.display = 'none'
         document.getElementById('q_19_msg').style.display = 'none'
@@ -152,11 +152,11 @@
       document.getElementById('q_46_ig').style.display = 'none'
         document.getElementById('q_46_q_summary').style.display = 'none'
         document.getElementById('q_46_msg').style.display = 'none'
-        document.getElementById('q_46_brk').style.display = 'none'
+        document.getElementById('q_46_brk').style.display = 'none'*/
 
         
     })  
-  </script
+    </script>
 
 </head>
 
@@ -217,13 +217,22 @@
                       % end
                       
                        % if y['qtype'] == 'f_radio':
-                        <p id="q_{{y['qid']}}_msg"></p>
+                        <p id="q_{{y['qid']}}_msg"></p> 
                         % for z in y['ans']:
                           <button class="btn btn-round" id="q{{y['qid']}}_{{z['aid']}}" style="margin-bottom: 4px; white-space:normal;" onclick="select_radio('{{y['qid']}}', '{{z['aid']}}')"><b>{{z['value']}}</b></button>
                         % end
                         <br>
                         <span style=" color: red; font-size: 0.75em;">* Enter feasibility to implement (0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible)</span><input class="form-control" type="number" name="q_{{y['qid']}}_feasibility_data" id="q_{{y['qid']}}_feasibility_data" style="width: 60%;" min="0" max="10" placeholder="0 to 10" onkeyup="captureFeasibiliy('{{y['qid']}}')" > 
                       % end
+      
+                       % if y['qtype'] == 'checkbox':
+                        <p id="q_{{y['qid']}}_msg"></p>
+                        % for z in y['ans']:
+                          <input type="checkbox" id="q{{y['qid']}}_{{z['aid']}}" name="q{{y['qid']}}_{{z['aid']}}" value="{{z['value_id']}}">
+                          <label for="q{{y['qid']}}_{{z['aid']}}" style="color: black"> {{z['value']}}</label><br>
+                        % end    
+                      % end
+      
                       
                       % if y['qtype'] == 'options':
                         <p id="q_{{y['qid']}}_msg"></p>
@@ -262,10 +271,10 @@
         </div>
       % end
 
-      <div class="row" style="margin-top: 15px; margin-bottom: 50px;">
+      <div class="row" style="margin-top: 15px; margin-bottom: 50px;"> 
         <div class="col-md-6 ml-auto mr-auto text-center">
            <!--<a href="/home">-->
-            <button class="btn btn-rose btn-raised" style="" onclick="on_submit()">Submit</button>
+            <button class="btn btn-rose btn-raised" style="" onclick="on_submit()">Continue to Feasometer</button>
             <center><img id="done_spinner" src="img/spinner.gif" style="width: 75px; display: none;"></center>
           <!--</a>-->
           <br>
