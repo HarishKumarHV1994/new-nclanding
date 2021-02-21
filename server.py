@@ -1,20 +1,20 @@
 from bottle import *
-from pymongo import MongoClient
-from bson.json_util import dumps
+#from pymongo import MongoClient
+#from bson.json_util import dumps
 from datetime import datetime
 import time
 import json
 import os
 
 from config_vars import *
-from all_functions import *
-from offline_functions import *
+#from all_functions import *
+#from offline_functions import *
 from ncd_data_json import *
 
 app = Bottle(__name__)
 
-client = MongoClient(MONGODB_URI)
-db = client.cas
+#client = MongoClient(MONGODB_URI)
+#db = client.cas
 
 ##################### Stress App #####################
 
@@ -95,7 +95,7 @@ def add_ncd_Stress():
 	except Exception as e:
 		print(e)
 
-	cur = db.stress_assessments.insert({'ncd_stress_data': assessment_data, 'time_stamp': time_stamp})
+	#cur = db.stress_assessments.insert({'ncd_stress_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
 @app.post('/add_ncdfeasibility_assessment')
@@ -109,7 +109,7 @@ def add_ncd_feasibility():
 	except Exception as e:
 		print(e)
 
-	cur = db.stress_assessments.insert({'ncd_stress_data': assessment_data, 'time_stamp': time_stamp})
+	#cur = db.stress_assessments.insert({'ncd_stress_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
 @app.post('/add_ncdrapid_assessment')
@@ -123,7 +123,7 @@ def add_ncd_rapid():
 	except Exception as e:
 		print(e)
 
-	cur = db.stress_assessments.insert({'ncd_rapid_data': assessment_data, 'time_stamp': time_stamp})
+	#cur = db.stress_assessments.insert({'ncd_rapid_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
 @app.post('/add_ncdscreening_assessment')
@@ -137,7 +137,7 @@ def add_ncd_screening():
 	except Exception as e:
 		print(e)
 
-	cur = db.stress_assessments.insert({'ncd_screening_data': assessment_data, 'time_stamp': time_stamp})
+	#cur = db.stress_assessments.insert({'ncd_screening_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
 
