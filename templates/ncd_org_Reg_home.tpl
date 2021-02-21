@@ -6,10 +6,10 @@
   <link rel="apple-touch-icon" sizes="76x76" href="">
   <link rel="icon" type="image/png" href="">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <!-- Linked json file should be question_feasibility.json -->
   <title>
-    Organization Registration for NCD | NIMHANS | QUESTIONNAIRE
+    {{data['heading']}} | NIMHANS | QUESTIONNAIRE
   </title>
+  <!--     Fonts and icons     -->
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -21,59 +21,35 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script src="js/orgReg.js"></script> 
+  <script src="js/org.js"></script>
 
-  <script type="text/javascript">   
-    $(document).ready(function(){ 
+  <script type="text/javascript">
+    $(document).ready(function(){
 
-     /* document.getElementById('q_19_q').style.display = 'none'
-      document.getElementById('q_19_ig').style.display = 'none'
-        document.getElementById('q_19_q_summary').style.display = 'none'
-        document.getElementById('q_19_msg').style.display = 'none'
-        document.getElementById('q_19_brk').style.display = 'none'*/
-
-     
+      
 
     })  
-  </script
+  </script> 
 
 </head>
 
-<body class="login-page sidebar-collapse"> 
+<body class="login-page sidebar-collapse">
   
   <!-- <div class="page-header header-filter" style="background-image: url(''); background-size: cover; background-position: top center;"> -->
     <div class="container">
 
       
 
-      <div id="ques_data" style="display: block;"> 
+      <div id="ques_data" style="display: block;">           
       % for x in data['sections']:
         <div class="row" style="margin-top: 75px;">
           <div class="col-md-6 ml-auto mr-auto">
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">REGISTER YOUR ORGANIZATION</h4>  
-                <p style="padding-left: 7%; padding-right: 7%; text-align: center; font-weight: bold; text-justify: inter-word;">Provide your Organization details so that you and your employees can start assessing organizational and personal Risks associated with NCDs </p>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">{{!x['name']}}</h4>  
+                <p style="padding-left: 7%; padding-right: 7%; text-align: center; font-weight: bold; text-justify: inter-word;">{{!x['summary']}}</p>
               </div>
               <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
-                  
-                  <p id="orgName" style="font-weight: 400; padding-left: 15px; font-size: 1em; display: block;">Organization Name<span style="font-weight: bold; color: red; font-size: 1em;">*</span></p>
-                      <div id="org_div" class="input-group" style="padding-left: 15px; display: block;">
-                          <input type="text" class="form-control" id="orgName_input" name="orgName_input"  placeholder="Enter Name" style="width: 100%;">
-                      </div>
-                  <br>
-                              
-                  <p id="type" style="font-weight: 400; padding-left: 15px; font-size: 1em; display: block;">Type of workplace<span style="font-weight: bold; color: red; font-size: 1em;">*</span></p>
-                      
-                    <select class="form-control" id="workplacetype" onchange=" " style="width: 100%;">
-                        <option value="-1">Select</option>
-                        % for z in y['ans']:
-                          <option value="{{z['aid']}}" >{{z['value']}}</option>
-                        % end
-                        </select>
-                      
-                      
-                  
                 % for y in data['data']:
                   % if y['section'] == x['name']:
                     <p id="q_{{y['qid']}}_q" style="font-weight: 400; padding-left: 15px; font-size: 1em; display: block;">
@@ -82,28 +58,20 @@
                         <span style="font-weight: bold; color: red; font-size: 1em;">*</span> 
                       % end
                     </p> 
-                    <p id="q_{{y['qid']}}_q_summary" style="font-weight: 400; padding-left: 15px; font-size: 0.8em; display: block; color: green;">
-                        % if y['question_information'] != '-9':
-                        {{y['question_information']}}
-                        % end
-                  </p>
+                   
                     <div id="q_{{y['qid']}}_ig" class="input-group" style="padding-left: 15px; display: block;">
                       
                       % if y['qtype'] == 'text':
                         <p id="q_{{y['qid']}}_msg"></p>
-                        <input type="text" class="form-control" id="q_{{y['qid']}}_data" name="q_{{y['qid']}}_data"  placeholder="{{y['ph']}}" style="width: 100%;">
+                        <input type="text" class="form-control" id="q_{{y['qid']}}_data" name="q_{{y['qid']}}_data"  placeholder="Enter name" style="width: 100%;">
                       % end
 
                       % if y['qtype'] == 'num':
                         <p id="q_{{y['qid']}}_msg"></p>
-                        <input type="number" class="form-control" id="q_{{y['qid']}}_data" name="q_{{y['qid']}}_data"  placeholder="{{y['ph']}}" maxlength="10000000" onkeyup="checkValid('q_{{y['qid']}}_data', '{{y['range']}}')"  style="width: 100%;"> 
+                        <input type="number" class="form-control" id="q_{{y['qid']}}_data" name="q_{{y['qid']}}_data"  placeholder="999999" maxlength="999999" onkeyup="checkValid('q_{{y['qid']}}_data', '{{y['range']}}')"  style="width: 100%;"> 
                       % end
 
-                      % if y['qtype'] == 'date':
-                        <p id="q_{{y['qid']}}_msg"></p>
-                        <input type="date" class="form-control" id="q_{{y['qid']}}_data" name="q_{{y['qid']}}_data"  placeholder="{{y['ph']}}" style="width: 100%;">
-                      % end
-
+                    
                       % if y['qtype'] == 'radio':
                         <p id="q_{{y['qid']}}_msg"></p>
                         % for z in y['ans']:
@@ -113,14 +81,6 @@
                         <input class="form-control" type="text" name="q_{{y['qid']}}_others_data" id="q_{{y['qid']}}_others_data" placeholder="Specify others" style="width: 100%; display: none;">  
                       % end
                       
-                       % if y['qtype'] == 'f_radio':
-                        <p id="q_{{y['qid']}}_msg"></p>
-                        % for z in y['ans']:
-                          <button class="btn btn-round" id="q{{y['qid']}}_{{z['aid']}}" style="margin-bottom: 4px; white-space:normal;" onclick="select_radio('{{y['qid']}}', '{{z['aid']}}')"><b>{{z['value']}}</b></button>
-                        % end
-                        <br>
-                        <span style=" color: red; font-size: 0.75em;">* Enter feasibility to implement (0- Worst feasibility, cannot implement ; 10- Very easy to implement and highly feasible)</span><input class="form-control" type="number" name="q_{{y['qid']}}_feasibility_data" id="q_{{y['qid']}}_feasibility_data" style="width: 60%;" min="0" max="10" placeholder="0 to 10" onkeyup="captureFeasibiliy('{{y['qid']}}')" > 
-                      % end
                       
                       % if y['qtype'] == 'options':
                         <p id="q_{{y['qid']}}_msg"></p>
@@ -135,14 +95,14 @@
                       % end
                       
 
-                    </div>  
+                    </div>    
 
                     <p id="q_{{y['qid']}}_brk"><br></p>
                   % end
                 % end
       
-               <div class="col-md-6 ml-auto mr-auto text-center">
-           <!--<a href="/home">-->
+              <!-- <div class="col-md-6 ml-auto mr-auto text-center">
+           
             <button class="btn btn-rose btn-raised" style="" onclick="validatesection('{{x['name']}}')">Validate Section</button>
                       
             <center> <p  id="{{x['name']}}_msg1"style="font-weight: 400; padding-left: 15px; font-size: 0.8em; display: block; color: red;">Please click here to make sure you have entered or selected right information for all the mandatory questions in this section
@@ -152,7 +112,7 @@
             <center> <p  id="{{x['name']}}_msg3"style="font-weight: 400; padding-left: 15px; font-size: 0.8em; display: block; color: red;">
                   </p></center>
           
-        </div>
+        </div>-->
               </div>
             </div>
           </div>
@@ -168,7 +128,7 @@
           <br>
           <a href="/ncdhome">Go To Home</a>
           <!--<br>
-          <a href="/logout">Logout</a> -->  
+          <a href="/logout">Logout</a> -->
         </div>
       </div>
 
@@ -177,7 +137,7 @@
 
     </div>
     
-  <!--   Core JS Files   -->
+   <!--   Core JS Files   -->
   <script src="../assets/js/core/jquery.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="../assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
