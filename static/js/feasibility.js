@@ -331,7 +331,7 @@ function calculate_score(){
     macro_score = 0
     macro_feasibility_score=0
     macro_max=22
-    macro_questions=11
+    macro_questions=0
     macro_feasibility_avg=0
     macro_score_percentage=0
     
@@ -339,6 +339,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			macro_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            macro_questions=macro_questions+1
             //macro_feasibility_score += parseInt(json_data.data[i].feasibility_score)
             //alert(macro_feasibility_score)
 		}
@@ -350,17 +351,38 @@ function calculate_score(){
     situational_score = 0
     situational_feasibility_score=0
     situational_max=27
-    situational_questions=21
+    situational_questions=0
     situational_feasibility_avg=0
     situational_score_percentage=0
 	situational_score = 0
     
     for(var i=20; i<=31; i++){
+        if(json_data.data[i].qtype=='checkbox'){
+            if(json_data.data[i].selection_values.length!=0){
+             //Loop through the options that are checked
+              for(var j=0;j<json_data.data[i].selection_values.length;j++){
+                  selected_value=json_data.data[i].selection_values[j]
+                  //alert("selected_value"+selected_value)
+                  for(var k=0;k<json_data.data[i].ans.length;k++){
+                      //alert("check item"+json_data.data[i].ans[k].aid)
+                      if(json_data.data[i].ans[k].aid==selected_value){
+                          situational_score=situational_score + parseInt(json_data.data[i].ans[k].value_id)
+                          
+                      }
+                  }
+              }
+                //alert("situational_score for checkbox=="+situational_score)
+             // For each item, determine the score by looping through the ans array of json data
+             // Add the score and it to situational_score 
+         }
+        }else{
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			situational_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            situational_questions=situational_questions+1
            // situational_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
+        }
 	}
     situational_score_percentage=parseInt((situational_score/situational_max)*100)
     //situational_feasibility_avg=parseInt(situational_feasibility_score/situational_questions)
@@ -368,25 +390,51 @@ function calculate_score(){
     interventions_score = 0
     interventions_feasibility_score=0
     interventions_max=10
-    interventions_questions=10
+    interventions_questions=0
     interventions_feasibility_avg=0
     interventions_score_percentage=0
 	interventions_score = 0
     
-    /*for(var i=32; i<=55; i++){
-		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
-			aid = parseInt(json_data.data[i].selection_val)
-			interventions_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
-           // interventions_feasibility_score += parseInt(json_data.data[i].feasibility_score)
-		}
-	}
-    interventions_score_percentage=parseInt((interventions_score/interventions_max)*100)*/
-    //interventions_feasibility_avg=parseInt(interventions_feasibility_score/interventions_questions)
+    if("selection_values" in json_data.data[32] && json_data.data[32].scoring_required == "True"){
+        i=32
+        //alert("interventions_score for checkbox==")
+        if(json_data.data[i].qtype=='checkbox'){
+            // alert("interventions_score for checkbox inside==")
+            if(json_data.data[i].selection_values.length!=0){
+               // alert("interventions_score for checkbox inside 2==")
+             //Loop through the options that are checked
+              for(var j=0;j<json_data.data[i].selection_values.length;j++){
+                 // alert("interventions_score for checkbox inside for 1==")
+                  selected_value=json_data.data[i].selection_values[j]
+                  for(var k=0;k<json_data.data[i].ans.length;k++){
+                     // alert("interventions_score for checkbox inside for 2==")
+                      if(json_data.data[i].ans[k].aid==selected_value){
+                          //alert("interventions_score for checkbox inside final if==")
+                          interventions_score=interventions_score + parseInt(json_data.data[i].ans[k].value_id)
+                          
+                          
+                      }
+                  }
+              }
+            // alert("interventions_score for checkbox=="+interventions_score)
+             // For each item, determine the score by looping through the ans array of json data
+             // Add the score and it to situational_score 
+         }
+        }
+        interventions_questions=interventions_questions+1
+        
+    }
+    
+    // Interventions to be handled
+    
+    
+    interventions_score_percentage=parseInt((interventions_score/interventions_max)*100)
+    
     
     tobacco_score = 0
     tobacco_feasibility_score=0
     tobacco_max=13
-    tobacco_questions=11
+    tobacco_questions=0
     tobacco_feasibility_avg=0
     tobacco_score_percentage=0
 	tobacco_score = 0
@@ -395,6 +443,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			tobacco_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            tobacco_questions=tobacco_questions+1
             //tobacco_feasibility_score +=parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -404,7 +453,7 @@ function calculate_score(){
     alcohol_score = 0
     alcohol_feasibility_score=0
     alcohol_max=9
-    alcohol_questions=7
+    alcohol_questions=0
     alcohol_feasibility_avg=0
     alcohol_score_percentage=0
 	alcohol_score = 0
@@ -413,6 +462,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			alcohol_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            alcohol_questions=alcohol_questions+1
            // alcohol_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -422,7 +472,7 @@ function calculate_score(){
     inactivity_score = 0
     inactivity_feasibility_score=0
     inactivity_max=11
-    inactivity_questions=8
+    inactivity_questions=0
     inactivity_feasibility_avg=0
     inactivity_score_percentage=0
 	inactivity_score = 0
@@ -431,6 +481,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			inactivity_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            inactivity_questions=inactivity_questions+1
             //inactivity_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -440,7 +491,7 @@ function calculate_score(){
     healthydiet_score = 0
     healthydiet_feasibility_score=0
     healthydiet_max=7
-    healthydiet_questions=7
+    healthydiet_questions=0
     healthydiet_feasibility_avg=0
     healthydiet_score_percentage=0
 	healthydiet_score = 0
@@ -449,6 +500,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			healthydiet_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            healthydiet_questions=healthydiet_questions+1
             //healthydiet_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -458,7 +510,7 @@ function calculate_score(){
     overweight_score = 0
     overweight_feasibility_score=0
     overweight_max=4
-    overweight_questions=4
+    overweight_questions=0
     overweight_feasibility_avg=0
     overweight_score_percentage=0
 	overweight_score = 0
@@ -467,6 +519,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			overweight_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            overweight_questions=overweight_questions+1
             //overweight_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -477,7 +530,7 @@ function calculate_score(){
     diabp_score = 0
     diabp_feasibility_score=0
     diabp_max=3
-    diabp_questions=3
+    diabp_questions=0
     diabp_feasibility_avg=0
     diabp_score_percentage=0
 	diabp_score = 0
@@ -486,6 +539,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			diabp_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            diabp_questions=diabp_questions+1
            // diabp_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -495,7 +549,7 @@ function calculate_score(){
     harmfulstress_score = 0
     harmfulstress_feasibility_score=0
     harmfulstress_max=8
-    harmfulstress_questions=6
+    harmfulstress_questions=0
     harmfulstress_feasibility_avg=0
     harmfulstress_score_percentage=0
 	harmfulstress_score = 0
@@ -504,6 +558,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			harmfulstress_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            harmfulstress_questions=harmfulstress_questions+1
             //harmfulstress_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -513,7 +568,7 @@ function calculate_score(){
     mental_score = 0
     mental_feasibility_score=0
     mental_max=12
-    mental_questions=8
+    mental_questions=0
     mental_feasibility_avg=0
     mental_score_percentage=0
 	mental_score = 0
@@ -522,6 +577,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			mental_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            mental_questions=mental_questions+1
            // mental_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -531,7 +587,7 @@ function calculate_score(){
     surveillance_score = 0
     surveillance_feasibility_score=0
     surveillance_max=6
-    surveillance_questions=5
+    surveillance_questions=0
     surveillance_feasibility_avg=0
     surveillance_score_percentage=0
 	surveillance_score = 0
@@ -540,6 +596,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			surveillance_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            surveillance_questions=surveillance_questions+1
             //surveillance_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -549,7 +606,7 @@ function calculate_score(){
     sustainability_score = 0
     sustainability_feasibility_score=0
     sustainability_max=10
-    sustainability_questions=9
+    sustainability_questions=0
     sustainability_feasibility_avg=0
     sustainability_score_percentage=0
 	sustainability_score = 0
@@ -558,6 +615,7 @@ function calculate_score(){
 		if("selection_val" in json_data.data[i] && json_data.data[i].scoring_required == "True"){
 			aid = parseInt(json_data.data[i].selection_val)
 			sustainability_score += parseInt(json_data.data[i].ans[aid - 1].value_id)
+            sustainability_questions=sustainability_questions+1
             //sustainability_feasibility_score += parseInt(json_data.data[i].feasibility_score)
 		}
 	}
@@ -767,7 +825,20 @@ function on_submit(){
 
 			}else if (ques_type == 'checkbox'){
                 
-               //Do nothing for now
+               //Loop through the options and check if they are checked
+               //If checked, then add them to selected_vals array
+               //Add the array to json_data
+                selected_values=[]
+                qid=i+1
+                var element_count = json_data.data[i]['ans'].length
+                for(j=1;j<=element_count;j++){
+                    if(document.getElementById("q"+qid+"_"+j).checked==true){
+                        selected_values.push(j)
+                    }
+                }
+                
+                json_data.data[i].selection_values = selected_values
+                
                 
             }
                 
@@ -780,49 +851,48 @@ function on_submit(){
 		var scores = calculate_score()
         
         
-		//localStorage.setItem('_ncdFeasibility_app_org_name', data_payload[2].selection_val)
-		//localStorage.setItem('_ncdFeasibility_tablecontent', scores)
+		
         
         localStorage.setItem('_macro_score', scores[0].score)
-		//localStorage.setItem('_macro_fasibility', scores[0].feasibility)
+		
         
         localStorage.setItem('_screening_score', scores[1].score)
-		//localStorage.setItem('_screening_fasibility', scores[1].feasibility)
+		
         
         localStorage.setItem('_system_score', scores[2].score)
-		//localStorage.setItem('_system_fasibility', scores[2].feasibility)
+	
         
         localStorage.setItem('_tobacco_score', scores[3].score)
-		//localStorage.setItem('_tobacco_fasibility', scores[3].feasibility)
+		
         
         localStorage.setItem('_alcohol_score', scores[4].score)
-		//localStorage.setItem('_alcohol_fasibility', scores[4].feasibility)
+	
         
         localStorage.setItem('_inactivity_score', scores[5].score)
-		//localStorage.setItem('_inactivity_fasibility', scores[5].feasibility)
+		
         
         localStorage.setItem('_diet_score', scores[6].score)
-		//localStorage.setItem('_diet_fasibility', scores[6].feasibility)
+		
         
         localStorage.setItem('_ow_score', scores[7].score)
-		//localStorage.setItem('_ow_fasibility', scores[7].feasibility)
+		
         
         localStorage.setItem('_sugar_score', scores[8].score)
-		//localStorage.setItem('_sugar_fasibility', scores[8].feasibility)
+		
         
         localStorage.setItem('_stress_score', scores[9].score)
-		//localStorage.setItem('_stress_fasibility', scores[9].feasibility)
+		
         
         localStorage.setItem('_mental_score', scores[10].score)
-		//localStorage.setItem('_mental_fasibility', scores[10].feasibility)
+	
         
         localStorage.setItem('_surv_score', scores[11].score)
-		//localStorage.setItem('_surv_fasibility', scores[11].feasibility)
+		
         
         localStorage.setItem('_sust_score', scores[12].score)
-		//localStorage.setItem('_sust_fasibility', scores[12].feasibility)
+		
         
-		//localStorage.setItem('_stress_app_symptoms_msg', scores.symptoms)
+		
 		
 		document.getElementById('done_spinner').style.display = 'block'
 
