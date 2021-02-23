@@ -80,6 +80,10 @@ def ncd_orgReg():
 	data = get_org_json()
 	return template('templates/ncd_org_Reg_home.tpl', data=data)
 
+@app.route('/ncdthankyou')
+def ncdRapid_score():
+	return static_file('ncdThankyou.html', root='templates/')
+
 
 
 @app.route('/policy')
@@ -170,6 +174,19 @@ def add_feasometer():
 	#cur = db.stress_assessments.insert({'ncd_feasometer_data': assessment_data, 'time_stamp': time_stamp})
 	return {'status': 'ok'}
 
+@post('/add_organization_Details')
+def add_OrganizationDetails():
+
+	assessment_data = request.forms.get('data')
+	time_stamp = time.time()
+
+	try:
+		assessment_data = json.loads(assessment_data)
+	except Exception as e:
+		print(e)
+
+	#cur = db.stress_assessments.insert({'ncd_feasometer_data': assessment_data, 'time_stamp': time_stamp})
+	return {'status': 'ok'}
 
 ######################### Static Routes Start #########################
 
