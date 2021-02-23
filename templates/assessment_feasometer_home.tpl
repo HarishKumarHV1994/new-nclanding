@@ -85,7 +85,7 @@
                           <button class="btn btn-round" id="q{{y['qid']}}_{{z['aid']}}" style="margin-bottom: 4px; white-space:normal;" onclick="select_radio('{{y['qid']}}', '{{z['aid']}}')"><b>{{z['value']}}</b></button>
                         % end
                         <br>
-                        <input class="form-control" type="text" name="q_{{y['qid']}}_others_data" id="q_{{y['qid']}}_others_data" placeholder="Specify others" style="width: 100%; display: none;">  
+                        <input class="form-control" type="text" name="q_{{y['qid']}}_others_data" id="q_{{y['qid']}}_others_data" placeholder="Specify others" style="width: 100%; display: none;"> 
                       % end
                       
                       
@@ -102,7 +102,7 @@
                       % end
                       
 
-                    </div>    
+                    </div>       
 
                     <p id="q_{{y['qid']}}_brk"><br></p>
                   % end
