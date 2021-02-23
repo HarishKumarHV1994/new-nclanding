@@ -25,10 +25,10 @@
     <script type="text/javascript">   
     $(document).ready(function(){ 
         
-        document.getElementById('orglabel').style.display = 'none'
-      document.getElementById('organization').style.display = 'none'
+        //document.getElementById('orglabel').style.display = 'none'
+      //document.getElementById('organization').style.display = 'none'
 
-    
+     document.getElementById('selected_user').value=-1
 
         
     })
@@ -39,18 +39,24 @@
         
         
         
+        if(parseInt(document.getElementById('selected_user').value)==-1){
+             alert("Please select whether you want to proceed as an Employee or a Health Manager")
+        }
+        
         if(parseInt(document.getElementById('selected_user').value)==0 || parseInt(document.getElementById('selected_user').value)==2){
            if(parseInt(document.getElementById('organization').value)==-1){
                alert("Please select the Organization you belong to before you proceed")
            }else{
                localStorage.setItem('_orgName', document.getElementById('organization').value) 
                localStorage.setItem('_user_type', document.getElementById('selected_user').value)
-               alert("Proceed as employee or health manager")
+                window.location.href = '/ncdhome'
+               //alert("Proceed as employee or health manager")
                
            }
         }
         else{
-               alert("Proceed as individual")
+               //Do nothing
+            //alert("Proceed as individual")
                
            }
            
@@ -74,9 +80,9 @@
         
     function select_radio(id){
 
-	
+	document.getElementById('selected_user').value=-1
     var radio_element_0 = document.getElementById(0)
-    var radio_element_1 = document.getElementById(1)
+    //var radio_element_1 = document.getElementById(1)
     var radio_element_2 = document.getElementById(2)
     //var ele=document.getElementById(id)
     //ele.classList.remove("btn-rose")
@@ -88,31 +94,31 @@
     
         if(parseInt(id)==0){
             radio_element_0.classList.add("btn-rose")
-            radio_element_1.classList.remove("btn-rose")
+            //radio_element_1.classList.remove("btn-rose")
             radio_element_2.classList.remove("btn-rose")
         }
         
-        if(parseInt(id)==1){
+       /* if(parseInt(id)==1){
             radio_element_1.classList.add("btn-rose")
             radio_element_0.classList.remove("btn-rose")
             radio_element_2.classList.remove("btn-rose")
-        }
+        }*/
         
         if(parseInt(id)==2){
             radio_element_2.classList.add("btn-rose")
-            radio_element_1.classList.remove("btn-rose")
+           // radio_element_1.classList.remove("btn-rose")
             radio_element_0.classList.remove("btn-rose")
         }
         
-      if(parseInt(id)==0 || parseInt(id)== 2){
+      /*if(parseInt(id)==0 || parseInt(id)== 2){
           document.getElementById('orglabel').style.display = 'block'
           document.getElementById('organization').style.display = 'block'
-      }
+      }*/
         
-     if(parseInt(id)==1){
+    /* if(parseInt(id)==1){
           document.getElementById('orglabel').style.display = 'none'
           document.getElementById('organization').style.display = 'none'
-      }
+      }*/
       
         document.getElementById('selected_user').value = id
     
@@ -209,7 +215,7 @@
             <p style="font-weight: bold"> I am:</p>
             
             <button class="btn btn-round" id="0" style="margin-bottom: 4px; white-space:normal" onclick="select_radio('0')"><b>An Employee – Participate in NCD & mental health screening as part of my Organization's Initiative</b></button>
-            <button class="btn btn-round" id="1" style="margin-bottom: 4px; white-space:normal"  onclick="select_radio('1')"><b>An Individual - Participate in NCD & mental health screening for self assessment</b></button>
+            <!--<button class="btn btn-round" id="1" style="margin-bottom: 4px; white-space:normal"  onclick="select_radio('1')"><b>An Individual - Participate in NCD & mental health screening for self assessment</b></button>-->
             <button class="btn btn-round" id="2" style="margin-bottom: 4px; white-space:normal"  onclick="select_radio('2')"><b>A Health Manager - Implement NCD and mental health activities in my workplace </b></button>
             
                         <!--onclick="select_radio('{{y['qid']}}', '{{z['aid']}}') <select class="form-control" id="usertype" style="width: 100%;">
@@ -234,13 +240,15 @@
             
         <!--<br>
           <p>By continuing you are giving consent to be a participant of this assessment/survey.</p>--> 
+            
+            <p style="font-weight: bold" id="orglabel"> If your organization name is not listed above, Please  <a href="/ncdOrgRegistration">CLICK HERE</a></p>
           
         </div>
         <div class="modal-footer">
-          <a href="/ncdhome">
+          
             <button class="btn btn-rose btn-raised" style="" onclick="gotohome()">Continue ></button>
               <!--<button class="btn btn-rose btn-raised" style="" onclick="on_submit()">Submit</button>-->
-          </a>
+          
         </div>
       </div>
     </div>
