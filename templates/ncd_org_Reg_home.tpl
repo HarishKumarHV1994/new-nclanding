@@ -126,7 +126,7 @@
             <center><img id="done_spinner" src="img/spinner.gif" style="width: 75px; display: none;"></center>
           <!--</a>-->
           <br>
-          <a href="/ncdhome">Go To Home</a>
+          <a href="/ncdlanding">Go To Home</a>
           <!--<br>
           <a href="/logout">Logout</a> -->
         </div>
