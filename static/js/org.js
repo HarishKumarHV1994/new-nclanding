@@ -315,6 +315,104 @@ function on_submit(){
 
 				if(val.length == 0){
 					flag = 3
+json_data = {"data": [{"qid": 1, "qtype": "text", "ph": -9.0, "ques": {"english": "Name of the workplace", "kannada": ""}, "question_information": "-9.0", "section": "ORGANIZATION DETAILS", "next_qid": 2, "scoring_required": "False", "mandatory": "True", "capture_specifics": "False", "follow_up": "False", "ans": []}, {"qid": 2, "qtype": "radio", "ques": {"english": "Type of workplace ", "kannada": ""}, "question_information": "-9.0", "section": "ORGANIZATION DETAILS", "scoring_required": "False", "mandatory": "True", "capture_specifics": "False", "follow_up": "False", "ans": [{"aid": 1, "value": "Private- Profit", "value_id": 0, "next_qid": 3}, {"aid": 2, "value": "Not for Profit ( NGOs) ", "value_id": 0, "next_qid": 3}, {"aid": 3, "value": "Public Sector", "value_id": 0, "next_qid": 3}]}, {"qid": 3, "qtype": "options", "ques": {"english": "Category of workplaces", "kannada": ""}, "question_information": "-9.0", "section": "ORGANIZATION DETAILS", "scoring_required": "False", "mandatory": "True", "capture_specifics": "True", "follow_up": "False", "ans": [{"aid": 1, "value": "Agriculture, Forestry, Fishing,and Hunting", "value_id": 0, "next_qid": 4}, {"aid": 2, "value": "Mining, Quarrying, and Oil/Gas Extraction", "value_id": 0, "next_qid": 4}, {"aid": 3, "value": "Wholesale Trade", "value_id": 0, "next_qid": 4}, {"aid": 4, "value": "Retail Trade", "value_id": 0, "next_qid": 4}, {"aid": 5, "value": "Hotel and Hospitality (Accommodation & Food Services)", "value_id": 0, "next_qid": 4}, {"aid": 7, "value": "Information Technology, IT enabled services and BPOs", "value_id": 0, "next_qid": 4}, {"aid": 8, "value": "Professional, Scientific, and Technical Service providers ", "value_id": 0, "next_qid": 4}, {"aid": 9, "value": "Transportation, mobility and Warehousing", "value_id": 0, "next_qid": 4}, {"aid": 10, "value": "Health Care and Social Assistance ( Hospitals, clincis, pharmacies, labs,social services)", "value_id": 0, "next_qid": 4}, {"aid": 11, "value": "Real Estate Rental & Leasing", "value_id": 0, "next_qid": 4}, {"aid": 12, "value": "Banking,Finance and Insurance", "value_id": 0, "next_qid": 4}, {"aid": 13, "value": "Management of Companies & Enterprises", "value_id": 0, "next_qid": 4}, {"aid": 14, "value": "Information , Journalism, telecommunication", "value_id": 0, "next_qid": 4}, {"aid": 15, "value": "Construction", "value_id": 0, "next_qid": 4}, {"aid": 16, "value": "Academic and Educational Services", "value_id": 0, "next_qid": 4}, {"aid": 17, "value": "Industries – Manufacturing, chemical, Apparel etc", "value_id": 0, "next_qid": 4}, {"aid": 18, "value": "Administrative and Support and Waste,Management and Remediation Services", "value_id": 0, "next_qid": 4}, {"aid": 19, "value": "Arts, Entertainment and Recreation", "value_id": 0, "next_qid": 4}, {"aid": 20, "value": "Other Services (except Public Administration):", "value_id": 0, "next_qid": 4}, {"aid": 21, "value": "Public Administration", "value_id": 0, "next_qid": 4}, {"aid": 22, "value": "Others", "value_id": 0, "next_qid": 4}]}, {"qid": 4, "qtype": "num", "ph": -9.0, "ques": {"english": "Pincode", "kannada": ""}, "question_information": "-9.0", "section": "ORGANIZATION DETAILS", "next_qid": 5, "scoring_required": "False", "mandatory": "False", "capture_specifics": "False", "follow_up": "False", "ans": [], "range": 999999},{"qid": 5, "qtype": "num", "ph": -9.0, "ques": {"english": "Number of employees (permanent+contract) ", "kannada": ""}, "question_information": "-9.0", "section": "ORGANIZATION DETAILS", "next_qid": 0, "scoring_required": "False", "mandatory": "True", "capture_specifics": "False", "follow_up": "False", "ans": [], "range": 999999}],"sections":[{"name":"ORGANIZATION DETAILS","summary":""}],"heading":"WORK STRESS AND ASSOCIATED SYMPTOMS ASSESSMENT"}
+
+
+var res = []
+
+function checkValid(field_id, field_range){
+
+	//console.log(field_id, field_range)
+
+    var val = document.getElementById(field_id).value
+
+    if (val < 0 || val > parseInt(field_range)){
+        document.getElementById(field_id).value = ''
+        alert('Please enter values <='+field_range)
+    }
+}
+
+
+function select_options(qid){
+    
+    var options_element = document.getElementById('q'+qid+'_data')
+    var selection_val = options_element.value
+    
+    
+    json_data.data[parseInt(qid)-1].selection_val = parseInt(selection_val)
+    
+    
+}
+
+
+function select_radio(qid, element_id){
+
+	var radio_element = document.getElementById('q'+qid+'_'+element_id)
+
+	var element_count = json_data.data[parseInt(qid)-1]['ans'].length
+    
+    //alert(qid)
+    //alert(element_id)
+
+	json_data.data[parseInt(qid)-1].selection_val = parseInt(element_id)
+
+	for(var i=0; i<element_count; i++){
+		if((i+1) != parseInt(element_id)){
+			var ele = document.getElementById('q'+qid+'_'+(i+1).toString())
+			ele.classList.remove("btn-rose")
+		}
+	}
+
+	radio_element.classList.add("btn-rose")
+    
+
+	//If the option selected for question 5 is Absent (option 2) ,then the user should skip to question 18
+    
+}
+
+
+
+
+function on_submit(){
+	var flag = 0
+
+	var data_payload = []
+
+	for(var i=0; i<json_data.data.length; i++){
+		
+		var ques_type = json_data.data[i].qtype
+
+		
+		if(json_data.data[i].mandatory == "True"){
+			if(ques_type == 'text'){
+				var val = document.getElementById('q_'+(json_data.data[i].qid).toString()+'_data').value
+
+				json_data.data[i].selection_val = val
+
+				data_payload.push({'qid': json_data.data[i].qid, 'selection_val': val})
+
+				if(val.length == 0){
+					flag = 1
+				}
+			}else if(ques_type == 'num'){
+				var val = document.getElementById('q_'+(json_data.data[i].qid).toString()+'_data').value
+
+				json_data.data[i].selection_val = val
+
+				data_payload.push({'qid': json_data.data[i].qid, 'selection_val': val})
+
+				if(parseInt(val) < 0 || parseInt(val) == NaN){
+					flag = 2
+				}
+			}else if(ques_type == 'date'){
+				var val = document.getElementById('q_'+(json_data.data[i].qid).toString()+'_data').value
+
+				json_data.data[i].selection_val = val
+
+				data_payload.push({'qid': json_data.data[i].qid, 'selection_val': val})
+
+				if(val.length == 0){
+					flag = 3
 				}
 			}else if(ques_type == 'radio'){
 				
@@ -349,11 +447,11 @@ function on_submit(){
 
 	if(flag == 0){
 
-		var scores = calculate_score()
+		
 
 		//localStorage.setItem('_stress_app_user_name', data_payload[0].selection_val)
 		//localStorage.setItem('_stress_app_work_stress_msg', scores.work_stress)
-		localStorage.setItem('_ncd_rapid_msg', scores.ncd_rapid)
+		//localStorage.setItem('_ncd_rapid_msg', scores.ncd_rapid)
 		//alert(scores.ncd_rapid)
 		document.getElementById('done_spinner').style.display = 'block'
 
@@ -361,10 +459,10 @@ function on_submit(){
 	    xhttp.onreadystatechange = function() {
 	        if (this.readyState == 4 && this.status == 200) {
 	          //console.log(this.responseText);
-	          window.location.href = '/ncdrapid_score'
+	          window.location.href = '/ncdthankyou'
 	        }
 	    };
-	    xhttp.open("POST", "/add_ncdrapid_assessment", true);
+	    xhttp.open("POST", "/add_organization_Details", true);
 	    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	    xhttp.send('data='+encodeURIComponent(JSON.stringify(data_payload)));
 
