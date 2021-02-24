@@ -430,6 +430,73 @@ function on_submit(){
 		localStorage.setItem('_stress_app_symptoms_msg', scores.symptoms)*/
 		
 		document.getElementById('done_spinner').style.display = 'block'
+         localStorage.setItem('_bingealco', 'N')
+        localStorage.setItem('_inactive', 'N')
+        localStorage.setItem('_unhealthy', 'N')
+        localStorage.setItem('_overwt', 'N')
+        localStorage.setItem('_obesity', 'N')
+        localStorage.setItem('_diabetes', 'N')
+        localStorage.setItem('_bp', 'N')
+        localStorage.setItem('_harmfullstress', 'N')
+        localStorage.setItem('_stress', 'N')
+        localStorage.setItem('_mental', 'N')
+        localStorage.setItem('_suicide', 'N')
+        localStorage.setItem('_tobacco', 'N')
+        localStorage.setItem('_alcohol', 'N')
+        
+        if(parseInt(json_data.data[10].selection_val)==1 || parseInt(json_data.data[10].selection_val)==2){
+            localStorage.setItem('_tobacco', 'Y')
+        }
+        if(parseInt(json_data.data[11].selection_val)==1 || parseInt(json_data.data[11].selection_val)==2 || parseInt(json_data.data[11].selection_val)==3 || parseInt(json_data.data[11].selection_val)==4){
+            localStorage.setItem('_alcohol', 'Y')
+        }
+        
+        if(parseInt(json_data.data[12].selection_val)==2 || parseInt(json_data.data[12].selection_val)==3 || parseInt(json_data.data[12].selection_val)==4){
+            localStorage.setItem('_bingealco', 'Y')
+        }
+        
+        if(parseInt(json_data.data[18].selection_val)==1 || parseInt(json_data.data[18].selection_val)==2 || parseInt(json_data.data[18].selection_val)==3 || parseInt(json_data.data[18].selection_val)==4){
+        localStorage.setItem('_inactive', 'Y')
+         }
+        
+        if((parseInt(json_data.data[15].selection_val)>3 && parseInt(json_data.data[17].selection_val)<3) || (parseInt(json_data.data[16].selection_val)>3 && parseInt(json_data.data[17].selection_val)<3)){
+        localStorage.setItem('_unhealthy', 'Y')
+        }
+        
+        wt = json_data.data[28].selection_val
+        ht= json_data.data[27].selection_val/100
+        
+        bmi=wt/(ht*ht)
+        if(bmi>25){
+        localStorage.setItem('_overwt', 'Y')
+        }
+         if(bmi>30){
+        localStorage.setItem('_obesity', 'Y')
+         }
+        if(parseInt(json_data.data[31].selection_val)>200){
+             localStorage.setItem('_diabetes', 'Y')
+        }
+        
+        if(json_data.data[29].selection_val_sys > 140 || json_data.data[29].selection_val_dia > 90){
+       
+        localStorage.setItem('_bp', 'Y')
+        }
+        if (json_data.data[22].selection_val == 3 || json_data.data[22].selection_val == 4){
+            localStorage.setItem('_stress', 'Y')
+        }
+        
+        if ((json_data.data[22].selection_val == 3 || json_data.data[22].selection_val == 4) && (json_data.data[23].selection_val == 3 || json_data.data[23].selection_val == 4 || json_data.data[23].selection_val == 5)){
+        localStorage.setItem('_harmfullstress', 'N')
+     }
+        mentalscore= json_data.data[20].selection_val+json_data.data[21].selection_val
+    if(mentalscore>3){
+        localStorage.setItem('_mental', 'Y')
+    }
+        
+    if(parseInt(json_data.data[26].selection_val)==2 || parseInt(json_data.data[26].selection_val)==3 || parseInt(json_data.data[26].selection_val)==4){
+        localStorage.setItem('_suicide', 'Y')
+    }
+        
 
 		var xhttp = new XMLHttpRequest();
 	    xhttp.onreadystatechange = function() {
@@ -460,4 +527,6 @@ function on_submit(){
 	}
 
 }
+
+
 
