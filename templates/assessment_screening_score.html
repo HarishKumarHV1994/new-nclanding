@@ -29,6 +29,117 @@
 
       document.getElementById('work_stress_msg').innerHTML = localStorage.getItem('_stress_app_work_stress_msg')
       document.getElementById('symptoms_msg').innerHTML = localStorage.getItem('_stress_app_symptoms_msg')*/
+        
+        //document.getElementById('thdn1').style.display = 'none'
+       totalrisks=0
+        
+        /*localStorage.setItem('_tobacco', 'Y')
+        localStorage.setItem('_alcohol', 'N')
+        localStorage.setItem('_bingealco', 'Y')
+        localStorage.setItem('_inactive', 'N')
+        localStorage.setItem('_unhealthy', 'Y')
+        localStorage.setItem('_overwt', 'N')
+        localStorage.setItem('_obesity', 'Y')
+        localStorage.setItem('_diabetes', 'N')
+        localStorage.setItem('_bp', 'Y')
+        localStorage.setItem('_harmfullstress', 'N')
+        localStorage.setItem('_stress', 'Y')
+        localStorage.setItem('_mental', 'N')
+        localStorage.setItem('_suicide', 'Y')*/
+       
+      
+      if(localStorage.getItem('_tobacco')=='Y'){
+          document.getElementById('thup1').style.display = 'none'
+          totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn1').style.display = 'none'
+      }
+        
+     if(localStorage.getItem('_alcohol')=='Y'){
+          document.getElementById('thup2').style.display = 'none'
+         totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn2').style.display = 'none'
+      }
+        
+        
+     if(localStorage.getItem('_bingealco')=='Y'){
+          document.getElementById('thup3').style.display = 'none'
+         totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn3').style.display = 'none'
+      }
+        
+         if(localStorage.getItem('_inactive')=='Y'){
+          document.getElementById('thup4').style.display = 'none'
+             totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn4').style.display = 'none'
+      }
+        
+         if(localStorage.getItem('_unhealthy')=='Y'){
+          document.getElementById('thup5').style.display = 'none'
+             totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn5').style.display = 'none'
+      }
+        
+         if(localStorage.getItem('_overwt')=='Y'){
+          document.getElementById('thup6').style.display = 'none'
+             totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn6').style.display = 'none'
+      }
+        
+         if(localStorage.getItem('_obesity')=='Y'){
+          document.getElementById('thup7').style.display = 'none'
+             totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn7').style.display = 'none'
+      }
+        
+         if(localStorage.getItem('_diabetes')=='Y'){
+          document.getElementById('thup8').style.display = 'none'
+             totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn8').style.display = 'none'
+      }
+        
+         if(localStorage.getItem('_bp')=='Y'){
+          document.getElementById('thup9').style.display = 'none'
+             totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn9').style.display = 'none'
+      }
+        
+         if(localStorage.getItem('_stress')=='Y'){
+          document.getElementById('thup10').style.display = 'none'
+             totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn10').style.display = 'none'
+      }
+        
+        if(localStorage.getItem('_harmfullstress')=='Y'){
+          document.getElementById('thup11').style.display = 'none'
+      }else{
+          document.getElementById('thdn11').style.display = 'none'
+      }
+        
+        if(localStorage.getItem('_mental')=='Y'){
+          document.getElementById('thup12').style.display = 'none'
+            totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn12').style.display = 'none'
+      }
+        
+          if(localStorage.getItem('_suicide')=='Y'){
+          document.getElementById('thup13').style.display = 'none'
+              totalrisks=totalrisks+1
+      }else{
+          document.getElementById('thdn13').style.display = 'none'
+      }
+        
+      document.getElementById('totalrisks').innerHTML = totalrisks
 
     })  
   </script>
@@ -44,22 +155,180 @@
         <div class="col-md-6 ml-auto mr-auto">
           <div class="card card-login">
             <div class="card-header card-header-rose text-center" style="padding-bottom: 30px;">
-              <h4 class="card-title">THANK YOU FOR TAKING THE ASSESSMENT</h4>
+              <h4 class="card-title">THANK YOU FOR TAKING THE NCD-SCREEN TEST</h4>
               <!-- <p><strong>District and Taluk Selection</strong></p> -->
             </div>
             <div class="card-body" style="padding-top: 15px; padding-bottom: 15px;">
 
-              <!--<br>
-              
-              <center><p style="font-weight: bold; padding-left: 15px; font-size: 1.4em;">Thank You <span id="name"></span> for taking the Assessment</p></center>
-
-              <br>-->
-
-              <!--<p id="work_stress_msg" style="font-weight: 400; padding-left: 15px; font-size: 1em;">Your Organisation's Score for RAPID APPRAISAL of HARMFUL STRESS RELATED INTERVENTIONS IN THE INDUSTRY is : <span id="rapid_msg"></span></p>-->
-                
-                <center><p style="padding-left: 15px; font-size: 1.2em;">TEXT TO ENTERED</p></center>
-
-              <!--<p id="symptoms_msg" style="font-weight: 400; padding-left: 15px; font-size: 1em;">The symptoms suggestive of work-stress level is <span style='color: #FF5722; font-weight: 550;'>MODERATE</span>.</p>-->
+             <centre><table>
+                    <tr>
+                        <th>
+                            <center><p style="padding-left: 15px; font-size: 1.1em;">NCDs/NCD Risk Factors</p></center>
+                        </th>
+                        <th>
+                            <center><p style="padding-left: 15px; font-size: 1.1em;">No Risk <img src="img/thumbsup.png" style="width: 15px;"> / Risk <img src="img/thumbsdown.png" style="width: 15px;"></p></center>
+                        </th>
+                        
+                    </tr>
+                    <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Tobacco use</p></center>
+                        </th>
+                        
+                        <th>
+                            <center><span id="thup1" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn1" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                     <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Alcohol use</p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup2" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn2" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Harmful Alcohol use(Binge Drinking)</p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup3" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn3" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                  <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Physical inactivity</p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup4" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn4" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Unhealthy Diet</p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup5" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn5" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Overweight </p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup6" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn6" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Obesity  </p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup7" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn7" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Elevated blood sugar  </p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup8" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn8" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Elevated blood pressure  </p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup9" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn9" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Work Stress </p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup10" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn10" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                  <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Harmful work stress </p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup11" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn11" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Common Mental Disorders – Depression and Anxiety </p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup12" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn12" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Suicidal ideation </p></center>
+                        </th>
+                        <th>
+                            <center><span id="thup13" style="width: 25px;"> <img src="img/thumbsup.png" style="width: 25px;"></span></center>
+                            <center><span id="thdn13" style="width: 25px;"> <img src="img/thumbsdown.png" style="width: 25px;"></span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <th>
+                            <center><p style="font-size: 1.0em;">Number of NCD risk factors  </p></center>
+                        </th>
+                        <th>
+                            <center><span id="totalrisks">12</span></center>
+                        </th>
+                        
+                    </tr>
+                 
+                    
+                 
+                 
+                 
+                 
+                </table></centre>
 
 
 
