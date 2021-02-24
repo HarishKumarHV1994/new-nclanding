@@ -167,7 +167,7 @@
 
       <div id="ques_data" style="display: block;">  
       % for x in data['sections']:
-        <div class="row" style="margin-top: 75px;">
+        <div class="row" style="margin-top: 75px;">       
           <div class="col-md-6 ml-auto mr-auto">
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
@@ -253,7 +253,7 @@
           
         </div>
 
-              </div>
+              </div>  
             </div>
           </div>
         </div>
