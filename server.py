@@ -23,6 +23,11 @@ def root():
 	# return template('templates/login.tpl', msg='')
 	return static_file('ncdlanding.html', root='templates/')
 
+@app.route('/yuvaspandanaScheme')
+def root():
+	# return template('templates/login.tpl', msg='')
+	return static_file('yspScheme.html', root='templates/')
+
 @app.route('/ncdlanding')
 def root():
 	# return template('templates/login.tpl', msg='')
