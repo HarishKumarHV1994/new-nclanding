@@ -21,6 +21,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
+      var schemeData={"scheme":{"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":null,"eng":null}},"schemeShortName":{"label":{"kan":"ಯೋಜನೆಯ ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರ","eng":"Display or Short Name"},"details":{"kan":null,"eng":null}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":null,"eng":null}},"purpose":{"label":{"kan":"ಯೋಜನೆಯ ಉದ್ದೇಶ","eng":"Purpose of the scheme"},"details":[{"kan":null,"eng":null}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities available/ Details of the scheme"},"details":[{"kan":null,"eng":null}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಯೋಜನೆಯ ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":null,"eng":null}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":null,"eng":null}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ ವ್ಯಾಪ್ತಿಗೆ ಬರುತ್ತದೆಯೇ?","eng":"Does it come under Sakala?"},"details":false},"process":{"label":{"kan":"ಯೋಜನೆಯ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":null,"eng":null}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted"},"details":[{"kan":null,"eng":null}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":null,"eng":null}],"website":null,"email":null,"contactNumbers":[{"type":"contact","type_eng":"Contact","type_kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":"link 2 District Offices Contact details"},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":"link 2 District Offices Contact details"}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":null,"eng":null},"designation":{"kan":null,"eng":null},"emailContact":null,"officeAddress":{"kan":null,"eng":null},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ರಿಯಾಯತಿಗಳು","eng":"Subsidies available under the scheme"},"details":[{"subsidySummary":{"kan":null,"eng":null},"subsidyDesc":{"kan":null,"eng":null}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":null,"eng":null}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
+      
       purposeItems=[1]
       purposetextIdNo=1
       
@@ -63,6 +65,357 @@
       additionalContactsItems=[1]
       additionalContactsTextIdNo=1
       
+      function validate(){
+          alert('validate')
+            schemeData.scheme.department=document.getElementById("departments").value
+            schemNum=document.getElementById("schemeNum").value
+            schemeData.scheme.schemeNumber=schemNum
+            //KSFC-scheme-13
+            schemeID=document.getElementById("departments").value+"-scheme-"+schemNum
+            schemeData.scheme.schemeID=schemeID
+          alert("---"+document.getElementById("shortname_eng").value.trim()+"----")
+            if(document.getElementById("shortname_eng").value.trim() ===""){
+                alert("blank check")
+                schemeData.scheme.schemeShortName.details.eng=null
+            }else{
+                schemeData.scheme.schemeShortName.details.eng=document.getElementById("shortname_eng").value
+            }
+             
+            
+            
+          
+            schemeData.scheme.schemeShortName.details.kan=document.getElementById("shortname_kan").value
+          
+            schemeData.scheme.schemeName.details.eng=document.getElementById("name_eng").value
+            schemeData.scheme.schemeName.details.kan=document.getElementById("name_kan").value
+            schemeData.scheme.sakala.details=   document.getElementById("sakala").value
+            schemeData.scheme.applicationMode=document.getElementById("applicationMode").value
+            schemeData.scheme.applicationURL=document.getElementById("applicationURL").value
+            schemeData.scheme.applicationFormLocation=document.getElementById("applicationFileName").value 
+            schemeData.scheme.detailedschemeName.details.eng=document.getElementById("detailedschemeName_eng").value
+            schemeData.scheme.detailedschemeName.details.kan=document.getElementById("detailedschemeName_kan").value
+
+            purpose=[]
+            for(i=0;i<purposeItems.length;i++){
+                
+                j=purposeItems[i]
+                purpose_eng_field = "purpose_eng_"+j
+                purpose_kan_field = "purpose_kan_"+j
+                purposeObject={"kan":null,"eng":null}
+                purposeObject.kan=document.getElementById(purpose_kan_field).value
+                purposeObject.eng=document.getElementById(purpose_eng_field).value
+                purpose.push(purposeObject)
+            }
+          
+            if(purpose == null || purpose.length==0){
+                schemeData.scheme.purpose.details = null
+            }else{
+                schemeData.scheme.purpose.details=purpose
+            }
+    
+            //facilities
+            facilities=[]
+            for(i=0;i<facilitiesItems.length;i++){
+                
+                j=facilitiesItems[i]
+                facilities_eng_field = "facilities_eng_"+j
+                facilities_kan_field = "facilities_kan_"+j
+                facilitiesObject={"kan":null,"eng":null}
+                facilitiesObject.kan=document.getElementById(facilities_kan_field).value
+                facilitiesObject.eng=document.getElementById(facilities_eng_field).value
+                facilities.push(facilitiesObject)
+            }
+          
+            if(facilities == null || facilities.length==0){
+                schemeData.scheme.facilities.details = null
+            }else{
+                schemeData.scheme.facilities.details=facilities
+                
+            }
+          schemeData.scheme.facilities.additionalDetails.fileName=document.getElementById("facilitiesFile").value
+          
+          //eligibilities
+            eligibilities=[]
+            for(i=0;i<eligibilitiesItems.length;i++){
+                
+                j=eligibilitiesItems[i]
+                eng_field = "eligibilities_eng_"+j
+                kan_field = "eligibilities_kan_"+j
+                obj={"kan":null,"eng":null}
+                obj.kan=document.getElementById(kan_field).value
+                obj.eng=document.getElementById(eng_field).value
+                eligibilities.push(obj)
+            }
+          
+            if(eligibilities == null || eligibilities.length==0){
+                schemeData.scheme.eligibility.details = null
+            }else{
+                schemeData.scheme.eligibility.details=eligibilities
+                
+            }
+          schemeData.scheme.eligibility.additionalDetails.fileName  =document.getElementById("eligibilitiesFile").value
+          
+          //qualification
+            qualifications=[]
+            for(i=0;i<qualificationsItems.length;i++){
+                
+                j=qualificationsItems[i]
+                eng_field = "qualifications_eng_"+j
+                kan_field = "qualifications_kan_"+j
+                obj={"kan":null,"eng":null}
+                obj.kan=document.getElementById(kan_field).value
+                obj.eng=document.getElementById(eng_field).value
+                qualifications.push(obj)
+            }
+          
+            if(qualifications == null || qualifications.length==0){
+                schemeData.scheme.qualifications.details = null
+            }else{
+                schemeData.scheme.qualifications.details=qualifications
+                
+            }
+          
+          schemeData.scheme.qualifications.additionalDetails.fileName  =document.getElementById("qualificationsFile").value
+          
+          //process
+            process=[]
+            for(i=0;i<processItems.length;i++){
+                
+                j=processItems[i]
+                eng_field = "process_eng_"+j
+                kan_field = "process_kan_"+j
+                obj={"kan":null,"eng":null}
+                obj.kan=document.getElementById(kan_field).value
+                obj.eng=document.getElementById(eng_field).value
+                process.push(obj)
+            }
+          
+            if(process == null || process.length==0){
+                schemeData.scheme.process.details = null
+            }else{
+                schemeData.scheme.process.details=process
+                
+            }
+          
+           schemeData.scheme.process.additionalDetails.fileName  =document.getElementById("processFile").value
+          
+          
+          //documents
+          documents=[]
+            for(i=0;i<documentsItems.length;i++){
+                
+                j=documentsItems[i]
+                eng_field = "documents_eng_"+j
+                kan_field = "documents_kan_"+j
+                obj={"kan":null,"eng":null}
+                obj.kan=document.getElementById(kan_field).value
+                obj.eng=document.getElementById(eng_field).value
+                documents.push(obj)
+            }
+          
+            if(documents == null || documents.length==0){
+                schemeData.scheme.documents.details = null
+            }else{
+                schemeData.scheme.documents.details=documents
+                
+            }
+          
+          schemeData.scheme.documents.additionalDetails.fileName  =document.getElementById("documentsFile").value
+          
+          
+          //contactOffice
+            contactOffice=[]
+            for(i=0;i<contactOfficeItems.length;i++){
+                
+                j=contactOfficeItems[i]
+                eng_field = "office_eng_"+j
+                kan_field = "office_kan_"+j
+                obj={"kan":null,"eng":null}
+                obj.kan=document.getElementById(kan_field).value
+                obj.eng=document.getElementById(eng_field).value
+                contactOffice.push(obj)
+            }
+          
+            if(contactOffice == null || contactOffice.length==0){
+                schemeData.scheme.contactOffice.details = null
+            }else{
+                schemeData.scheme.contactOffice.details=process
+                
+            }
+          
+          schemeData.scheme.contactOffice.contactsURL =document.getElementById("contactsFile").value
+          
+          //subsidiesExamples
+            subsidiesExamples=[]
+            for(i=0;i<subsidiesExampleItems.length;i++){
+                
+                j=subsidiesExampleItems[i]
+                eng_field = "subsidiesExample_eng_"+j
+                kan_field = "subsidiesExample_kan_"+j
+                obj={"kan":null,"eng":null}
+                obj.kan=document.getElementById(kan_field).value
+                obj.eng=document.getElementById(eng_field).value
+                subsidiesExamples.push(obj)
+            }
+          
+            if(subsidiesExamples == null || subsidiesExamples.length==0){
+                schemeData.scheme.subsidies.subsidiesDistributionExample.details = null
+            }else{
+                schemeData.scheme.subsidies.subsidiesDistributionExample.details=subsidiesExamples
+                
+            }
+            
+           //contactNumbers
+            contactNumbers=[]
+            for(i=0;i<contactNumbersItems.length;i++){
+                
+                j=contactNumbersItems[i]
+                eng_field = "contactNumbers_eng_"+j
+                //kan_field = "subsidiesExample_kan_"+j
+                //obj={"kan":null,"eng":null}
+                //obj.kan=document.getElementById(kan_field).value
+                eng=document.getElementById(eng_field).value
+                contactNumbers.push(eng)
+            }
+          
+            if(contactNumbers == null || contactNumbers.length==0){
+                schemeData.scheme.contactOffice.contactNumbers[0].num=null
+            }else{
+                schemeData.scheme.contactOffice.contactNumbers[0].num=contactNumbers
+                
+            }
+          
+          //helpiline
+            helpline=[]
+            for(i=0;i<helplineItems.length;i++){
+                
+                j=helplineItems[i]
+                eng_field = "helpline_eng_"+j
+                //kan_field = "subsidiesExample_kan_"+j
+                //obj={"kan":null,"eng":null}
+                //obj.kan=document.getElementById(kan_field).value
+                eng=document.getElementById(eng_field).value
+                helpline.push(eng)
+            }
+          
+            if(helpline == null || helpline.length==0){
+                schemeData.scheme.contactOffice.contactNumbers[1].num=null
+            }else{
+                schemeData.scheme.contactOffice.contactNumbers[1].num=helpline
+                
+            }
+          
+          //website
+            website=[]
+            for(i=0;i<websitesItems.length;i++){
+                
+                j=websitesItems[i]
+                eng_field = "website_eng_"+j
+                //kan_field = "subsidiesExample_kan_"+j
+                //obj={"kan":null,"eng":null}
+                //obj.kan=document.getElementById(kan_field).value
+                eng=document.getElementById(eng_field).value
+                website.push(eng)
+            }
+          
+            if(website == null || website.length==0){
+                schemeData.scheme.contactOffice.website=null
+            }else{
+                schemeData.scheme.contactOffice.website=website
+                
+            }
+          
+          //emails
+            emails=[]
+            for(i=0;i<emailsItems.length;i++){
+                
+                j=emailsItems[i]
+                eng_field = "email_eng_"+j
+                //kan_field = "subsidiesExample_kan_"+j
+                //obj={"kan":null,"eng":null}
+                //obj.kan=document.getElementById(kan_field).value
+                eng=document.getElementById(eng_field).value
+                emails.push(eng)
+            }
+          
+            if(emails == null || emails.length==0){
+                schemeData.scheme.contactOffice.email=null
+            }else{
+                schemeData.scheme.contactOffice.email=emails
+                
+            }
+          
+           schemeData.scheme.additionalContactInformation.contactsURL =document.getElementById("addtionalscontactsFile").value
+          
+          schemeData.scheme.subsidies.additionalDetails.fileName =document.getElementById("subsidiesFile").value
+          
+          //Subsidies
+          subsidies=[]
+          for(i=0;i<subsidiesItems.length;i++){
+                
+                j=subsidiesItems[i]
+                eng_field = "subsidy_eng_"+j
+                kan_field = "subsidy_kan_"+j
+                desc_eng_field = "subsidyDesc_eng_"+j
+                desc_kan_field = "subsidyDesc_kan_"+j
+                
+                subsidyObj={"subsidySummary":{"kan":null,"eng":null},"subsidyDesc":{"kan":null,"eng":null}}
+                
+                subsidyObj.subsidySummary.kan=document.getElementById(kan_field).value
+                subsidyObj.subsidySummary.eng=document.getElementById(eng_field).value
+                
+                subsidyObj.subsidyDesc.kan=document.getElementById(desc_kan_field).value
+                subsidyObj.subsidyDesc.eng=document.getElementById(desc_eng_field).value
+                
+                subsidies.push(subsidyObj)
+            }
+          
+            if(subsidies == null || subsidies.length==0){
+                schemeData.scheme.subsidies.details = null
+            }else{
+                schemeData.scheme.subsidies.details=subsidies
+                
+            }
+          //additionalContacts
+          additionalContacts=[]
+          for(i=0;i<additionalContactsItems.length;i++){
+              j=additionalContactsItems[i]
+              addContactObj={"name":{"kan":null,"eng":null},"designation":{"kan":null,"eng":null},"emailContact":{"kan":null,"eng":null},"officeAddress":{"kan":null,"eng":null},"contactNumber":null}
+              name_eng="addname_eng_"+j
+              name_kan="addname_kan_"+j
+              desig_eng="adddesig_eng_"+j
+              desig_kan="adddesig_kan_"+j
+              office_eng="addoffice_eng_"+j
+              office_kan="addoffice_kan_"+j
+              emailContact="addemail_eng_"+j
+              contactNumber="addcontact_eng_"+j
+              addContactObj.name.eng=document.getElementById(name_eng).value
+              addContactObj.name.kan=document.getElementById(name_kan).value
+              
+              addContactObj.designation.eng=document.getElementById(desig_eng).value
+              addContactObj.designation.kan=document.getElementById(desig_kan).value
+              
+              addContactObj.officeAddress.eng=document.getElementById(office_eng).value
+              addContactObj.officeAddress.kan=document.getElementById(office_kan).value
+              
+              addContactObj.emailContact=document.getElementById(emailContact).value
+              addContactObj.contactNumber=document.getElementById(contactNumber).value
+              
+              additionalContacts.push(addContactObj)
+              
+          }
+          
+           if(additionalContacts == null || additionalContacts.length==0){
+                schemeData.scheme.additionalContactInformation.details = null
+            }else{
+                schemeData.scheme.additionalContactInformation.details=additionalContacts
+                
+            }
+          
+           document.getElementById("jsontext").value=JSON.stringify(schemeData)
+    
+          
+      }
       
       function showTable(tablename){
           //alert("show")
@@ -317,7 +670,6 @@
           document.getElementById(sectionName+"_del_"+textIdNo).innerHTML = "DEL";
           
       }
-      
       
       function addTexAreaSet(sectionName){
           //alert(sectionName)
@@ -601,8 +953,7 @@
           document.getElementById(sectionName+"_del_"+textIdNo).innerHTML = "DELETE";
           
       }
-      
-      
+       
       function deleteFunction(sectionName,id){
            
             rowId=sectionName+"_row_"+id
@@ -693,6 +1044,10 @@
             
             //purposetextIdNo=purposetextIdNo-1
       }
+      
+      
+      
+      
     
   </script>
 
@@ -724,6 +1079,8 @@ table {
 }
     </style>
     </head>
+    <!--<form>-->
+    
     <body class="login-page sidebar-collapse">  
         <div class="container">
             <div class="card card-login">
@@ -739,7 +1096,8 @@ table {
                             Department
                         </td>
                         <td>
-                            <select name="departments" id="departments" class="form-control input-lg">
+                            <select name="departments" id="departments" class="form-control input-lg" required>
+                                <option value=""></option>
                                 <option value="KSFC">K.S.F.C</option>
                                 <option value="SCLWLF">Social Welfare</option>
                                 <option value="SERICL">Sericulture</option>
@@ -764,7 +1122,7 @@ table {
                             Scheme Number
                         </td>
                         <td>
-                            <input name="schemeNum" type="number" class="form-control-1 " id="schemeNum">
+                            <input name="schemeNum" type="number" class="form-control-1 " id="schemeNum" required>
                         </td>
                         
                     </tr>
@@ -796,15 +1154,28 @@ table {
                         
                     </tr>
                  
-                    <tr>
+                 <tr>
                         <td>
-                            Name/ಯೋಜನೆ
+                            Display or Short Name/ಯೋಜನೆಯ ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರು
                         </td>
                         <td>
-                            <input name="name_eng" type="text" class="form-control-1 " id="name_eng">
+                            <input name="shortname_eng" type="text" class="form-control-1 " id="shortname_eng" required maxlength="30">
                         </td>
                         <td>
-                            <input name="name_kan" type="text" class="form-contro1-1 " id="name_kan">
+                            <input name="shortname_kan" type="text" class="form-contro1-1 " id="shortname_kan" required maxlength="30">
+                        </td>
+                        
+                    </tr>
+                 
+                 <tr>
+                        <td>
+                            Descriptive Name of the Scheme/ಯೋಜನೆಯ ಪೂರ್ಣ ಹೆಸರು
+                        </td>
+                        <td>
+                            <input name="name_eng" type="text" class="form-control-1 " id="name_eng" required maxlength = "300">
+                        </td>
+                        <td>
+                            <input name="name_kan" type="text" class="form-contro1-1 " id="name_kan" required maxlength = "300">
                         </td>
                         
                     </tr>
@@ -1034,8 +1405,8 @@ table {
                         <td id="qualifications_id_col_1" name="qualifications_id_col_1" style="width:3%">
                             <input name="qualifications_id" type="number" class="form-control" id="qualifications_id" value="1" readonly=true maxlength="1" >
                         </td>
-                        <td id="qualifications_eng_1" name="qualifications_eng_1">
-                            <textarea name="qualifications_eng_col_1" type="textarea" rows="4" cols="50"  id="qualifications_eng_col_1"  maxlength="3000"> </textarea>
+                        <td id="qualifications_eng_col_1" name="qualifications_eng_1">
+                            <textarea name="qualifications_eng_1" type="textarea" rows="4" cols="50"  id="qualifications_eng_1"  maxlength="3000"> </textarea>
                         </td>
                         <td id="qualifications_kan_col_1" name="qualifications_kan_col_1">
                             <textarea name="qualifications_kan_1" type="textarea" rows="4" cols="50"  id="qualifications_kan_1" maxlength="3000"> </textarea>
@@ -1385,12 +1756,12 @@ table {
                         
                     </tr>
                     
-                    <tr id="contactNumber_row_1" name="contactNumber_row_1">
-                        <td id="contactNumber_id_1" name="contactNumber_id_1" style="width:3%">
-                            <input name="contactNumber_id" type="number" class="form-control" id="contactNumber_id" value="1" readonly=true maxlength="1" >
+                    <tr id="contactNumbers_row_1" name="contactNumbers_row_1">
+                        <td id="contactNumbers_id_1" name="contactNumbers_id_1" style="width:3%">
+                            <input name="contactNumbers_id" type="number" class="form-control" id="contactNumbers_id" value="1" readonly=true maxlength="1" >
                         </td>
-                        <td id="contactNumber_eng_col_1" name="contactNumber_eng_col_1">
-                            <input name="contactNumber_eng_1" type="text" class="form-control-1 " id="contactNumber_eng_1">
+                        <td id="contactNumbers_eng_col_1" name="contactNumbers_eng_col_1">
+                            <input name="contactNumbers_eng_1" type="text" class="form-control-1 " id="contactNumbers_eng_1">
                         
                         </td>
                         
@@ -1557,7 +1928,7 @@ table {
                         <textarea name="addoffice_kan_1" type="textarea" rows="4" cols="20"  id="addoffice_kan_1" maxlength="3000"> </textarea>
                     </td>
                     <td id="addemail_col_1" name="addemail_col_1">
-                        <input name="addname_eng_1" type="text" class="form-control" id="addname_eng_1">
+                        <input name="addemail_eng_1" type="text" class="form-control" id="addemail_eng_1">
                     </td>
                     <td id="addcontact_col_1" name="addcontact_col_1">
                         <input name="addcontact_eng_1" type="text" class="form-control" id="addcontact_eng_1">
@@ -1669,13 +2040,13 @@ table {
                         <input name="subsidy_id" type="number" class="form-control" id="subsidy_id" value="1" readonly=true maxlength="1" >
                     </td>
                     <td id="subsidy_eng_col_1" name="subsidy_eng_col_1">
-                        <textarea name="subsidy_kan_1" type="textarea" rows="4" cols="20"  id="subsidy_kan_1" maxlength="3000"> </textarea>
+                        <textarea name="subsidy_eng_1" type="textarea" rows="4" cols="20"  id="subsidy_eng_1" maxlength="3000"> </textarea>
                     </td>
                     <td id="subsidy_kan_col_1" name="subsidy_kan_col_1">
                         <textarea name="subsidy_kan_1" type="textarea" rows="4" cols="20"  id="subsidy_kan_1" maxlength="3000"> </textarea>
                     </td>
                     <td id="subsidyDesc_eng_col_1" name="subsidyDesc_eng_col_1">
-                        <textarea name="subsidyDesc_kan_1" type="textarea" rows="4" cols="20"  id="subsidyDesc_kan_1" maxlength="3000"> </textarea>
+                        <textarea name="subsidyDesc_eng_1" type="textarea" rows="4" cols="20"  id="subsidyDesc_eng_1" maxlength="3000"> </textarea>
                     </td>
                     <td id="subsidyDesc_kan_col_1" name="subsidyDesc_kan_col_1">
                         <textarea name="subsidyDesc_kan_1" type="textarea" rows="4" cols="20"  id="subsidyDesc_kan_1" maxlength="3000"> </textarea>
@@ -1722,7 +2093,7 @@ table {
                         <input name="subsidiesExample_id" type="number" class="form-control" id="subsidiesExample_id" value="1" readonly=true maxlength="1" >
                     </td>
                     <td id="subsidiesExample_eng_col_1" name="subsidiesExample_eng_col_1">
-                        <textarea name="subsidiesExample_kan_1" type="textarea" rows="4" cols="50"  id="subsidiesExample_kan_1" maxlength="3000"> </textarea>
+                        <textarea name="subsidiesExample_eng_1" type="textarea" rows="4" cols="50"  id="subsidiesExample_eng_1" maxlength="3000"> </textarea>
                     </td>
                     <td id="subsidiesExample_kan_col_1" name="subsidiesExample_kan_col_1">
                         <textarea name="subsidiesExample_kan_1" type="textarea" rows="4" cols="50"  id="subsidiesExample_kan_1" maxlength="3000"> </textarea>
@@ -1809,6 +2180,12 @@ table {
             <br>
             <br>
             
+            <center> <button class="btn btn-rose btn-raised validate" style="" id="validate" onclick="validate()">VALIDATE</button> <br>
+            <textarea name="jsontext" type="textarea" rows="4" cols="50"  id="jsontext" maxlength="100000"> </textarea></center>
+            
+             
+            
         
     </body>
+    <!--</form>-->
 </html>
