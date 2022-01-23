@@ -205,8 +205,12 @@
             }else{
                 schemeData.scheme.purpose.details=purpose
                 if(document.getElementById("purposeFile").value.trim() === ""){
+                   // alert("no file")
+                    
                     schemeData.scheme.purpose.additionalDetails.fileName=null
                 }else{
+                   
+                   // alert("yes file=="+document.getElementById("purposeFile").value.trim()) 
                     schemeData.scheme.purpose.additionalDetails.fileName=document.getElementById("purposeFile").value.trim()
                     }
             }
@@ -1659,7 +1663,8 @@ table {
                         Purpose - File with information or Additional Information
                     </td>
                     <td >
-                        <input name="purposeFile" type="text" class="form-control-1 " id="purposeFile">
+                         <input type="file" id="purposeFile" name="purposeFile">
+                        <!--<input name="purposeFile" type="text" class="form-control-1 " id="purposeFile">-->
                     </td>
                 </tr>
             </table>
@@ -1729,7 +1734,8 @@ table {
                         Facilities - File with information or Additional Information
                     </td>
                     <td >
-                        <input name="facilitiesFile" type="text" class="form-control-1 " id="facilitiesFile">
+                        <input type="file" id="facilitiesFile" name="facilitiesFile" class="form-control-1 ">
+                        
                     </td>
                 </tr>
             </table>
@@ -1795,7 +1801,8 @@ table {
                         Eligibilities - File with information or Additional Information
                     </td>
                     <td >
-                        <input name="eligibilitiesFile" type="text" class="form-control-1 " id="eligibilitiesFile">
+                        <input type="file" id="eligibilitiesFile" name="eligibilitiesFile" class="form-control-1 ">
+                        
                     </td>
                 </tr>
             </table>
@@ -1861,7 +1868,8 @@ table {
                         Qualifications - File with information or Additional Information
                     </td>
                     <td >
-                        <input name="qualificationsFile" type="text" class="form-control-1 " id="qualificationsFile">
+                        <input type="file" id="qualificationsFile" name="qualificationsFile" class="form-control-1 ">
+                        
                     </td>
                 </tr>
             </table>
@@ -1954,7 +1962,8 @@ table {
                         Process for Applying - File with information or Additional Information
                     </td>
                     <td >
-                        <input name="processFile" type="text" class="form-control-1 " id="processFile">
+                        <input type="file" id="processFile" name="processFile" class="form-control-1 ">
+                        
                     </td>
                 </tr>
             </table>
@@ -2024,7 +2033,8 @@ table {
                         Documents to be submitted with Application - File with information or Additional Information
                     </td>
                     <td >
-                        <input name="documentsFile" type="text" class="form-control-1 " id="documentsFile">
+                        <input type="file" id="documentsFile" name="documentsFile" class="form-control-1 ">
+                        
                     </td>
                 </tr>
             </table>
@@ -2309,7 +2319,8 @@ table {
                         Contact Office, Numbers, Websites - File with information or Additional Information
                     </td>
                     <td >
-                        <input name="contactsFile" type="text" class="form-control-1 " id="contactsFile">
+                        <input type="file" id="contactsFile" name="contactsFile" class="form-control-1 ">
+                        
                     </td>
                 </tr>
             </table>
@@ -2429,7 +2440,8 @@ table {
                         Additional Contacts - File with information or Additional Information
                     </td>
                     <td >
-                        <input name="addtionalscontactsFile" type="text" class="form-control-1 " id="addtionalscontactsFile">
+                        <input type="file" id="addtionalscontactsFile" name="addtionalscontactsFile" class="form-control-1 ">
+                        
                     </td>
                 </tr>
             </table>
@@ -2557,7 +2569,9 @@ table {
                         Subsidies - File with information or Additional Information
                     </td>
                     <td >
-                        <input name="subsidiesFile" type="text" class="form-control-1 " id="subsidiesFile">
+                        <input type="file" id="subsidiesFile" name="subsidiesFile" class="form-control-1 ">
+                        
+                        
                     </td>
                 </tr>
             </table>
