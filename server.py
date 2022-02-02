@@ -1,10 +1,15 @@
+#from __future__ import unicode_literals
+import bottle
 from bottle import *
-#from pymongo import MongoClient
+import pymongo
 #from bson.json_util import dumps
 from datetime import datetime
 import time
 import json
 import os
+from bson import json_util, ObjectId
+import urllib.parse
+from json.encoder import JSONEncoder
 
 from config_vars import *
 #from all_functions import *
@@ -15,6 +20,10 @@ app = Bottle(__name__)
 
 #client = MongoClient(MONGODB_URI)
 #db = client.cas
+mongo_uri = "mongodb+srv://akalabsadmin:" + urllib.parse.quote("akalabs123") + "@cluster0.vucpx.mongodb.net/yhbs?retryWrites=true&w=majority"
+myclient = pymongo.MongoClient(mongo_uri)
+mydb = myclient["yhbs"]
+
 
 ##################### Stress App #####################
 
@@ -24,9 +33,16 @@ def root():
 	return static_file('ncdlanding.html', root='templates/')
 
 @app.route('/yuvaspandanaScheme')
-def root():
+def goToScheme():
 	# return template('templates/login.tpl', msg='')
-	return static_file('yspScheme.html', root='templates/')
+    departmentsObj = mydb.yknDepartmentMaster.find({"department.Active":True})
+    departmentArr = []
+    for y in  departmentsObj:
+        departmentArr.append(y)
+    departments={"Departments":departmentArr}
+    print(departments)
+    return template('templates/yspScheme.tpl', data=departments)
+
 
 @app.route('/ncdlanding')
 def root():
