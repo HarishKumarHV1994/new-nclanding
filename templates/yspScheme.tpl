@@ -1537,7 +1537,7 @@ table {
              <table>
                     <tr>
                         <td>
-                            Department/Corporation/Board <b>(Mandatory)</b>
+                            Department/Corporation/Board Name under which you want to create the scheme <b>(Mandatory)</b>
                         </td>
                         <td>
                             <select name="departments" id="departments" class="form-control input-lg" required>
