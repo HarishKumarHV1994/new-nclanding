@@ -64,15 +64,456 @@
       
       additionalContactsItems=[1]
       additionalContactsTextIdNo=1
+      
       isvalid=false
       
-      function validate(){
-          
-          var today = new Date();
-          var savetime=today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            
+      $(document).ready(function(){
+       var schemeId = GetUrlParameter('schemeId');
+        //alert(schemeId)
+       //alert(department)
+      var request = {"schemeId":schemeId}
+      //alert(request)
+       $.ajax({
+                    type: "POST",
+                    url: '/ysgetScheme',
+                    data: JSON.stringify(request),
+                    contentType: "application/json",
+                    success: function (data) {
+                      $("#spinner").fadeOut("slow");
+                      console.log(data);
+                      var json = $.parseJSON(data);
+                      if (json.msg == "Success"){  
+                       //console.log(json.data);
+                       //console.log(json.scheme); 
+                        document.getElementById("shortname_kan").value=json.scheme.schemeName.details.kan;
+                        document.getElementById("departments").value=json.scheme.department ;
+                        document.getElementById("schemeNum").value=json.scheme.schemeNumber;
+                        document.getElementById("shortname_eng").value=json.scheme.schemeShortName.details.eng;
+                        document.getElementById("shortname_kan").value=json.scheme.schemeShortName.details.kan;
+                        document.getElementById("name_eng").value=json.scheme.schemeName.details.eng;
+                        document.getElementById("name_kan").value=json.scheme.schemeName.details.kan;
+                        document.getElementById("detailedschemeName_eng").value=json.scheme.detailedschemeName.details.eng;
+                          document.getElementById("detailedschemeName_kan").value=json.scheme.detailedschemeName.details.kan;
+                          
+                          //Handle Application URL, application mode, application form
+                          
+                         
+                          for(var option of document.getElementById("applicationMode").options){
+                              if (option.value === json.scheme.applicationMode){
+                                  option.selected = true;
+                              }
+                          }
+                          
+                          
+                          for(var option of document.getElementById("sakala").options){
+                              if (option.value === json.scheme.sakala){
+                                  option.selected = true;
+                              }
+                          }
+                          
+                          document.getElementById("applicationURL").value=json.scheme.applicationURL
+                          //Handle Sakala
+                          //Handle Purpose
+                        if(json.scheme.purpose.details !=""){
+                            if(json.scheme.purpose.details.length == 1){
+                                document.getElementById("purpose_eng_1").value=json.scheme.purpose.details[0].eng;
+                                document.getElementById("purpose_kan_1").value=json.scheme.purpose.details[0].kan;
+                            }else{
+                                 document.getElementById("purpose_eng_1").value=json.scheme.purpose.details[0].eng;
+                                document.getElementById("purpose_kan_1").value=json.scheme.purpose.details[0].kan;
+                                
+                                for(i=1;i<json.scheme.purpose.details.length;i++){
+                                    addTexAreaSet("purpose")
+                                    counter=i+1
+                                    engFldname="purpose_eng_"+counter
+                                    kanFldname="purpose_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.purpose.details[i].eng
+                                    document.getElementById(kanFldname).value=json.scheme.purpose.details[i].kan
+                                }
+                            }
+                        
+                            
+                        }
+                          /*document.getElementById("purposeFile").value = json.scheme.purpose.additionalDetails.fileName
+                          document.getElementById("facilitiesFile").value = json.scheme.facilities.additionalDetails.fileName
+                          document.getElementById("documentsFile").value = json.scheme.documents.additionalDetails.fileName
+                          document.getElementById("processFile").value = json.scheme.process.additionalDetails.fileName
+                          document.getElementById("qualificationsFile").value = json.scheme.qualifications.additionalDetails.fileName
+                          document.getElementById("eligibilitiesFile").value = json.scheme.eligibility.additionalDetails.fileName
+                          document.getElementById("contactsFile").value = json.scheme.contactOffice.contactsURL
+                          document.getElementById("subsidiesFile").value = json.scheme.subsidies.additionalDetails.fileName
+                          document.getElementById("addtionalscontactsFile").value = json.scheme.additionalContactInformation.contactsURL
+                         document.getElementById("applicationFileName").value=json.scheme.applicationFormLocation
+`
+                          */
+                          
+                        //Handle Facilities
+                        if(json.scheme.facilities.details !=""){
+                            if(json.scheme.facilities.details.length == 1){
+                                document.getElementById("facilities_eng_1").value=json.scheme.facilities.details[0].eng;
+                                document.getElementById("facilities_kan_1").value=json.scheme.facilities.details[0].kan;
+                            }else{
+                                document.getElementById("facilities_eng_1").value=json.scheme.facilities.details[0].eng;
+                                document.getElementById("facilities_kan_1").value=json.scheme.facilities.details[0].kan;
+                                
+                                for(i=1;i<json.scheme.facilities.details.length;i++){
+                                    addTexAreaSet("facilities")
+                                    counter=i+1
+                                    engFldname="facilities_eng_"+counter
+                                    kanFldname="facilities_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.facilities.details[i].eng
+                                    document.getElementById(kanFldname).value=json.scheme.facilities.details[i].kan
+                                }
+                            }
+                        
+                            
+                        }
+                          
+                        
+                        //Handle eligibilities
+                        if(json.scheme.eligibility.details !=""){
+                            if(json.scheme.eligibility.details.length == 1){
+                                document.getElementById("eligibilities_eng_1").value=json.scheme.eligibility.details[0].eng;
+                                document.getElementById("eligibilities_kan_1").value=json.scheme.eligibility.details[0].kan;
+                            }else{
+                                 document.getElementById("eligibilities_eng_1").value=json.scheme.eligibility.details[0].eng;
+                                document.getElementById("eligibilities_kan_1").value=json.scheme.eligibility.details[0].kan;
+                                for(i=1;i<json.scheme.eligibility.details.length;i++){
+                                    addTexAreaSet("eligibilities")
+                                    counter=i+1
+                                    engFldname="eligibilities_eng_"+counter
+                                    kanFldname="eligibilities_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.eligibility.details[i].eng
+                                    document.getElementById(kanFldname).value=json.scheme.eligibility.details[i].kan
+                                }
+                            }
+                        
+                            
+                        }
+                          
+                        //Handle qualifications
+                        if(json.scheme.qualifications.details !=""){
+                            if(json.scheme.qualifications.details.length == 1){
+                                document.getElementById("qualifications_eng_1").value=json.scheme.qualifications.details[0].eng;
+                                document.getElementById("qualifications_kan_1").value=json.scheme.qualifications.details[0].kan;
+                            }else{
+                                 document.getElementById("qualifications_eng_1").value=json.scheme.qualifications.details[0].eng;
+                                document.getElementById("qualifications_kan_1").value=json.scheme.qualifications.details[0].kan;
+                                
+                                for(i=1;i<json.scheme.qualifications.details.length;i++){
+                                    addTexAreaSet("qualifications")
+                                    counter=i+1
+                                    engFldname="qualifications_eng_"+counter
+                                    kanFldname="qualifications_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.qualifications.details[i].eng
+                                    document.getElementById(kanFldname).value=json.scheme.qualifications.details[i].kan
+                                }
+                            }
+                        
+                            
+                        }
+                          
+                        //Handle process
+                        if(json.scheme.process.details !=""){
+                            if(json.scheme.process.details.length == 1){
+                                document.getElementById("process_eng_1").value=json.scheme.process.details[0].eng;
+                                document.getElementById("process_kan_1").value=json.scheme.process.details[0].kan;
+                            }else{
+                                document.getElementById("process_eng_1").value=json.scheme.process.details[0].eng;
+                                document.getElementById("process_kan_1").value=json.scheme.process.details[0].kan;
+                                
+                                for(i=1;i<json.scheme.process.details.length;i++){
+                                    addTexAreaSet("process")
+                                    counter=i+1
+                                    engFldname="process_eng_"+counter
+                                    kanFldname="process_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.process.details[i].eng
+                                    document.getElementById(kanFldname).value=json.scheme.process.details[i].kan
+                                }
+                            }
+                        
+                            
+                        }
+                          
+                        //Handle office
+                        if(json.scheme.contactOffice.details !=""){
+                            if(json.scheme.contactOffice.details.length == 1){
+                                document.getElementById("office_eng_1").value=json.scheme.contactOffice.details[0].eng;
+                                document.getElementById("office_kan_1").value=json.scheme.contactOffice.details[0].kan;
+                            }else{
+                                 document.getElementById("office_eng_1").value=json.scheme.contactOffice.details[0].eng;
+                                document.getElementById("office_kan_1").value=json.scheme.contactOffice.details[0].kan;
+                                
+                                for(i=1;i<json.scheme.process.details.length;i++){
+                                    addTexAreaSet("office")
+                                    counter=i+1
+                                    engFldname="office_eng_"+counter
+                                    kanFldname="office_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.contactOffice.details[i].eng
+                                    document.getElementById(kanFldname).value=json.scheme.contactOffice.details[i].kan
+                                }
+                            }
+                        
+                            
+                        }
+                          
+                        //Handle subsidy
+                        if(json.scheme.subsidies.details !=""){
+                            if(json.scheme.subsidies.details.length == 1){
+                                document.getElementById("subsidy_eng_1").value=json.scheme.subsidies.details[0].subsidySummary.eng;
+                                document.getElementById("subsidy_kan_1").value=json.scheme.subsidies.details[0].subsidySummary.kan;
+                                
+                                document.getElementById("subsidyDesc_eng_1").value=json.scheme.subsidies.details[0].subsidyDesc.eng;
+                                document.getElementById("subsidyDesc_kan_1").value=json.scheme.subsidies.details[0].subsidyDesc.kan;
+                                
+                            }else{
+                                
+                                document.getElementById("subsidy_eng_1").value=json.scheme.subsidies.details[0].subsidySummary.eng;
+                                document.getElementById("subsidy_kan_1").value=json.scheme.subsidies.details[0].subsidySummary.kan;
+                                
+                                document.getElementById("subsidyDesc_eng_1").value=json.scheme.subsidies.details[0].subsidyDesc.eng;
+                                document.getElementById("subsidyDesc_kan_1").value=json.scheme.subsidies.details[0].subsidyDesc.kan;
+                                
+                                for(i=1;i<json.scheme.subsidies.details.length;i++){
+                                    addSubsidies("subsidy")
+                                    counter=i+1
+                                    engFldname="subsidy_eng_"+counter
+                                    kanFldname="subsidy_kan_"+counter
+                                    engDescFldname="subsidyDesc_eng_"+counter
+                                    kanDescFldname="subsidyDesc_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.subsidies.details[i].subsidySummary.eng;
+                                    document.getElementById(kanFldname).value=json.scheme.subsidies.details[i].subsidySummary.kan;
+
+                                    document.getElementById(engDescFldname).value=json.scheme.subsidies.details[i].subsidyDesc.eng;
+                                    document.getElementById(kanDescFldname).value=json.scheme.subsidies.details[i].subsidyDesc.kan;
+                                    }
+                            }
+                        
+                            
+                        }
+                          
+                        //Handle subsidyExample
+                        if(json.scheme.subsidies.subsidiesDistributionExample.details !=""){
+                            if(json.scheme.subsidies.subsidiesDistributionExample.details.length == 1){
+                                document.getElementById("subsidiesExample_eng_1").value=json.scheme.subsidies.subsidiesDistributionExample.details[0].eng;
+                                document.getElementById("subsidiesExample_kan_1").value=json.scheme.subsidies.subsidiesDistributionExample.details[0].kan;
+                            }else{
+                                 document.getElementById("subsidiesExample_eng_1").value=json.scheme.subsidies.subsidiesDistributionExample.details[0].eng;
+                                document.getElementById("subsidiesExample_kan_1").value=json.scheme.subsidies.subsidiesDistributionExample.details[0].kan;
+                                
+                                for(i=1;i<json.scheme.subsidies.subsidiesDistributionExample.details.length;i++){
+                                    addTexAreaSet("subsidiesExample")
+                                    counter=i+1
+                                    engFldname="subsidiesExample_eng_"+counter
+                                    kanFldname="subsidiesExample_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.contactOffice.details[i].eng
+                                    document.getElementById(kanFldname).value=json.scheme.contactOffice.details[i].kan
+                                }
+                            }
+                        
+                            
+                        }
+                          
+                          //Handle Documents
+                        if(json.scheme.documents.details !=""){
+                            //alert(json.scheme.documents.details.length)
+                            if(json.scheme.documents.details.length == 1){
+                               //alert('documents==')
+                                document.getElementById("documents_eng_1").value=json.scheme.documents.details[0].eng;
+                                document.getElementById("documents_kan_1").value=json.scheme.documents.details[0].kan;
+                            }else{
+                                //alert('documents are there')
+                                 document.getElementById("documents_eng_1").value=json.scheme.documents.details[0].eng;
+                                document.getElementById("documents_kan_1").value=json.scheme.documents.details[0].kan;
+                                
+                                for(i=1;i<json.scheme.documents.details.length;i++){
+                                    addTextSet("documents")
+                                    counter=i+1
+                                    engFldname="documents_eng_"+counter
+                                    kanFldname="documents_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.documents.details[i].eng
+                                    document.getElementById(kanFldname).value=json.scheme.documents.details[i].kan
+                                }
+                            }
+                        
+                            
+                        }
+                          
+                          //Handle website
+                        if(json.scheme.contactOffice.website !=""){
+                            if(json.scheme.contactOffice.website.length == 1){
+                                document.getElementById("website_eng_1").value=json.scheme.contactOffice.website[0];
+                            }else{
+                                document.getElementById("website_eng_1").value=json.scheme.contactOffice.website[0];
+                                for(i=1;i<json.scheme.contactOffice.website.length;i++){
+                                    addSingleText('website')
+                                    counter=i+1
+                                    engFldname="website_eng_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.contactOffice.website[i];
+                                }
+                            }
+                            
+                        }
+                          
+                        //Handle emails
+                        if(json.scheme.contactOffice.email !=""){
+                            if(json.scheme.contactOffice.email.length == 1){
+                                document.getElementById("email_eng_1").value=json.scheme.contactOffice.email[0];
+                            }else{
+                                document.getElementById("email_eng_1").value=json.scheme.contactOffice.email[0];
+                                for(i=1;i<json.scheme.contactOffice.email.length;i++){
+                                    addSingleText('email')
+                                    counter=i+1
+                                    engFldname="email_eng_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.contactOffice.email[i];
+                                }
+                            }
+                            
+                        }
+                        
+                        //Handle contactNumbers
+                        if(json.scheme.contactOffice.contactNumbers[0].num !=""){
+                            if(json.scheme.contactOffice.contactNumbers[0].num.length == 1){
+                                document.getElementById("contactNumbers_eng_1").value=json.scheme.contactOffice.contactNumbers[0].num[0];
+                            }else{
+                                document.getElementById("contactNumbers_eng_1").value=json.scheme.contactOffice.contactNumbers[0].num[0];
+                                for(i=1;i<json.scheme.contactOffice.contactNumbers[0].num.length;i++){
+                                    addSingleText('contactNumbers')
+                                    counter=i+1
+                                    engFldname="contactNumbers_eng_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.contactOffice.contactNumbers[0].num[i];
+                                }
+                            }
+                            
+                        }
+                          
+                        //Handle Helplines
+                        if(json.scheme.contactOffice.contactNumbers[1].num !=""){
+                            if(json.scheme.contactOffice.contactNumbers[1].num.length == 1){
+                                document.getElementById("helpline_eng_1").value=json.scheme.contactOffice.contactNumbers[1].num[0];
+                            }else{
+                                document.getElementById("helpline_eng_1").value=json.scheme.contactOffice.contactNumbers[1].num[0];
+                                for(i=1;i<json.scheme.contactOffice.contactNumbers[1].num.length;i++){
+                                    addSingleText('helpline')
+                                    counter=i+1
+                                    engFldname="helpline_eng_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.contactOffice.contactNumbers[1].num[i];
+                                }
+                            }
+                            
+                        }
+                        
+                        //Handle Additional Information
+                          if(json.scheme.additionalContactInformation.details !=""){
+                              if(json.scheme.additionalContactInformation.details.length == 1){
+                                  document.getElementById("addname_eng_1").value=json.scheme.additionalContactInformation.details[0].name.eng
+                                  document.getElementById("addname_kan_1").value=json.scheme.additionalContactInformation.details[0].name.kan
+                                  
+                                  document.getElementById("adddesig_eng_1").value=json.scheme.additionalContactInformation.details[0].designation.eng
+                                  
+                                  document.getElementById("adddesig_kan_1").value=json.scheme.additionalContactInformation.details[0].designation.kan
+                                  
+                                  document.getElementById("addoffice_eng_1").value=json.scheme.additionalContactInformation.details[0].officeAddress.eng
+                                  
+                                  document.getElementById("addoffice_kan_1").value=json.scheme.additionalContactInformation.details[0].officeAddress.kan
+                                  
+                                  document.getElementById("addemail_eng_1").value=json.scheme.additionalContactInformation.details[0].emailContact
+                                  
+                                  document.getElementById("addcontact_eng_1").value=json.scheme.additionalContactInformation.details[0].contactNumber
+                                  
+                                  
+                                  
+                              }else{
+                                  
+                                  document.getElementById("addname_eng_1").value=json.scheme.additionalContactInformation.details[0].name.eng
+                                  document.getElementById("addname_kan_1").value=json.scheme.additionalContactInformation.details[0].name.kan
+                                  
+                                  document.getElementById("adddesig_eng_1").value=json.scheme.additionalContactInformation.details[0].designation.eng
+                                  
+                                  document.getElementById("adddesig_kan_1").value=json.scheme.additionalContactInformation.details[0].designation.kan
+                                  
+                                  document.getElementById("addoffice_eng_1").value=json.scheme.additionalContactInformation.details[0].officeAddress.eng
+                                  
+                                  document.getElementById("addoffice_kan_1").value=json.scheme.additionalContactInformation.details[0].officeAddress.kan
+                                  
+                                  document.getElementById("addemail_eng_1").value=json.scheme.additionalContactInformation.details[0].emailContact
+                                  
+                                  document.getElementById("addcontact_eng_1").value=json.scheme.additionalContactInformation.details[0].contactNumber
+                                  
+                                  for(i=1;i<json.scheme.additionalContactInformation.details.length;i++){
+                                      addAdditionalDetails('additionalInfo')
+                                      counter=i+1
+                                      engaddname="addname_eng_"+counter
+                                      kanaddname="addname_kan_"+counter
+                                      engadddesig="adddesig_eng_"+counter
+                                      kanadddesig="adddesig_kan_"+counter
+                                      engaddoffice="addoffice_eng_"+counter
+                                      kanaddoffice="addoffice_kan_"+counter
+                                      
+                                      engaddemail="addemail_eng_"+counter
+                                      engaddcontact="addcontact_eng_"+counter
+                                      
+                                      document.getElementById(engaddname).value=json.scheme.additionalContactInformation.details[i].name.eng
+                                      document.getElementById(kanaddname).value=json.scheme.additionalContactInformation.details[i].name.kan
+
+                                      document.getElementById(engadddesig).value=json.scheme.additionalContactInformation.details[i].designation.eng
+
+                                      document.getElementById(kanadddesig).value=json.scheme.additionalContactInformation.details[i].designation.kan
+
+                                      document.getElementById(engaddoffice).value=json.scheme.additionalContactInformation.details[i].officeAddress.eng
+
+                                      document.getElementById(kanaddoffice).value=json.scheme.additionalContactInformation.details[i].officeAddress.kan
+
+                                      document.getElementById(engaddemail).value=json.scheme.additionalContactInformation.details[i].emailContact
+
+                                      document.getElementById(engaddcontact).value=json.scheme.additionalContactInformation.details[i].contactNumber
+                                      
+                                      
+                                      
+                                  }
+                                  
+                              }
+                          }
+                          
+                          
+                          
+                          
+                        
+                      }
+                    },
+                    error: function(data){
+                        $("#spinner").fadeOut("slow");
+                        alert("Technical Error!");
+                    }
+
+                });
+
+        });
+      
+      function GetUrlParameter(sParam)
+
+        {
+            var sPageURL = window.location.search.substring(1);
+
+            var sURLVariables = sPageURL.split('&');
+
+            for (var i = 0; i < sURLVariables.length; i++)
+            {
+                var sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] == sParam)
+
+                {
+                    return sParameterName[1];
+                }
+            }
+        }
+      
+       function validate(){
+            var today = new Date();
+            var savetime=today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             errorMessage=""
-           hasError=false
+            hasError=false
             schemeData.scheme.department=document.getElementById("departments").value
             schemNum=document.getElementById("schemeNum").value
             
@@ -138,12 +579,11 @@
                 isvalid=false
             }else{
                 
-              
-           
             schemeData.scheme.Created_By="Admin"
             schemeData.scheme.Modified_By="Admin"
             schemeData.scheme.Created_Time=savetime
             schemeData.scheme.Modified_Time=savetime
+                
            schemeData.scheme.sakala.details=   document.getElementById("sakala").value
           
             if(document.getElementById("applicationMode").value.trim() === ""){
@@ -1521,6 +1961,8 @@
       
       
       
+      
+      
     
   </script>
 
@@ -1569,13 +2011,7 @@ table {
                             Department/Corporation/Board <b>(Mandatory)</b>
                         </td>
                         <td>
-                            <select name="departments" id="departments" class="form-control input-lg" required>
-                                  <option value=""></option>
-                                 % for y in data['Departments']:
-                                    <option value="{{!y['department']['dep_id']}}" >{{!y['department']['shortName']['eng']}}</option>
-                                % end
-                            
-                            </select>
+                            <input name="dep" type="text" class="form-control-1 " id="departments" required readonly>
                         </td>
                         
                     </tr>
@@ -1584,7 +2020,7 @@ table {
                             Scheme Number <b>(Mandatory)</b>
                         </td>
                         <td>
-                            <input name="schemeNum" type="number" class="form-control-1 " id="schemeNum" required>
+                            <input name="schemeNum" type="number" class="form-control-1 " id="schemeNum" required readonly>
                         </td>
                         
                     </tr>
@@ -1621,10 +2057,10 @@ table {
                             Display or Short Name/ಯೋಜನೆಯ ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರು <b>(Mandatory)</b>
                         </td>
                         <td>
-                            <input name="shortname_eng" type="text" class="form-control-1 " id="shortname_eng" required maxlength="30">
+                            <input name="shortname_eng" type="text" class="form-control-1 " id="shortname_eng" required maxlength="30" >
                         </td>
                         <td>
-                            <input name="shortname_kan" type="text" class="form-contro1-1 " id="shortname_kan" required maxlength="30">
+                            <input name="shortname_kan" type="text" class="form-contro1-1 " id="shortname_kan" required maxlength="30" >
                         </td>
                         
                     </tr>
@@ -2542,7 +2978,7 @@ table {
                         Offline Application File Name
                     </td>
                     <td >
-                        <input name="applicationFileName" type="text" class="form-control-1 " id="applicationFileName">
+                        <input name="applicationFileName" type="file" class="form-control-1 " id="applicationFileName">
                     </td>
                 </tr>
                 
@@ -2683,11 +3119,6 @@ table {
                 </tr>
             </table>
         </div>
-            <br>
-            <br>
-            
-            
-            
             <center><p style="padding-left: 15px; font-size: 1.2em;"><span id="link"></span></p></center>
             
             
@@ -2703,7 +3134,6 @@ table {
                 <center><p style="padding-left: 15px; font-size: 1.2em;"><span id="errorMessage"></span></p></center>
                 
             </center>
-            
             
              
             
