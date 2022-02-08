@@ -367,7 +367,7 @@ def getAllDepsAndSchemes():
 def viewScheme():
     return template('templates/yspSchemeView.tpl')
     
-@route('/yuvaspandanaScheme')
+@app.route('/yuvaspandanaScheme')
 def goToScheme():
 	# return template('templates/login.tpl', msg='')
     departmentsObj = mydb.yknDepartmentMaster.find({"department.active":True})
