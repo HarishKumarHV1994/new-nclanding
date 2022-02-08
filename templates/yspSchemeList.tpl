@@ -46,23 +46,43 @@ table {
        //alert(department)
             
             var selectList = document.createElement("select");
-                    selectList.id = "schemeName";
-                    selectList.name = "schemeName";
-                    //myParent.appendChild(selectList);
-                    tdElement=document.getElementById("schemeColumn");
-                     var option = document.createElement("option");
-                     option.value = "";
-                     option.text = "--Select--";
-                     selectList.appendChild(option);
-                     % for z in data['Departments'][0]['department']['Schemes']:
-                         option = document.createElement("option");
-                         option.value = "{{!z['scheme_id']}}";
-                         option.text = "{{!z['scheme_name']}}";
-                         selectList.appendChild(option);
-                                    
-                        % end
-                    
-                    tdElement.appendChild(selectList)
+            selectList.id = "schemeName";
+            selectList.name = "schemeName";
+            //myParent.appendChild(selectList);
+            tdElement=document.getElementById("schemeColumn");
+             var option = document.createElement("option");
+             option.value = "";
+             option.text = "--Select--";
+             selectList.appendChild(option);
+             % for z in data['Departments'][0]['department']['Schemes']:
+                 option = document.createElement("option");
+                 option.value = "{{!z['scheme_id']}}";
+                 option.text = "{{!z['scheme_name']}}";
+                 selectList.appendChild(option);
+
+                % end
+
+            tdElement.appendChild(selectList)
+            
+            selectList = document.createElement("select");
+            selectList.id = "inactiveschemeName";
+            selectList.name = "inactiveschemeName";
+            //myParent.appendChild(selectList);
+            tdElement=document.getElementById("inactiveschemeColumn");
+             var option = document.createElement("option");
+             option.value = "";
+             option.text = "--Select--";
+             selectList.appendChild(option);
+             % for z in data['Departments'][0]['department']['inactiveSchemes']:
+                 option = document.createElement("option");
+                 option.value = "{{!z['scheme_id']}}";
+                 option.text = "{{!z['scheme_name']}}";
+                 selectList.appendChild(option);
+
+                % end
+
+            tdElement.appendChild(selectList)
+            
             
             
       
@@ -75,28 +95,55 @@ table {
             var element = document.getElementById("schemeName");
             element.parentNode.removeChild(element);    
             var selectList = document.createElement("select");
-                    selectList.id = "schemeName";
-                    selectList.name = "schemeName";
-                    //myParent.appendChild(selectList);
-                    tdElement=document.getElementById("schemeColumn");
-                     % for y in data['Departments']:
-                         depElement="{{!y['department']['Dep_ID']}}"
-                         if(depElement==depId){
-                             var option = document.createElement("option");
-                             option.value = "";
-                             option.text = "--Select--";
-                             selectList.appendChild(option);
-                        
-                           % for z in y['department']['Schemes']:
-                             option = document.createElement("option");
-                             option.value = "{{!z['scheme_id']}}";
-                             option.text = "{{!z['scheme_name']}}";
-                             selectList.appendChild(option);
+            selectList.id = "schemeName";
+            selectList.name = "schemeName";
+            //myParent.appendChild(selectList);
+            tdElement=document.getElementById("schemeColumn");
+             % for y in data['Departments']:
+                 depElement="{{!y['department']['Dep_ID']}}"
+                 if(depElement==depId){
+                     var option = document.createElement("option");
+                     option.value = "";
+                     option.text = "--Select--";
+                     selectList.appendChild(option);
 
-                            % end
-                         }
-                     % end
-                     tdElement.appendChild(selectList)
+                   % for z in y['department']['Schemes']:
+                     option = document.createElement("option");
+                     option.value = "{{!z['scheme_id']}}";
+                     option.text = "{{!z['scheme_name']}}";
+                     selectList.appendChild(option);
+
+                    % end
+                 }
+             % end
+             tdElement.appendChild(selectList)
+            
+            
+            element = document.getElementById("inactiveschemeName");
+            element.parentNode.removeChild(element);    
+            var selectList = document.createElement("select");
+            selectList.id = "inactiveschemeName";
+            selectList.name = "inactiveschemeName";
+            //myParent.appendChild(selectList);
+            tdElement=document.getElementById("inactiveschemeColumn");
+             % for y in data['Departments']:
+                 depElement="{{!y['department']['Dep_ID']}}"
+                 if(depElement==depId){
+                     var option = document.createElement("option");
+                     option.value = "";
+                     option.text = "--Select--";
+                     selectList.appendChild(option);
+
+                   % for z in y['department']['inactiveSchemes']:
+                     option = document.createElement("option");
+                     option.value = "{{!z['scheme_id']}}";
+                     option.text = "{{!z['scheme_name']}}";
+                     selectList.appendChild(option);
+
+                    % end
+                 }
+             % end
+             tdElement.appendChild(selectList)
                     
                     
             
@@ -122,6 +169,58 @@ table {
         function goToHome(){
             window.location.href = '/yuvaspandanaHome'
         }
+        
+        function deactivateScheme(){
+            if(document.getElementById("schemeName").value.trim()===""){
+                alert("Please select a Scheme you want to deactivate")
+            }else{
+                
+                var today = new Date();
+              var savetime=today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+              scheme = document.getElementById("schemeName").value.trim()
+              schemeObj={"schemeId":document.getElementById("schemeName").value.trim(),"updateTime":savetime}
+              var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                      //localStorage.removeItem(localStorageKey)
+                      window.location.href =  '/yuvaspandanaHome'
+                    }
+                };
+                xhttp.open("POST", "/ysDeactivateScheme", true);
+                xhttp.setRequestHeader("Content-type", "application/json");
+                xhttp.send('data='+JSON.stringify(schemeObj));
+                
+               
+                
+            }
+        }
+        
+        function activateScheme(){
+          
+         if(document.getElementById("inactiveschemeName").value.trim()===""){
+                alert("Please select a Scheme you want to Activate")
+            }else{
+                
+                var today = new Date();
+              var savetime=today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+              scheme = document.getElementById("inactiveschemeName").value.trim()
+              schemeObj={"schemeId":document.getElementById("inactiveschemeName").value.trim(),"updateTime":savetime}
+              var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                      //localStorage.removeItem(localStorageKey)
+                      window.location.href =  '/yuvaspandanaHome'
+                    }
+                };
+                xhttp.open("POST", "/ysActivateScheme", true);
+                xhttp.setRequestHeader("Content-type", "application/json");
+                xhttp.send('data='+JSON.stringify(schemeObj));
+                
+               
+                
+            }
+          
+      }
         
         
 
@@ -159,7 +258,10 @@ table {
                       Department
                   </th>
                   <th>
-                      Scheme
+                      Active Schemes
+                  </th>
+                  <th>
+                      Inactive Schemes
                   </th>
               </tr>
               <tr id="dataRow" name="dataRow">
@@ -195,6 +297,17 @@ table {
                                 
                   </td>
                   
+                  <td id="inactiveschemeColumn" name="inactiveschemeColumn">
+                      
+                                
+                               
+                            
+                
+                            
+                                
+                                
+                  </td>
+                  
               </tr>
               <tr>
                   <td colspan="2">
@@ -202,12 +315,23 @@ table {
                   <button class="btn btn-rose btn-raised" onclick="getScheme()">
                                   MODIFY
                                 </button>
+                    <button class="btn btn-rose btn-raised" onclick="deactivateScheme()">
+                                  DEACTIVATE
+                                </button>
+                          
               </center>
+                  </td>
+                  <td>
+                   <center>
+                  <button class="btn btn-rose btn-raised" onclick="activateScheme()">
+                                  ACTIVATE
+                                </button>
+                      </center>
                   </td>
               </tr>
               
               <tr>
-                  <td colspan="2">
+                  <td colspan="3">
                       <center>
                   <button class="btn btn-rose btn-raised" onclick="goToHome()">
                                   GO TO HOME

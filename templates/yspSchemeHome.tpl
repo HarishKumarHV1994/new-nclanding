@@ -56,6 +56,54 @@ table {
             }
         }
         
+        function deactivateDeparment(){
+            if(document.getElementById("sysName_eng").value.trim()===""){
+                alert("Please select a Department you want to deactivate")
+            }else{
+                
+                var today = new Date();
+              var savetime=today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+              dep = document.getElementById("sysName_eng").value.trim()
+              depObj={"depId":document.getElementById("sysName_eng").value.trim(),"updateTime":savetime}
+              var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                      //localStorage.removeItem(localStorageKey)
+                      window.location.href =  '/yuvaspandanaHome'
+                    }
+                };
+                xhttp.open("POST", "/ysDeactivateDepartment", true);
+                xhttp.setRequestHeader("Content-type", "application/json");
+                xhttp.send('data='+JSON.stringify(depObj));
+                
+               
+                
+            }
+        }
+        
+        function activateDepartment(){
+          
+         if(document.getElementById("inactiveDeps").value.trim()===""){
+                alert("Please select a Department you want to Activate")
+            }else{
+              var today = new Date();
+              var savetime=today.getDate()+"/"+(today.getMonth()+1)+"/"+today.getFullYear()+"-"+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+              dep = document.getElementById("inactiveDeps").value.trim()
+              depObj={"depId":document.getElementById("inactiveDeps").value.trim(),"updateTime":savetime}
+              var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                      //localStorage.removeItem(localStorageKey)
+                      window.location.href =  '/yuvaspandanaHome'
+                    }
+                };
+                xhttp.open("POST", "/ysActivateDepartment", true);
+                xhttp.setRequestHeader("Content-type", "application/json");
+                xhttp.send('data='+JSON.stringify(depObj));
+          }
+          
+      }
+        
         
         
         
@@ -88,7 +136,7 @@ table {
         
           <table>
                <tr>
-                        <th colspan="2">
+                        <th colspan="3">
                             <div class="info">
                                 <div class="icon icon-info">
                                   <img src="img/department.png" style="width: 75px;">
@@ -111,14 +159,7 @@ table {
                       
                                 
                                
-                            
-                             
-                                <button class="btn btn-rose btn-raised" onclick="getDepartmentDetails()">
-                                  MODIFY
-                                </button>
-                      
-                      <br>
-                       <select name="sysName_eng" id="sysName_eng" required>
+                           <select name="sysName_eng" id="sysName_eng" required>
                                 <option value="" style="text-align-last: center">--SELECT--</option>
                                 % for y in data['Departments']:
                                     <option value="{{!y['department']['Dep_ID']}}" style="text-align-last: center">{{!y['department']['Dep_Short_Name_English']}}</option>
@@ -126,13 +167,53 @@ table {
                                 
                                 
                             
-                            </select>
+                            </select> 
+                              <br>
+                                <button class="btn btn-rose btn-raised" onclick="getDepartmentDetails()">
+                                  MODIFY
+                                </button>
+                      
+                                <button class="btn btn-rose btn-raised" onclick="deactivateDeparment()">
+                                  DEACTIVATE
+                                </button>
+                      
+                     
+                       
+                            
+                                
+                                
+                  </td>
+                  
+                  <td>
+                      
+                                
+                               
+                           <select name="inactiveDeps" id="inactiveDeps" required>
+                                <option value="" style="text-align-last: center">--SELECT--</option>
+                                % for y in data['InactiveDepartments']:
+                                    <option value="{{!y['department']['Dep_ID']}}" style="text-align-last: center">{{!y['department']['Dep_Short_Name_English']}}</option>
+                                % end
+                                
+                                
+                            
+                            </select> 
+                              <br>
+                               
+                      
+                                <button class="btn btn-rose btn-raised" onclick="activateDepartment()">
+                                  ACTIVATE
+                                </button>
+                      
+                     
+                       
                             
                                 
                                 
                   </td>
                   
               </tr>
+          </table>
+          <table>
               
               <tr>
                         <th colspan="2">
@@ -163,6 +244,7 @@ table {
                                 </a>
                       
                   </td>
+                  
                   
               </tr>
               

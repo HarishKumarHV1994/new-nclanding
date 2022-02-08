@@ -21,6 +21,12 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
+      
+       $(document).ready(function(){
+           document.getElementById("increment").style.display = 'none'
+       });
+      
+      
       var schemeData={"scheme":{"Created_Time":null,"Created_By":null,"Modified_Time":null,"Modified_By":null,"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":"","eng":""}},"schemeShortName":{"label":{"kan":"ಯೋಜನೆಯ ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರ","eng":"Display or Short Name"},"details":{"kan":"","eng":""}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":"","eng":""}},"purpose":{"label":{"kan":"ಯೋಜನೆಯ ಉದ್ದೇಶ","eng":"Purpose of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities available/ Details of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಯೋಜನೆಯ ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ ವ್ಯಾಪ್ತಿಗೆ ಬರುತ್ತದೆಯೇ?","eng":"Does it come under Sakala?"},"details":false},"process":{"label":{"kan":"ಯೋಜನೆಯ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":"","eng":""}],"website":null,"email":null,"contactNumbers":[{"type":"contact","eng":"Contact","kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":null},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":"link 2 District Offices Contact details"}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":"","eng":""},"designation":{"kan":"","eng":""},"emailContact":null,"officeAddress":{"kan":"","eng":""},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ರಿಯಾಯತಿಗಳು","eng":"Subsidies available under the scheme"},"details":[{"subsidySummary":{"kan":"","eng":""},"subsidyDesc":{"kan":"","eng":""}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":"","eng":""}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
       
       purposeItems=[1]
@@ -848,7 +854,8 @@
         
                 
           //document.getElementById("jsontext").value=JSON.stringify(schemeData)
-          document.getElementById("errorMessage").innerHTML=""
+         document.getElementById("increment").style.display = 'block' 
+         document.getElementById("errorMessage").innerHTML=""
           
                 
         
@@ -1518,7 +1525,37 @@
             window.location.href = '/yuvaspandanaHome'
         }
       
+      function populateSchemeNumber(depId){
+          
+           % for y in data['Departments']:
+                 depElement="{{!y['department']['dep_id']}}"
+                 if(depElement==depId){
+                     
+                     schemeId={{!y['department']['lastSchemeID']}}+1
+                     document.getElementById("schemeNum").value=schemeId
+                 
+                 }
+           
+           % end
+      }
       
+      function incrementLastSchemeNumber(){
+              if(isvalid){
+              document.getElementById("errorMessage").innerHTML = ""
+              var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                      //localStorage.removeItem(localStorageKey)
+                      window.location.href =  '/yuvaspandanaHome'
+                    }
+                };
+                xhttp.open("POST", "/incrementSchemeNum", true);
+                xhttp.setRequestHeader("Content-type", "application/json");
+                xhttp.send('data='+encodeURIComponent(JSON.stringify(schemeData)));
+          }else{
+              alert('Ensure all required fields are filled before submitting')
+          }
+      }
       
       
     
@@ -1569,7 +1606,7 @@ table {
                             Department/Corporation/Board <b>(Mandatory)</b>
                         </td>
                         <td>
-                            <select name="departments" id="departments" class="form-control input-lg" required>
+                            <select name="departments" id="departments" class="form-control input-lg" required onchange="populateSchemeNumber(this.value)">
                                   <option value=""></option>
                                  % for y in data['Departments']:
                                     <option value="{{!y['department']['dep_id']}}" >{{!y['department']['shortName']['eng']}}</option>
@@ -1584,7 +1621,8 @@ table {
                             Scheme Number <b>(Mandatory)</b>
                         </td>
                         <td>
-                            <input name="schemeNum" type="number" class="form-control-1 " id="schemeNum" required>
+                            
+                            <input name="schemeNum" type="number" class="form-control-1 " id="schemeNum" required readonly>
                         </td>
                         
                     </tr>
@@ -2695,6 +2733,9 @@ table {
                 <button class="btn btn-rose btn-raised validate" style="" id="validate" onclick="validate()">VALIDATE</button>
                 
                 <!--<button class="btn btn-rose btn-raised validate" style="" id="validate" onclick="createScheme()">SUBMIT</button>-->
+                
+                <button class="btn btn-rose btn-raised increment" style="" id="increment" onclick="incrementLastSchemeNumber()">AFTER DOWNLOADING THE ABOVE JSON --> CLICK HERE</button>
+                
                 
                 <button class="btn btn-rose btn-raised" onclick="goToHome()">GO TO HOME</button>
                 
