@@ -54,16 +54,88 @@ def goToSchemeView():
     #schemeId= reqJson["schemeId"]
     #print(schemeId)
     schemeFromDB=mydb.yknSchemeDescMaster.find_one({"scheme.schemeID":schemeId},{"_id":0})
-    #print(schemeFromDB)
+    print(schemeFromDB)
     schemeObj=schemeFromDB["scheme"]
     response = {}
     response["msg"] = "Success"
     response["scheme"] = schemeObj
                     
-    #print(response)
+    print(response)
+                    
+    return json.dumps(response)
+@app.post('/ysActivateScheme')
+def activateScheme():
+    print("HERE IN activateScheme")
+    scheme=request.forms.get('data')
+    #print(department)
+    scheme = json.loads(scheme)
+    print(scheme["schemeId"])
+    print(scheme["updateTime"])
+    #print(department["depId"])
+    mydb.yknSchemeMaster.find_one_and_update({"scheme.scheme_ID" : scheme["schemeId"]},{"$set":{"scheme.active": True,"scheme.modified_time":scheme["updateTime"]}})
+    response = {}
+    response["msg"] = "Success"
+    #response["scheme"] = schemeObj
+                    
+    print(response)
                     
     return json.dumps(response)
 
+@app.post('/ysDeactivateScheme')
+def deactivateScheme():
+    print("HERE IN ysDeactivateScheme")
+    scheme=request.forms.get('data')
+    #print(department)
+    scheme = json.loads(scheme)
+    print(scheme["schemeId"])
+    print(scheme["updateTime"])
+    #print(department["depId"])
+    mydb.yknSchemeMaster.find_one_and_update({"scheme.scheme_ID" : scheme["schemeId"]},{"$set":{"scheme.active": False,"scheme.modified_time":scheme["updateTime"]}})
+    response = {}
+    response["msg"] = "Success"
+    #response["scheme"] = schemeObj
+                    
+    print(response)
+                    
+    return json.dumps(response)
+
+
+@app.post('/ysActivateDepartment')
+def activateDepartment():
+    print("HERE IN activateDepartment")
+    department=request.forms.get('data')
+    #print(department)
+    department = json.loads(department)
+    print(department["depId"])
+    print(department["updateTime"])
+    #print(department["depId"])
+    mydb.yknDepartmentMaster.find_one_and_update({"department.dep_id" : department["depId"]},{"$set":{"department.active": True,"department.modified_time":department["updateTime"]}})
+    response = {}
+    response["msg"] = "Success"
+    #response["scheme"] = schemeObj
+                    
+    print(response)
+                    
+    return json.dumps(response)
+
+@app.post('/ysDeactivateDepartment')
+def deactivateDepartment():
+    print("HERE IN deactivateDepartment")
+    department=request.forms.get('data')
+    #print(department)
+    department = json.loads(department)
+    print(department["depId"])
+    print(department["updateTime"])
+    #print(department["depId"])
+    mydb.yknDepartmentMaster.find_one_and_update({"department.dep_id" : department["depId"]},{"$set":{"department.active": False,"department.modified_time":department["updateTime"]}})
+    response = {}
+    response["msg"] = "Success"
+    #response["scheme"] = schemeObj
+                    
+    print(response)
+                    
+    return json.dumps(response)
+    
 @app.route('/yuvaspandanaHome')
 def gotToYSPHome():
 	# return template('templates/login.tpl', msg='')
@@ -80,10 +152,21 @@ def gotToYSPHome():
             scheme_obj={'scheme_id':scheme_id, 'scheme_name':scheme_name}
             schemeArr.append(scheme_obj)
         department={"department":{"Dep_ID":y['department']['dep_id'],"Dep_Short_Name_English":y['department']['shortName']['eng'],"schemes":schemeArr}}
-        #print(department)
+        print(department)
         #print('/////')
         departmentArr.append(department)
-    departments={"Departments":departmentArr}
+    ## Get inactive departments
+    inactivedepartmentsObj = mydb.yknDepartmentMaster.find({"department.active":False})
+    inactivedepartmentArr = []
+    for y in  inactivedepartmentsObj:
+        #print(y)
+        
+        department={"department":{"Dep_ID":y['department']['dep_id'],"Dep_Short_Name_English":y['department']['shortName']['eng']}}
+        print(department)
+        #print('/////')
+        inactivedepartmentArr.append(department)
+        
+    departments={"Departments":departmentArr,"InactiveDepartments":inactivedepartmentArr}
     #print(departments)
     
     #scheme = mydb.yknSchemeMaster.find({"department.Active":True})
@@ -102,7 +185,7 @@ def viewDepartment():
     for y in  departmentsObj:
         departmentArr.append(y)
     departments={"Departments":departmentArr}
-    #print(departments)
+    print(departments)
     
     return template('templates/yspModifyDeparment.tpl', data=departments)
 
@@ -125,22 +208,23 @@ def getDepartment():
     
     requestData = request.json
     department = requestData.get('depId')
-    #print(department)
+    print(department)
     
     #dep_schema={"depId":null}
    
     #department = json.loads(department)
     #depId=department["depId"]
-    #print(department)
+    print(department)
     #print(depId)
     #mycol = mydb["yknDepartmentMaster"]
     depFromDB=mydb.yknDepartmentMaster.find_one({"department.dep_id":department},{"_id":0})
-    #print(depFromDB)
+    print(depFromDB)
     response = {}
     response["msg"] = "Success"
     response["data"] = depFromDB
-    #print(response)
-    
+    print(response)
+    print("before dumps")
+    #print(json.dumps(response, ensure_ascii=False))
     return json.dumps(response)
 
 
@@ -177,7 +261,7 @@ def createScheme():
         },
         "schemeDesc": {
             "kan": scheme['scheme']['detailedschemeName']['details']['kan'],
-            "eng": scheme['scheme']['detailedschemeName']['details']['kan']
+            "eng": scheme['scheme']['detailedschemeName']['details']['eng']
         },
         "scheme_Logo": "logo.png",
         "active": "Y",
@@ -187,8 +271,25 @@ def createScheme():
         "modified_By": scheme['scheme']['Modified_By']
     }
     }
-    mycol = mydb["yknSchemeMasterTest"]
-    x = mycol.insert_one(schemeMaster)
+    #mycol = mydb["yknSchemeMasterTest"]
+    #x = mycol.insert_one(schemeMaster)
+    
+    lastSchemeNumber=scheme['scheme']['schemeNumber']
+    mydb.yknDepartmentMaster.find_one_and_update({"department.dep_id" : scheme["department"]},{"$set":{"department.lastSchemeID": lastSchemeNumber,"department.modified_time":scheme['scheme']['Modified_Time']}})
+        
+    response = {}
+    response["msg"] = "Success"
+	
+    return json.dumps(response)
+
+@app.post('/incrementSchemeNum')
+def incrementSchemeNum():
+    print("HERE IN incrementSchemeNum")
+    scheme=request.forms.get('data')
+    scheme = json.loads(scheme,  encoding='utf-8')
+    
+    lastSchemeNumber=scheme['scheme']['schemeNumber']
+    mydb.yknDepartmentMaster.find_one_and_update({"department.dep_id" : scheme['scheme']["department"]},{"$set":{"department.lastSchemeID": lastSchemeNumber,"department.modified_time":scheme['scheme']['Modified_Time']}})
     
     
     response = {}
@@ -196,12 +297,19 @@ def createScheme():
 	
     return json.dumps(response)
 
+    
 @app.post('/ysCreateDep')
 def createDepartment():
 	# return template('templates/login.tpl', msg='')
     print("HERE IN CREATE Department")
     department=request.forms.get('data')
-    #print(department)
+    print(department)
+    department = json.loads(department)
+    print("After json")
+    print(department)
+    #kanName= department['department']['shortName']['kan']
+    #print(kanName)
+    #print(codecs.decode(kanName))
     #department=codecs.decode(department)
     #print("///////")
     #print(department)
@@ -213,10 +321,10 @@ def createDepartment():
     #assert type(r["correct"]) is unicode
     #print(r)
     #scheme = request.json
-    department = json.loads(department)
+    #department = json.loads(department)
     #scheme=json.JSONEncoder().encode(scheme)
     #print(scheme)
-    mycol = mydb["yknDepartmentMasterTest"]
+    mycol = mydb["yknDepartmentMaster"]
     x = mycol.insert_one(department)
     response = {}
     response["msg"] = "Success"
@@ -240,8 +348,17 @@ def getAllDepsAndSchemes():
             scheme_name=z['scheme']['schemeName']['kan']
             scheme_obj={'scheme_id':scheme_id, 'scheme_name':scheme_name}
             schemeArr.append(scheme_obj)
+        inactivescheme = mydb.yknSchemeMaster.find({"scheme.dep_id":y['department']['dep_id'],"scheme.active":False})
+        inactiveschemeArr = []
+        for z in  inactivescheme:
+            #print(z)
+            scheme_id=z['scheme']['scheme_ID']
+            #scheme_name=z['scheme']['schemeName']['eng']
+            scheme_name=z['scheme']['schemeName']['kan']
+            scheme_obj={'scheme_id':scheme_id, 'scheme_name':scheme_name}
+            inactiveschemeArr.append(scheme_obj)
             
-        department={"department":{"Dep_ID":y['department']['dep_id'],"Dep_Short_Name_English":y['department']['shortName']['eng'],"Schemes":schemeArr}}
+        department={"department":{"Dep_ID":y['department']['dep_id'],"Dep_Short_Name_English":y['department']['shortName']['eng'],"Schemes":schemeArr,"inactiveSchemes":inactiveschemeArr}}
         departmentArr.append(department)
                     
     departments={"Departments":departmentArr}
@@ -250,7 +367,7 @@ def getAllDepsAndSchemes():
 def viewScheme():
     return template('templates/yspSchemeView.tpl')
     
-@app.route('/yuvaspandanaScheme')
+@route('/yuvaspandanaScheme')
 def goToScheme():
 	# return template('templates/login.tpl', msg='')
     departmentsObj = mydb.yknDepartmentMaster.find({"department.active":True})
@@ -258,8 +375,10 @@ def goToScheme():
     for y in  departmentsObj:
         departmentArr.append(y)
     departments={"Departments":departmentArr}
-    #print(departments)
+    print(departments)
     return template('templates/yspScheme.tpl', data=departments)
+
+
 
 ###Yuvaspandana MIS End###
 
