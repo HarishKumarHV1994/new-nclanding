@@ -135,19 +135,27 @@
                             
                         }
                         document.getElementById("addtionalscontactsFile").value = json.scheme.additionalContactInformation.contactsURL
+                        
+                        document.getElementById("purposeFile").value = json.scheme.purpose.additionalDetails.fileName
+                        
+                        document.getElementById("facilitiesFile").value = json.scheme.facilities.additionalDetails.fileName
+                        
+                        document.getElementById("documentsFile").value = json.scheme.documents.additionalDetails.fileName
+                        
+                        document.getElementById("processFile").value = json.scheme.process.additionalDetails.fileName
+                        
+                         document.getElementById("qualificationsFile").value = json.scheme.qualifications.additionalDetails.fileName
+                        
+                        document.getElementById("eligibilitiesFile").value = json.scheme.eligibility.additionalDetails.fileName
+                        
+                         document.getElementById("contactsFile").value = json.scheme.contactOffice.contactsURL
                           
-                          /*document.getElementById("purposeFile").value = json.scheme.purpose.additionalDetails.fileName
-                          document.getElementById("facilitiesFile").value = json.scheme.facilities.additionalDetails.fileName
-                          document.getElementById("documentsFile").value = json.scheme.documents.additionalDetails.fileName
-                          document.getElementById("processFile").value = json.scheme.process.additionalDetails.fileName
-                          document.getElementById("qualificationsFile").value = json.scheme.qualifications.additionalDetails.fileName
-                          document.getElementById("eligibilitiesFile").value = json.scheme.eligibility.additionalDetails.fileName
-                          document.getElementById("contactsFile").value = json.scheme.contactOffice.contactsURL
                           document.getElementById("subsidiesFile").value = json.scheme.subsidies.additionalDetails.fileName
-                          document.getElementById("addtionalscontactsFile").value = json.scheme.additionalContactInformation.contactsURL
-                         document.getElementById("applicationFileName").value=json.scheme.applicationFormLocation
-`
-                          */
+                          
+                        document.getElementById("applicationFileName").value=json.scheme.applicationFormLocation
+                        
+                          
+                         
                           
                         //Handle Facilities
                         if(json.scheme.facilities.details !=""){
@@ -3066,7 +3074,7 @@ table {
                         Offline Application File Name
                     </td>
                     <td >
-                        <input name="applicationFileName" type="file" class="form-control-1 " id="applicationFileName">
+                        <input name="applicationFileName" type="text" class="form-control-1 " id="applicationFileName">
                     </td>
                 </tr>
                 
