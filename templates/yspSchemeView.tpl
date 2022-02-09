@@ -21,7 +21,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
-      var schemeData={"scheme":{"Created_Time":null,"Created_By":null,"Modified_Time":null,"Modified_By":null,"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":"","eng":""}},"schemeShortName":{"label":{"kan":"ಯೋಜನೆಯ ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರ","eng":"Display or Short Name"},"details":{"kan":"","eng":""}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":"","eng":""}},"purpose":{"label":{"kan":"ಯೋಜನೆಯ ಉದ್ದೇಶ","eng":"Purpose of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities available/ Details of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಯೋಜನೆಯ ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ ವ್ಯಾಪ್ತಿಗೆ ಬರುತ್ತದೆಯೇ?","eng":"Does it come under Sakala?"},"details":false},"process":{"label":{"kan":"ಯೋಜನೆಯ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":"","eng":""}],"website":null,"email":null,"contactNumbers":[{"type":"contact","eng":"Contact","kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":null},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":"link 2 District Offices Contact details"}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":"","eng":""},"designation":{"kan":"","eng":""},"emailContact":null,"officeAddress":{"kan":"","eng":""},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ರಿಯಾಯತಿಗಳು","eng":"Subsidies available under the scheme"},"details":[{"subsidySummary":{"kan":"","eng":""},"subsidyDesc":{"kan":"","eng":""}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":"","eng":""}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
+      var schemeData={"scheme":{"Created_Time":null,"Created_By":null,"Modified_Time":null,"Modified_By":null,"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":"","eng":""}},"schemeShortName":{"label":{"kan":"ಯೋಜನೆಯ ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರ","eng":"Display or Short Name"},"details":{"kan":"","eng":""}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":"","eng":""}},"purpose":{"label":{"kan":"ಯೋಜನೆಯ ಉದ್ದೇಶ","eng":"Purpose of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities available/ Details of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಯೋಜನೆಯ ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ ವ್ಯಾಪ್ತಿಗೆ ಬರುತ್ತದೆಯೇ?","eng":"Does it come under Sakala?"},"details":false},"process":{"label":{"kan":"ಯೋಜನೆಯ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":"","eng":""}],"website":null,"email":null,"contactNumbers":[{"type":"contact","eng":"Contact","kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":null},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":null}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":"","eng":""},"designation":{"kan":"","eng":""},"emailContact":null,"officeAddress":{"kan":"","eng":""},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ರಿಯಾಯತಿಗಳು","eng":"Subsidies available under the scheme"},"details":[{"subsidySummary":{"kan":"","eng":""},"subsidyDesc":{"kan":"","eng":""}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":"","eng":""}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
       
       purposeItems=[1]
       purposetextIdNo=1
@@ -134,6 +134,8 @@
                         
                             
                         }
+                        document.getElementById("addtionalscontactsFile").value = json.scheme.additionalContactInformation.contactsURL
+                          
                           /*document.getElementById("purposeFile").value = json.scheme.purpose.additionalDetails.fileName
                           document.getElementById("facilitiesFile").value = json.scheme.facilities.additionalDetails.fileName
                           document.getElementById("documentsFile").value = json.scheme.documents.additionalDetails.fileName
@@ -593,13 +595,13 @@
             }
           
            if(document.getElementById("applicationURL").value.trim() === ""){
-                schemeData.scheme.applicationMode=""
+                schemeData.scheme.applicationURL=""
             }else{
                 schemeData.scheme.applicationURL=document.getElementById("applicationURL").value
             }
           
             if(document.getElementById("applicationFileName").value.trim() === ""){
-                schemeData.scheme.applicationMode=""
+                schemeData.scheme.applicationFormLocation=""
             }else{
                 schemeData.scheme.applicationFormLocation=document.getElementById("applicationFileName").value
             }
@@ -648,22 +650,25 @@
                 }
                 
             }
-          
-            if(purpose == null || purpose.length==0 || document.getElementById("purpose").value == "No"){
+            
+            if(document.getElementById("purpose").value == "No"){
                 schemeData.scheme.purpose.details = ""
                 schemeData.scheme.purpose.additionalDetails.fileName=""
             }else{
-                schemeData.scheme.purpose.details=purpose
-                if(document.getElementById("purposeFile").value.trim() === ""){
-                   // alert("no file")
-                    
-                    schemeData.scheme.purpose.additionalDetails.fileName=""
-                }else{
-                   
-                   // alert("yes file=="+document.getElementById("purposeFile").value.trim()) 
-                    schemeData.scheme.purpose.additionalDetails.fileName=document.getElementById("purposeFile").value.trim()
+                 if(document.getElementById("purposeFile").value.trim() === ""){
+                        schemeData.scheme.purpose.additionalDetails.fileName=""
+                     }else{
+                        schemeData.scheme.purpose.additionalDetails.fileName=document.getElementById("purposeFile").value.trim()
                     }
+                
+                if(purpose == null || purpose.length==0){
+                    schemeData.scheme.purpose.details = ""
+                     
+                }else{
+                    schemeData.scheme.purpose.details=purpose
+                }
             }
+            
     
             //facilities
           facilities=[]
@@ -695,18 +700,28 @@
                 }
                 
             }
-          
-            if(facilities == null || facilities.length==0 || document.getElementById("facilities").value == "No"){
+                
+            ////
+            if(document.getElementById("facilities").value == "No"){
                 schemeData.scheme.facilities.details = ""
                 schemeData.scheme.facilities.additionalDetails.fileName=""
             }else{
-                schemeData.scheme.facilities.details=facilities
-                if(document.getElementById("facilitiesFile").value.trim() === ""){
-                    schemeData.scheme.facilities.additionalDetails.fileName=""
-                }else{
-                    schemeData.scheme.facilities.additionalDetails.fileName=document.getElementById("facilitiesFile").value.trim()
+                 if(document.getElementById("facilitiesFile").value.trim() === ""){
+                        schemeData.scheme.facilities.additionalDetails.fileName=""
+                     }else{
+                        schemeData.scheme.facilities.additionalDetails.fileName=document.getElementById("facilitiesFile").value.trim()
                     }
+                
+                if(facilities == null || facilities.length==0){
+                    schemeData.scheme.facilities.details = ""
+                     
+                }else{
+                    schemeData.scheme.facilities.details=facilities
+                }
             }
+            ////
+          
+        
           
           //eligibilities
             eligibilities=[]
@@ -738,18 +753,29 @@
                 }
                 
             }
-          
-            if(eligibilities == null || eligibilities.length==0 || document.getElementById("eligibilities").value == "No"){
+                
+                ////
+            if(document.getElementById("eligibilities").value == "No"){
                 schemeData.scheme.eligibility.details = ""
                 schemeData.scheme.eligibility.additionalDetails.fileName=""
             }else{
-                schemeData.scheme.eligibility.details=eligibilities
-                if(document.getElementById("eligibilitiesFile").value.trim() === ""){
-                    schemeData.scheme.eligibility.additionalDetails.fileName=""
-                }else{
-                    schemeData.scheme.eligibility.additionalDetails.fileName=document.getElementById("eligibilitiesFile").value.trim()
+                 if(document.getElementById("eligibilitiesFile").value.trim() === ""){
+                        schemeData.scheme.eligibility.additionalDetails.fileName=""
+                     }else{
+                        schemeData.scheme.eligibility.additionalDetails.fileName=document.getElementById("eligibilitiesFile").value.trim()
                     }
+                
+                if(eligibilities == null || eligibilities.length==0){
+                    schemeData.scheme.eligibility.details = ""
+                     
+                }else{
+                    schemeData.scheme.eligibility.details=eligibilities
+                }
             }
+            ////
+                
+          
+           
           
           
           //qualification
@@ -785,17 +811,28 @@
                 
             }
           
-            if(qualifications == null || qualifications.length==0 || document.getElementById("qualifications").value == "No"){
+            
+            ////
+            if(document.getElementById("qualifications").value == "No"){
                 schemeData.scheme.qualifications.details = ""
                 schemeData.scheme.qualifications.additionalDetails.fileName=""
             }else{
-                schemeData.scheme.qualifications.details=qualifications
-                if(document.getElementById("qualificationsFile").value.trim() === ""){
-                    schemeData.scheme.qualifications.additionalDetails.fileName=""
-                }else{
-                    schemeData.scheme.qualifications.additionalDetails.fileName=document.getElementById("qualificationsFile").value.trim()
+                 if(document.getElementById("qualificationsFile").value.trim() === ""){
+                        schemeData.scheme.qualifications.additionalDetails.fileName=""
+                     }else{
+                        schemeData.scheme.qualifications.additionalDetails.fileName=document.getElementById("qualificationsFile").value.trim()
                     }
+                
+                if(qualifications == null || qualifications.length==0){
+                    schemeData.scheme.qualifications.details = ""
+                     
+                }else{
+                    schemeData.scheme.qualifications.details=qualifications
+                }
             }
+            ////
+                
+            
           
           
           //process
@@ -830,18 +867,30 @@
                 }
                 
             }
-          
-            if(process == null || process.length==0 || document.getElementById("process").value == "No"){
+                
+                ////
+            if(document.getElementById("process").value == "No"){
                 schemeData.scheme.process.details = ""
                 schemeData.scheme.process.additionalDetails.fileName=""
             }else{
-                schemeData.scheme.process.details=process
-                if(document.getElementById("processFile").value.trim() === ""){
-                    schemeData.scheme.process.additionalDetails.fileName=""
-                }else{
-                    schemeData.scheme.process.additionalDetails.fileName=document.getElementById("processFile").value.trim()
+                 if(document.getElementById("processFile").value.trim() === ""){
+                        schemeData.scheme.process.additionalDetails.fileName=""
+                     }else{
+                        schemeData.scheme.process.additionalDetails.fileName=document.getElementById("processFile").value.trim()
                     }
+                
+                if(process == null || process.length==0){
+                    schemeData.scheme.process.details = ""
+                     
+                }else{
+                    schemeData.scheme.process.details=process
+                }
             }
+            ////
+                
+                
+          
+            
           
           
           //documents
@@ -878,17 +927,27 @@
                 
             }
           
-            if(documents == null || documents.length==0 || document.getElementById("documents").value == "No"){
+            ////
+            if(document.getElementById("documents").value == "No"){
                 schemeData.scheme.documents.details = ""
                 schemeData.scheme.documents.additionalDetails.fileName=""
             }else{
-                schemeData.scheme.documents.details=documents
-                if(document.getElementById("documentsFile").value.trim() === ""){
-                    schemeData.scheme.documents.additionalDetails.fileName=""
-                }else{
-                    schemeData.scheme.documents.additionalDetails.fileName=document.getElementById("documentsFile").value.trim()
+                 if(document.getElementById("documentsFile").value.trim() === ""){
+                        schemeData.scheme.documents.additionalDetails.fileName=""
+                     }else{
+                        schemeData.scheme.documents.additionalDetails.fileName=document.getElementById("documentsFile").value.trim()
                     }
+                
+                if(documents == null || documents.length==0){
+                    schemeData.scheme.documents.details = ""
+                     
+                }else{
+                    schemeData.scheme.documents.details=documents
+                }
             }
+            ////
+                
+            
           
           
           //contactOffice
@@ -925,19 +984,27 @@
                 }
                 
             }
-          
-            if(contactOffice == null || contactOffice.length==0 || document.getElementById("officeName").value == "No"){
+                
+            ////
+            if(document.getElementById("officeName").value == "No"){
                 schemeData.scheme.contactOffice.details = ""
                 schemeData.scheme.contactOffice.contactsURL=""
             }else{
-                schemeData.scheme.contactOffice.details=contactOffice
-                if(document.getElementById("contactsFile").value.trim() === ""){
-                    schemeData.scheme.contactOffice.contactsURL=""
-                }else{
-                    schemeData.scheme.contactOffice.contactsURL=document.getElementById("contactsFile").value.trim()
+                 if(document.getElementById("addtionalscontactsFile").value.trim() === ""){
+                        schemeData.scheme.contactOffice.contactsURL=""
+                     }else{
+                        schemeData.scheme.contactOffice.contactsURL=document.getElementById("addtionalscontactsFile").value.trim()
                     }
+                
+                if(contactOffice == null || contactOffice.length==0){
+                    schemeData.scheme.contactOffice.details = ""
+                     
+                }else{
+                    schemeData.scheme.contactOffice.details=contactOffice
+                }
             }
-          
+            ////
+                
           
           //subsidiesExamples
             subsidiesExamples=[]
@@ -1143,19 +1210,30 @@
                 }
                 
             }
-          
-            if(subsidies == null || subsidies.length==0 || document.getElementById("subsidies").value == "No"){
+                
+             ////
+            if(document.getElementById("subsidies").value == "No"){
                 schemeData.scheme.subsidies.details = ""
                 schemeData.scheme.subsidies.additionalDetails.fileName=""
             }else{
-                schemeData.scheme.subsidies.details=subsidies
-                if(document.getElementById("subsidiesFile").value.trim() === ""){
-                    schemeData.scheme.subsidies.additionalDetails.fileName=""
-                }else{
-                    schemeData.scheme.subsidies.additionalDetails.fileName=document.getElementById("subsidiesFile").value.trim()
+                 if(document.getElementById("subsidiesFile").value.trim() === ""){
+                        schemeData.scheme.subsidies.additionalDetails.fileName=""
+                     }else{
+                        schemeData.scheme.subsidies.additionalDetails.fileName=document.getElementById("subsidiesFile").value.trim()
                     }
                 
+                if(subsidies == null || subsidies.length==0){
+                    schemeData.scheme.subsidies.details = ""
+                     
+                }else{
+                    schemeData.scheme.subsidies.details=subsidies
+                }
             }
+            ////
+                
+                
+          
+            
           
           //additionalContacts
           additionalContacts=[]
@@ -1245,19 +1323,29 @@
                   additionalContacts.push(addContactObj)
               }
           }
-          
-          if(additionalContacts == null || additionalContacts.length==0 || document.getElementById("additionalContact").value=="No"){
-                schemeData.scheme.additionalContactInformation.details = ""
-               schemeData.scheme.additionalContactInformation.contactsURL=""
-            }else{
-                schemeData.scheme.additionalContactInformation.details=additionalContacts
-                if(document.getElementById("addtionalscontactsFile").value.trim()==null){
-                    schemeData.scheme.additionalContactInformation.contactsURL=""
-                }else{
-                schemeData.scheme.additionalContactInformation.contactsURL=document.getElementById("addtionalscontactsFile").value.trim()
-                }
                 
+           ////
+            if(document.getElementById("additionalContact").value == "No"){
+                schemeData.scheme.additionalContactInformation.details = ""
+                schemeData.scheme.additionalContactInformation.contactsURL=""
+            }else{
+                 if(document.getElementById("addtionalscontactsFile").value.trim() === ""){
+                        schemeData.scheme.additionalContactInformation.contactsURL=""
+                     }else{
+                        schemeData.scheme.additionalContactInformation.contactsURL=document.getElementById("addtionalscontactsFile").value.trim()
+                    }
+                
+                if(subsidies == null || subsidies.length==0){
+                    schemeData.scheme.additionalContactInformation.details = ""
+                     
+                }else{
+                    schemeData.scheme.additionalContactInformation.details=subsidies
+                }
             }
+            ////
+                
+          
+         
           
           
                 
@@ -2158,7 +2246,7 @@ table {
                         Purpose - File with information or Additional Information
                     </td>
                     <td >
-                         <input type="file" id="purposeFile" name="purposeFile">
+                         <input type="text" id="purposeFile" name="purposeFile">
                         <!--<input name="purposeFile" type="text" class="form-control-1 " id="purposeFile">-->
                     </td>
                 </tr>
@@ -2229,7 +2317,7 @@ table {
                         Facilities - File with information or Additional Information
                     </td>
                     <td >
-                        <input type="file" id="facilitiesFile" name="facilitiesFile" class="form-control-1 ">
+                        <input type="text" id="facilitiesFile" name="facilitiesFile" class="form-control-1 ">
                         
                     </td>
                 </tr>
@@ -2296,7 +2384,7 @@ table {
                         Eligibilities - File with information or Additional Information
                     </td>
                     <td >
-                        <input type="file" id="eligibilitiesFile" name="eligibilitiesFile" class="form-control-1 ">
+                        <input type="text" id="eligibilitiesFile" name="eligibilitiesFile" class="form-control-1 ">
                         
                     </td>
                 </tr>
@@ -2363,7 +2451,7 @@ table {
                         Qualifications - File with information or Additional Information
                     </td>
                     <td >
-                        <input type="file" id="qualificationsFile" name="qualificationsFile" class="form-control-1 ">
+                        <input type="text" id="qualificationsFile" name="qualificationsFile" class="form-control-1 ">
                         
                     </td>
                 </tr>
@@ -2457,7 +2545,7 @@ table {
                         Process for Applying - File with information or Additional Information
                     </td>
                     <td >
-                        <input type="file" id="processFile" name="processFile" class="form-control-1 ">
+                        <input type="text" id="processFile" name="processFile" class="form-control-1 ">
                         
                     </td>
                 </tr>
@@ -2528,7 +2616,7 @@ table {
                         Documents to be submitted with Application - File with information or Additional Information
                     </td>
                     <td >
-                        <input type="file" id="documentsFile" name="documentsFile" class="form-control-1 ">
+                        <input type="text" id="documentsFile" name="documentsFile" class="form-control-1 ">
                         
                     </td>
                 </tr>
@@ -2814,7 +2902,7 @@ table {
                         Contact Office, Numbers, Websites - File with information or Additional Information
                     </td>
                     <td >
-                        <input type="file" id="contactsFile" name="contactsFile" class="form-control-1 ">
+                        <input type="text" id="contactsFile" name="contactsFile" class="form-control-1 ">
                         
                     </td>
                 </tr>
@@ -2935,7 +3023,7 @@ table {
                         Additional Contacts - File with information or Additional Information
                     </td>
                     <td >
-                        <input type="file" id="addtionalscontactsFile" name="addtionalscontactsFile" class="form-control-1 ">
+                        <input type="text" id="addtionalscontactsFile" name="addtionalscontactsFile" class="form-control-1 ">
                         
                     </td>
                 </tr>
@@ -3064,7 +3152,7 @@ table {
                         Subsidies - File with information or Additional Information
                     </td>
                     <td >
-                        <input type="file" id="subsidiesFile" name="subsidiesFile" class="form-control-1 ">
+                        <input type="text" id="subsidiesFile" name="subsidiesFile" class="form-control-1 ">
                         
                         
                     </td>
