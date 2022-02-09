@@ -1332,7 +1332,7 @@
               }
           }
                 
-           ////
+            ////
             if(document.getElementById("additionalContact").value == "No"){
                 schemeData.scheme.additionalContactInformation.details = ""
                 schemeData.scheme.additionalContactInformation.contactsURL=""
