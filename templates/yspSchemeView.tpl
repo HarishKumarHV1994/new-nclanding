@@ -1343,11 +1343,11 @@
                         schemeData.scheme.additionalContactInformation.contactsURL=document.getElementById("addtionalscontactsFile").value.trim()
                     }
                 
-                if(subsidies == null || subsidies.length==0){
+                if(additionalContacts == null || additionalContacts.length==0){
                     schemeData.scheme.additionalContactInformation.details = ""
                      
                 }else{
-                    schemeData.scheme.additionalContactInformation.details=subsidies
+                    schemeData.scheme.additionalContactInformation.details=additionalContacts
                 }
             }
             ////
