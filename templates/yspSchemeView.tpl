@@ -998,10 +998,10 @@
                 schemeData.scheme.contactOffice.details = ""
                 schemeData.scheme.contactOffice.contactsURL=""
             }else{
-                 if(document.getElementById("addtionalscontactsFile").value.trim() === ""){
+                 if(document.getElementById("contactsFile").value.trim() === ""){
                         schemeData.scheme.contactOffice.contactsURL=""
                      }else{
-                        schemeData.scheme.contactOffice.contactsURL=document.getElementById("addtionalscontactsFile").value.trim()
+                        schemeData.scheme.contactOffice.contactsURL=document.getElementById("contactsFile").value.trim()
                     }
                 
                 if(contactOffice == null || contactOffice.length==0){
