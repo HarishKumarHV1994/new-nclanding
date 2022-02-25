@@ -938,6 +938,7 @@
                 
           //document.getElementById("jsontext").value=JSON.stringify(schemeData)
           document.getElementById("errorMessage").innerHTML=""
+          document.getElementById("increment").style.display = 'block'
           
                 
         
