@@ -2165,10 +2165,12 @@ table {
                             Descriptive Name of the Scheme/ಯೋಜನೆಯ ಪೂರ್ಣ ಹೆಸರು
                         </td>
                         <td>
-                            <input name="name_eng"  type="textarea" rows="4" cols="50"  id="name_eng" required maxlength = "3000">
+                            
+                            <textarea name="name_eng" type="textarea" rows="4" cols="50"  id="name_eng"  required maxlength="3000"> </textarea>
                         </td>
                         <td>
-                            <input name="name_kan"  type="textarea" rows="4" cols="50"  id="name_kan" required maxlength = "3000">
+                           
+                            <textarea name="name_kan" type="textarea" rows="4" cols="50"  id="name_kan"  required maxlength="3000"> </textarea>
                         </td>
                         
                     </tr>
