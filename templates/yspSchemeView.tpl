@@ -2152,10 +2152,10 @@ table {
                             Display or Short Name/ಯೋಜನೆಯ ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರು <b>(Mandatory)</b>
                         </td>
                         <td>
-                            <input name="shortname_eng" type="text" class="form-control-1 " id="shortname_eng" required maxlength="30" >
+                            <input name="shortname_eng" type="text" class="form-control-1 " id="shortname_eng" required maxlength="300" >
                         </td>
                         <td>
-                            <input name="shortname_kan" type="text" class="form-contro1-1 " id="shortname_kan" required maxlength="30" >
+                            <input name="shortname_kan" type="text" class="form-contro1-1 " id="shortname_kan" required maxlength="300" >
                         </td>
                         
                     </tr>
