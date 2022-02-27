@@ -1749,15 +1749,15 @@ table {
                         
                     </tr>
                  
-                <tr>
+                 <tr>
                         <td>
                             Descriptive Name of the Scheme/ಯೋಜನೆಯ ಪೂರ್ಣ ಹೆಸರು
                         </td>
                         <td>
-                            <input name="name_eng" type="textarea" class="form-control-1 " id="name_eng" required maxlength = "3000">
+                            <input name="name_eng"  type="textarea" rows="4" cols="50"  id="name_eng" required maxlength = "3000">
                         </td>
                         <td>
-                            <input name="name_kan" type="textarea" class="form-contro1-1 " id="name_kan" required maxlength = "3000">
+                            <input name="name_kan"  type="textarea" rows="4" cols="50"  id="name_kan" required maxlength = "3000">
                         </td>
                         
                     </tr>
