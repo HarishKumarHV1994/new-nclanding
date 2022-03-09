@@ -77,7 +77,7 @@ function validate(){
     }
     
     if(errorExists == false){
-        depObj.department.dep_id=document.getElementById("sysName_eng").value.trim()
+        depObj.department.dep_id=document.getElementById("sysName_eng").value.trim().toUpperCase()
         depObj.department.shortName.eng = document.getElementById("shortDisplayname_eng").value.trim()
         depObj.department.shortName.kan = document.getElementById("shortDisplayname_kan").value.trim()
         depObj.department.name.eng=document.getElementById("fullName_eng").value.trim()
