@@ -95,8 +95,7 @@ var depObj = {"department":{"dep_id":null,"shortName":{
       "created_by":null,
       "modified_time":null,
       "modified_by":null,
-      "logo":null,
-      "bg_image":null}
+       "logo":"logo.jpeg","bg_image":"bg.jpeg","lastSchemeID":0}
     }
 
 var isvalid = false
