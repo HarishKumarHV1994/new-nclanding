@@ -21,7 +21,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
-      var schemeData={"scheme":{"Created_Time":null,"Created_By":null,"Modified_Time":null,"Modified_By":null,"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":"","eng":""}},"schemeShortName":{"label":{"kan":"ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರು","eng":"Display or Short Name"},"details":{"kan":"","eng":""}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":"","eng":""}},"purpose":{"label":{"kan":"ಉದ್ದೇಶ","eng":"Purpose"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ?","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ","eng":"Sakala"},"details":false},"process":{"label":{"kan":"ಅನುಸರಿಸಬೇಕಾದ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted while applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":"","eng":""}],"website":null,"email":null,"contactNumbers":[{"type":"contact","eng":"Contact","kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":null},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":null}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":"","eng":""},"designation":{"kan":"","eng":""},"emailContact":null,"officeAddress":{"kan":"","eng":""},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ರಿಯಾಯತಿಗಳು","eng":"Subsidies "},"details":[{"subsidySummary":{"kan":"","eng":""},"subsidyDesc":{"kan":"","eng":""}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":"","eng":""}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
+      var schemeData={"scheme":{"keywords":{"details":[{"kan":"","eng":""}]},"Created_Time":null,"Created_By":null,"Modified_Time":null,"Modified_By":null,"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":"","eng":""}},"schemeShortName":{"label":{"kan":"ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರು","eng":"Display or Short Name"},"details":{"kan":"","eng":""}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":"","eng":""}},"purpose":{"label":{"kan":"ಉದ್ದೇಶ","eng":"Purpose"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ?","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ","eng":"Sakala"},"details":false},"process":{"label":{"kan":"ಅನುಸರಿಸಬೇಕಾದ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted while applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":"","eng":""}],"website":null,"email":null,"contactNumbers":[{"type":"contact","eng":"Contact","kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":null},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":null}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":"","eng":""},"designation":{"kan":"","eng":""},"emailContact":null,"officeAddress":{"kan":"","eng":""},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ರಿಯಾಯತಿಗಳು","eng":"Subsidies "},"details":[{"subsidySummary":{"kan":"","eng":""},"subsidyDesc":{"kan":"","eng":""}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":"","eng":""}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
+      
       purposeItems=[1]
       purposetextIdNo=1
       
@@ -63,6 +64,10 @@
       
       additionalContactsItems=[1]
       additionalContactsTextIdNo=1
+      
+      keywordsItems=[1]
+      keywordstextIdNo=1
+      
       
       isvalid=false
       
@@ -347,6 +352,32 @@
                         
                             
                         }
+                          
+                          //Handle Keywords
+                        if(json.scheme.keywords.details !=""){
+                            //alert(json.scheme.documents.details.length)
+                            if(json.scheme.keywords.details.length == 1){
+                               //alert('documents==')
+                                document.getElementById("keywords_eng_1").value=json.scheme.keywords.details[0].eng;
+                                document.getElementById("keywords_kan_1").value=json.scheme.keywords.details[0].kan;
+                            }else{
+                                //alert('documents are there')
+                                 document.getElementById("keywords_eng_1").value=json.scheme.keywords.details[0].eng;
+                                document.getElementById("keywords_kan_1").value=json.scheme.keywords.details[0].kan;
+                                
+                                for(i=1;i<json.scheme.keywords.details.length;i++){
+                                    addTextSet("keywords")
+                                    counter=i+1
+                                    engFldname="keywords_eng_"+counter
+                                    kanFldname="keywords_kan_"+counter
+                                    document.getElementById(engFldname).value=json.scheme.keywords.details[i].eng
+                                    document.getElementById(kanFldname).value=json.scheme.keywords.details[i].kan
+                                }
+                            }
+                        
+                            
+                        }
+                          
                           
                           //Handle website
                         if(json.scheme.contactOffice.website !=""){
@@ -954,7 +985,48 @@
             }
             ////
                 
-            
+            //keywords
+          keywords=[]
+          //alert(keywordsItems.length)
+        
+          for(i=0;i<keywordsItems.length;i++){
+                
+                j=keywordsItems[i]
+                eng_field = "keywords_eng_"+j
+                kan_field = "keywords_kan_"+j
+              
+                obj={"kan":"","eng":""}
+                
+                nullObj=true
+                if(document.getElementById(kan_field).value.trim() === "" ){
+                    obj.kan=""
+                }else{
+                    obj.kan=document.getElementById(kan_field).value
+                    nullObj=false
+                    
+                }
+                
+                if(document.getElementById(eng_field).value.trim() === "" ){
+                    obj.eng=""
+                }else{
+                    obj.eng=document.getElementById(eng_field).value
+                    nullObj=false
+                    
+                }
+                
+                if(nullObj == false){
+                    keywords.push(obj)
+                }
+                
+            }
+                
+        if(keywords == null || keywords.length==0){
+                    schemeData.scheme.keywords.details = ""
+                     
+                }else{
+                    schemeData.scheme.keywords.details=keywords
+                }
+                
           
           
           //contactOffice
@@ -1815,6 +1887,13 @@
               
           }
           
+          if(sectionName=='keywords'){
+              keywordstextIdNo=keywordstextIdNo+1
+              textIdNo=keywordstextIdNo
+              keywordsItems.push(textIdNo)
+              
+          }
+          
           
           //alert(textIdNo)
           tableElement=document.getElementById(tableId);
@@ -2160,7 +2239,7 @@ table {
                         
                     </tr>
                  
-                 <tr>
+                  <tr>
                         <td>
                             Descriptive Name of the Scheme/ಯೋಜನೆಯ ಪೂರ್ಣ ಹೆಸರು
                         </td>
@@ -3216,6 +3295,73 @@ table {
                 </tr>
             </table>
         </div>
+            
+        <br>
+            <br>
+            <div class="card card-login">
+              <div class="card-header card-header-rose text-center">
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Key Words (for search)</h4>
+              </div>
+                
+                <table>
+                    <tr>
+                        <td>
+                            Please add the key words which will identify the scheme.
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+            
+            <div name="keywordsDiv" id="keywordsDiv">
+            <table id="keywordsTable" name="keywordsTable">
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            English
+                        </th>
+                        <th>
+                            Kannada
+                        </th>
+                        <th>
+                            <button class="btn btn-rose btn-raised addDocuments" style="" id="addkeywords" onclick="addTextSet('keywords')">ADD </button> 
+                        </th>
+                        
+                    </tr>
+                    
+                    <tr id="keywords_row_1" name="keywords_row_1">
+                        <td id="keywords_id_1" name="keywords_id_1" style="width:3%">
+                            <input name="keywords_id" type="number" class="form-control" id="keywords_id" value="1" readonly=true maxlength="1" >
+                        </td>
+                        <td id="keywords_eng_col_1" name="keywords_eng_col_1">
+                            <input name="keywords_eng_1" type="text" class="form-control-1 " id="keywords_eng_1">
+                        
+                        </td>
+                        <td id="keywords_kan_col_1" name="keywords_kan_col_1">
+                            
+                            <input name="keywords_kan_1" type="text" class="form-control-1 " id="keywords_kan_1">
+                        </td>
+                         <td>
+                            
+                        </td>
+                        
+                    </tr>
+                 
+                 
+                    
+                    
+                </table>
+            
+    
+            
+            </div>
+            
+            
+            <br>
+            <br>
+            
             <center><p style="padding-left: 15px; font-size: 1.2em;"><span id="link"></span></p></center>
             
             
