@@ -54,13 +54,16 @@ def goToSchemeView():
     #schemeId= reqJson["schemeId"]
     #print(schemeId)
     schemeFromDB=mydb.yknSchemeDescMaster.find_one({"scheme.schemeID":schemeId},{"_id":0})
-    print(schemeFromDB)
+    schemeMasterFromDB=mydb.yknSchemeMaster.find_one({"scheme.scheme_ID":schemeId},{"_id":0})
+    schemeFromDB["scheme"]["keywords"]=schemeMasterFromDB["scheme"]["keywords"]
+    schemeObj=schemeFromDB["scheme"]
+    #print(schemeFromDB)
     schemeObj=schemeFromDB["scheme"]
     response = {}
     response["msg"] = "Success"
     response["scheme"] = schemeObj
                     
-    print(response)
+    #print(response)
                     
     return json.dumps(response)
 @app.post('/ysActivateScheme')
