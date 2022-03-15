@@ -2122,6 +2122,12 @@
                 subsidiesItems=filteredAry
                 
             }
+           
+            if(sectionName=='keywords'){
+                var filteredAry = keywordsItems.filter(function(e) { return e !== id })
+                keywordsItems=filteredAry
+                
+            }
           
             
             
