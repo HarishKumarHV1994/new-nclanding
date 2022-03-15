@@ -1009,7 +1009,7 @@
                 if(document.getElementById(eng_field).value.trim() === "" ){
                     obj.eng=""
                 }else{
-                    obj.eng=document.getElementById(eng_field).value
+                    obj.eng=document.getElementById(eng_field).value.trim().toUpperCase()
                     nullObj=false
                     
                 }
