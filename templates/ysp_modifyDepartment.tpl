@@ -157,10 +157,10 @@ table {
                             Short Display name (Eg. K.S.R.T.C/ಕ.ರಾ.ರ.ಸಾ.ಸಂ)<b>(Mandatory)</b>
                         </td>
                         <td>
-                            <input name="shortDisplayname_eng" type="text" class="form-control-1 " id="shortDisplayname_eng" required maxlength="15">
+                            <input name="shortDisplayname_eng" type="text" class="form-control-1 " id="shortDisplayname_eng" required maxlength="50">
                         </td>
                         <td>
-                            <input name="shortDisplayname_kan" type="text" class="form-contro1-1 " id="shortDisplayname_kan" required maxlength="15">
+                            <input name="shortDisplayname_kan" type="text" class="form-contro1-1 " id="shortDisplayname_kan" required maxlength="50">
                         </td>
                         
                     </tr>
@@ -172,10 +172,10 @@ table {
                             Full Name/ಪೂರ್ಣ ಹೆಸರು (Eg.Karnataka State Road Transport Corporation / ಕರ್ನಾಟಕ ರಾಜ್ಯ ರಸ್ತೆ ಸಾರಿಗೆ ನಿಗಮ) <b>(Mandatory)</b>
                         </td>
                         <td>
-                            <input name="fullName_eng" type="text" class="form-control-1 " id="fullName_eng" required maxlength = "75">
+                            <input name="fullName_eng" type="text" class="form-control-1 " id="fullName_eng" required maxlength = "100">
                         </td>
                         <td>
-                            <input name="fullName_kan" type="text" class="form-contro1-1 " id="fullName_kan" required maxlength = "75">
+                            <input name="fullName_kan" type="text" class="form-contro1-1 " id="fullName_kan" required maxlength = "100">
                         </td>
                         
                     </tr>
