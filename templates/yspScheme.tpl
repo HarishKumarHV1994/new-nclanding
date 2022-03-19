@@ -1916,7 +1916,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Facilities available with the scheme/ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ಸೌಲಭ್ಯಯಗಳು (Multiple Items)</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Facilities available with the scheme/ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ಸೌಲಭ್ಯಗಳು (Multiple Items)</h4>
               </div>
                 
                 <table>
@@ -1987,7 +1987,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Eligibility to reap the benefits of the scheme/ಯೋಜನೆಯ ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳ(Multiple Items)</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Eligibility to reap the benefits of the scheme/ಯೋಜನೆಯ ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು(Multiple Items)</h4>
               </div>
                 <table>
                     <tr>
@@ -2285,7 +2285,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Contact Office/ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ(Multiple Office)</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Contact Office/ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ(Multiple Office)</h4>
               </div>
                 
                 <table>
@@ -2570,7 +2570,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Additional Contact Information/ ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದವರು (Multiple numbers can be added)</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Additional Contact Information/ ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಸಂಪರ್ಕಿಸಬೇಕಾದವರು (Multiple numbers can be added)</h4>
               </div>
                 
                  <table>
@@ -2734,7 +2734,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Subsidies/ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ರಿಯಾಯತಿಗಳ</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Subsidies/ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ರಿಯಾಯಿತಿಗಳ</h4>
               </div>
                 
                 <table>
@@ -2821,7 +2821,7 @@ table {
             <br>
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Subsidies Example/ರಿಯಾಯತಿ - ಉದಾಹರಣೆ</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Subsidies Example/ರಿಯಾಯಿತಿ - ಉದಾಹರಣೆ</h4>
               </div>
                 
                 <table>
