@@ -27,7 +27,7 @@
        });
       
       
-      var schemeData={"scheme":{"keywords":{"details":[{"kan":"","eng":""}]},"Created_Time":null,"Created_By":null,"Modified_Time":null,"Modified_By":null,"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":"","eng":""}},"schemeShortName":{"label":{"kan":"ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರು","eng":"Display or Short Name"},"details":{"kan":"","eng":""}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":"","eng":""}},"purpose":{"label":{"kan":"ಉದ್ದೇಶ","eng":"Purpose"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ?","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ","eng":"Sakala"},"details":false},"process":{"label":{"kan":"ಅನುಸರಿಸಬೇಕಾದ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted while applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":"","eng":""}],"website":null,"email":null,"contactNumbers":[{"type":"contact","eng":"Contact","kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":null},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":null}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":"","eng":""},"designation":{"kan":"","eng":""},"emailContact":null,"officeAddress":{"kan":"","eng":""},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ರಿಯಾಯಿತಿಗಳು","eng":"Subsidies "},"details":[{"subsidySummary":{"kan":"","eng":""},"subsidyDesc":{"kan":"","eng":""}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":"","eng":""}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
+      var schemeData={"scheme":{"keywords":{"details":[{"kan":"","eng":""}]},"themes":[],"Created_Time":null,"Created_By":null,"Modified_Time":null,"Modified_By":null,"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":"","eng":""}},"schemeShortName":{"label":{"kan":"ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರು","eng":"Display or Short Name"},"details":{"kan":"","eng":""}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":"","eng":""}},"purpose":{"label":{"kan":"ಉದ್ದೇಶ","eng":"Purpose"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ?","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ","eng":"Sakala"},"details":false},"process":{"label":{"kan":"ಅನುಸರಿಸಬೇಕಾದ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted while applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":"","eng":""}],"website":null,"email":null,"contactNumbers":[{"type":"contact","eng":"Contact","kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":null},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":null}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":"","eng":""},"designation":{"kan":"","eng":""},"emailContact":null,"officeAddress":{"kan":"","eng":""},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ರಿಯಾಯತಿಗಳು","eng":"Subsidies "},"details":[{"subsidySummary":{"kan":"","eng":""},"subsidyDesc":{"kan":"","eng":""}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":"","eng":""}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
       
       purposeItems=[1]
       purposetextIdNo=1
@@ -137,6 +137,25 @@
             }else{
                 schemeData.scheme.schemeName.details.kan=document.getElementById("name_kan").value
             }
+            
+            // Handle checkboxes
+          
+          var checkBox1 = document.getElementById("theme1");
+          var checkBox2 = document.getElementById("theme2");
+          var checkBox3 = document.getElementById("theme3");
+          var checkBox4 = document.getElementById("theme4");
+          var checkBox5 = document.getElementById("theme5");
+          
+          
+
+         // If the checkbox is checked, display the output text
+          if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == false 
+             && checkBox4.checked == false && checkBox5.checked == false){
+              errorMessage=errorMessage+" Please select atleast 1 theme that this scheme belongs to<br>"
+              hasError=true
+              
+          }
+          
           
             //alert(errorMessage)
             if(hasError){
@@ -144,7 +163,39 @@
                 document.getElementById("errorMessage").innerHTML=errorMessage
                 isvalid=false
             }else{
+            
+            var checkBox1 = document.getElementById("theme1");
+              var checkBox2 = document.getElementById("theme2");
+              var checkBox3 = document.getElementById("theme3");
+              var checkBox4 = document.getElementById("theme4");
+              var checkBox5 = document.getElementById("theme5");
+
+
+             themes =[]
+             // If the checkbox is checked, display the output text
+              if (checkBox1.checked == true ){
+                  themes.push("theme1")
+                  //alert("Select atleast 1 theme")
+              }
+                    if (checkBox2.checked == true ){
+                  themes.push("theme2")
+                  //alert("Select atleast 1 theme")
+              }
+                    if (checkBox3.checked == true ){
+                  themes.push("theme3")
+                  //alert("Select atleast 1 theme")
+              }
+                    if (checkBox4.checked == true ){
+                  themes.push("theme4")
+                  //alert("Select atleast 1 theme")
+              }
+                    if (checkBox5.checked == true ){
+                  themes.push("theme5")
+                  //alert("Select atleast 1 theme")
+              }
                 
+            schemeData.scheme.themes=themes
+            
             schemeData.scheme.Created_By="Admin"
             schemeData.scheme.Modified_By="Admin"
             schemeData.scheme.Created_Time=savetime
@@ -2928,6 +2979,52 @@ table {
             
             
             <br>
+            <br>
+            
+            <div name="themesDiv" id="themesDiv">
+            <table id="themesTable" name="themesTable">
+                    <tr>
+                        <th>
+                            Select Themes
+                        </th>
+                        <!--<th>
+                        </th>-->
+                        
+                    </tr>
+                    
+                    <tr id="themes_row_1" name="themes_row_1">
+                        
+                        <td>
+                        <input type="checkbox" id="theme1" name="theme1" value="theme1">
+                            <label for="theme1"> Financial aid (Loan, Subsidy, Incentive etc.)</label><br>
+                        <br>
+                        <input type="checkbox" id="theme2" name="theme2" value="theme2">
+                             <label for="theme2"> Free</label><br>
+                        <br>
+                        <input type="checkbox" id="theme3" name="theme3" value="theme3">
+                             <label for="theme3"> Training/Education</label><br>
+                        <br>
+                            <input type="checkbox" id="theme4" name="theme4" value="theme4">
+                             <label for="theme4">  Facility/Supply/Distribution</label><br>
+                        <br>
+                            <input type="checkbox" id="theme5" name="theme5" value="theme5">
+                             <label for="theme5">  Registration/Renewal</label><br>
+                        <br>
+                            
+                        </td>
+                        
+                        
+                    </tr>
+                 
+                 
+                    
+                    
+                </table>
+            
+    
+            
+            </div>
+            
             <br>
             
             
