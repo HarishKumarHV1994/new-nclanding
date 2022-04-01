@@ -291,7 +291,7 @@
                 
                 j=facilitiesItems[i]
                 eng_field = "facilities_eng_"+j
-                kan_field = "facilities_eng_"+j
+                kan_field = "facilities_kan_"+j
                 obj={"kan":"","eng":""}
                 nullObj=true
                 if(document.getElementById(kan_field).value.trim() === "" ){
