@@ -3461,19 +3461,19 @@ table {
                         
                         <td>
                         <input type="checkbox" id="theme1" name="theme1" value="theme1">
-                            <label for="theme1"> Financial aid (Loan, Subsidy, Incentive etc.)</label><br>
+                            <label for="theme1"> Financial aid (Loan, Subsidy, Incentive etc.)/ ಧನ ಸಹಾಯ</label><br>
                         <br>
                         <input type="checkbox" id="theme2" name="theme2" value="theme2">
-                             <label for="theme2"> Free</label><br>
+                             <label for="theme2">Free/ ಉಚಿತ</label><br>
                         <br>
                         <input type="checkbox" id="theme3" name="theme3" value="theme3">
-                             <label for="theme3"> Training/Education</label><br>
+                             <label for="theme3"> Training/Education / ಶಿಕ್ಷಣ/ತರಬೇತಿ</label><br>
                         <br>
                             <input type="checkbox" id="theme4" name="theme4" value="theme4">
-                             <label for="theme4">  Facility/Supply/Distribution</label><br>
+                             <label for="theme4">  Facility/Supply/Distribution / ಸೌಲಭ್ಯ/ಪೂರೈಕೆ/ವಿತರಣೆ</label><br>
                         <br>
                             <input type="checkbox" id="theme5" name="theme5" value="theme5">
-                             <label for="theme5">  Registration/Renewal</label><br>
+                             <label for="theme5">  Registration/Renewal / ನೋಂದಣಿ/ನವೀಕರಣ</label><br>
                         <br>
                             
                         </td>
