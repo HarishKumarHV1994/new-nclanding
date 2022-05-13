@@ -21,7 +21,8 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
-      var schemeData={"scheme":{"keywords":{"details":[{"kan":"","eng":""}]},"themes":[],"Created_Time":null,"Created_By":null,"Modified_Time":null,"Modified_By":null,"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":"","eng":""}},"schemeShortName":{"label":{"kan":"ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರು","eng":"Display or Short Name"},"details":{"kan":"","eng":""}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":"","eng":""}},"purpose":{"label":{"kan":"ಉದ್ದೇಶ","eng":"Purpose"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ?","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ","eng":"Sakala"},"details":false},"process":{"label":{"kan":"ಅನುಸರಿಸಬೇಕಾದ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted while applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":"","eng":""}],"website":null,"email":null,"contactNumbers":[{"type":"contact","eng":"Contact","kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":null},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":null}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":"","eng":""},"designation":{"kan":"","eng":""},"emailContact":null,"officeAddress":{"kan":"","eng":""},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ರಿಯಾಯತಿಗಳು","eng":"Subsidies "},"details":[{"subsidySummary":{"kan":"","eng":""},"subsidyDesc":{"kan":"","eng":""}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":"","eng":""}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
+      var schemeData={"scheme":{"keywords":{"details":[{"kan":"","eng":""}]},"flagshipScheme":false, "keyScheme":false,"schemeCreationDate":null,"themes":[],"Created_Time":null,"Created_By":null,"Modified_Time":null,"Modified_By":null,"department":null,"schemeNumber":0,"schemeID":null,"schemeName":{"label":{"kan":"ಯೋಜನೆ","eng":"Scheme"},"details":{"kan":"","eng":""}},"schemeShortName":{"label":{"kan":"ಕಿರು-ಸಂಕ್ಷಿಪ್ತ ಹೆಸರು","eng":"Display or Short Name"},"details":{"kan":"","eng":""}},"detailedschemeName":{"label":{"kan":"ಯೋಜನೆಯ ವಿವರ","eng":"Scheme Details"},"details":{"kan":"","eng":""}},"purpose":{"label":{"kan":"ಉದ್ದೇಶ","eng":"Purpose"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"facilities":{"label":{"kan":"ಸೌಲಭ್ಯಯಗಳು","eng":"Facilities"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"eligibility":{"label":{"kan":"ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು","eng":"Eligibility to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"qualifications":{"label":{"kan":"ಯಾರಿಗೆ ಈ ಯೋಜನೆ?","eng":"Qualification to reap the benefits of the scheme"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"sakala":{"label":{"kan":"ಸಕಾಲ","eng":"Sakala"},"details":false},"process":{"label":{"kan":"ಅನುಸರಿಸಬೇಕಾದ ಪ್ರಕ್ರಿಯೆ","eng":"Process for applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"documents":{"label":{"kan":"ಅರ್ಜಿಯೊಂದಿಗೆ ಸಲ್ಲಿಸಬೇಕಾದ ದಾಖಲೆಗಳು","eng":"Documents to be submitted while applying"},"details":[{"kan":"","eng":""}],"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}},"contactOffice":{"label":{"kan":"ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ","eng":"Contact Office"},"details":[{"kan":"","eng":""}],"website":null,"email":null,"contactNumbers":[{"type":"contact","eng":"Contact","kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","num":[null],"numbersfileLink":null},{"type":"helpline","eng":"Helpline","kan":"ಸಹಾಯವಾಣಿ","num":[null],"numbersfileLink":null}],"contactsURL":null},"additionalContactInformation":{"labels":[{"kan":"ಹೆಸರು","eng":"Name"},{"kan":"ಪದನಾಮ","eng":"Designation"},{"kan":"ಇ-ಮೇಲ್ ","eng":"EmailId "},{"kan":"ಕಛೇರಿ ವಿಳಾಸ","eng":"Office Address"},{"kan":"ದೂರವಾಣಿ/ಮೊಬೈಲ್ ಸಂಖ್ಯೆ","eng":"Contact Number"}],  "details":[{"name":{"kan":"","eng":""},"designation":{"kan":"","eng":""},"emailContact":null,"officeAddress":{"kan":"","eng":""},"contactNumber":null}],"contactsURL":null},"applicationMode":null,"applicationFormLocation":null,"applicationURL":null,"subsidies":{"label":{"kan":"ರಿಯಾಯತಿಗಳು","eng":"Subsidies "},"details":[{"subsidySummary":{"kan":"","eng":""},"subsidyDesc":{"kan":"","eng":""}}],"subsidiesDistributionExample":{"label":{"kan":"ರಿಯಾಯತಿ - ಉದಾಹರಣೆ","eng":"An example of Subsidy Distribution "},"details":{"kan":"","eng":""}},"additionalDetails":{"label":{"kan":"ಹೆಚ್ಚಿನ ವಿವರಗಳು","eng":"For Additional Details"},"fileName":null}}}}
+      
       purposeItems=[1]
       purposetextIdNo=1
       
@@ -87,9 +88,9 @@
                       var json = $.parseJSON(data);
                       if (json.msg == "Success"){  
                        //console.log(json.data);
-                       //console.log(json.scheme);
-                       
-                       if (json.scheme.themes.length!=0){
+                       //console.log(json.scheme); 
+                        //json.scheme.push({"themes":[]})
+                        if (json.scheme.themes.length!=0){
                             for (i=0;i<json.scheme.themes.length;i++){
                                 theme=json.scheme.themes[i]
                                 if(theme=='theme1'){
@@ -112,10 +113,28 @@
                                     document.getElementById("theme5").checked = true
                                 }
                                 
+                                if(theme=='theme6'){
+                                    document.getElementById("theme6").checked = true
+                                }
+                                
                             }
                         }
-                        
-                        document.getElementById("shortname_kan").value=json.scheme.schemeName.details.kan;
+                       
+                         if(json.scheme.schemeCreationDate==null){
+                             document.getElementById("creationDate").value=""
+                         } else{
+                             document.getElementById("creationDate").value=json.scheme.schemeCreationDate;
+                         }
+                         
+                         if(json.scheme.flagshipScheme==true){
+                             document.getElementById("flagshipTrue").checked=true
+                         }
+                          if(json.scheme.keyScheme==true){
+                              document.getElementById("keySchemeTrue").checked=true
+                          }
+                         
+                          
+                          document.getElementById("shortname_kan").value=json.scheme.schemeName.details.kan;
                         document.getElementById("departments").value=json.scheme.department ;
                         document.getElementById("schemeNum").value=json.scheme.schemeNumber;
                         document.getElementById("shortname_eng").value=json.scheme.schemeShortName.details.eng;
@@ -637,25 +656,36 @@
             }else{
                 schemeData.scheme.schemeName.details.kan=document.getElementById("name_kan").value
             }
-            
-            // Handle checkboxes
+           
+            if(document.getElementById("creationDate").value.trim() === ""){
+                errorMessage=errorMessage+" Please enter the date on which the Scheme was introduced by the Department or the Government"
+                schemeData.scheme.schemeCreationDate=null
+                hasError=true
+                
+            }else{
+                schemeData.scheme.schemeCreationDate=document.getElementById("creationDate").value
+            }
+           
+           
+           // Handle checkboxes
           
           var checkBox1 = document.getElementById("theme1");
           var checkBox2 = document.getElementById("theme2");
           var checkBox3 = document.getElementById("theme3");
           var checkBox4 = document.getElementById("theme4");
           var checkBox5 = document.getElementById("theme5");
+           var checkBox6 = document.getElementById("theme6");
           
           
 
          // If the checkbox is checked, display the output text
           if (checkBox1.checked == false && checkBox2.checked == false && checkBox3.checked == false 
-             && checkBox4.checked == false && checkBox5.checked == false){
+             && checkBox4.checked == false && checkBox5.checked == false && checkBox6.checked == false){
               errorMessage=errorMessage+" Please select atleast 1 theme that this scheme belongs to<br>"
               hasError=true
               
           }
-          
+           
           
             //alert(errorMessage)
             if(hasError){
@@ -663,12 +693,13 @@
                 document.getElementById("errorMessage").innerHTML=errorMessage
                 isvalid=false
             }else{
-            
-            var checkBox1 = document.getElementById("theme1");
+                
+              var checkBox1 = document.getElementById("theme1");
               var checkBox2 = document.getElementById("theme2");
               var checkBox3 = document.getElementById("theme3");
               var checkBox4 = document.getElementById("theme4");
               var checkBox5 = document.getElementById("theme5");
+                 var checkBox6 = document.getElementById("theme6");
 
 
              themes =[]
@@ -694,13 +725,37 @@
                   //alert("Select atleast 1 theme")
               }
                 
+                 if (checkBox6.checked == true ){
+              themes.push("theme6")
+              //alert("Select atleast 1 theme")
+          }
+                
+                
             schemeData.scheme.themes=themes
-            
                 
             schemeData.scheme.Created_By="Admin"
             schemeData.scheme.Modified_By="Admin"
             schemeData.scheme.Created_Time=savetime
             schemeData.scheme.Modified_Time=savetime
+                
+                if(document.getElementById("keySchemeTrue").checked == true){
+               //alert("keySchemeTrue")
+               schemeData.scheme.keyScheme=true
+           } 
+            if(document.getElementById("keySchemeFalse").checked == true){
+                 //alert("keySchemeFalse")
+               schemeData.scheme.keyScheme=false
+           }
+                
+           if(document.getElementById("flagshipTrue").checked == true){
+                //alert("flagshipTrue")
+               schemeData.scheme.flagshipScheme=true
+           } 
+            if(document.getElementById("flagshipFalse").checked == true){
+                //alert("flagshipFalse")
+               schemeData.scheme.flagshipScheme=false
+           }
+                
                 
            schemeData.scheme.sakala.details=   document.getElementById("sakala").value
           
@@ -2200,8 +2255,8 @@
                 subsidiesItems=filteredAry
                 
             }
-           
-            if(sectionName=='keywords'){
+          
+          if(sectionName=='keywords'){
                 var filteredAry = keywordsItems.filter(function(e) { return e !== id })
                 keywordsItems=filteredAry
                 
@@ -2350,6 +2405,49 @@ table {
                         </td>
                         
                     </tr>
+                 
+                 
+                 <tr>
+                        <td>
+                            Scheme Creation Date (The date on which Govt./Department introduced the scheme)
+                        </td>
+                        <td>
+                            <input type="date" name="creationDate" id="creationDate">
+                        </td>
+                        <td>
+                            <!--<textarea name="detailedschemeName_kan" type="textarea" rows="4" cols="50"  id="detailedschemeName_kan"  maxlength="3000"> </textarea>-->
+                        </td>
+                        
+                    </tr>
+                 
+                 
+                  <tr>
+                        <td>
+                            Is this a Govt or Department designated Flagship scheme?
+                        </td>
+                        <td>
+                            <input type="radio" id="flagshipTrue" name="flagship" value="true" > <label for="Y" >YES</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="flagshipFalse" name="flagship" value="false" checked=true><label for="N">NO</label>
+                        </td>
+                        <td>
+                            Flagship scheme will appear in the Banner
+                        </td>
+                        
+                    </tr>
+                 
+                 
+                 <tr>
+                        <td>
+                            Is this a Govt or Department designated Top/Primary/Important scheme?
+                        </td>
+                        <td>
+                            <input type="radio" id="keySchemeTrue" name="keyScheme" value="true" > <label for="Y" >YES</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="keySchemeFalse" name="keyScheme" value="false" checked=true><label for="N">NO</label>
+                        </td>
+                        <td>
+                           Key Schemes will appear in the top for that theme or for that department
+                        </td>
+                        
+                    </tr>
+                 
                     
                     
                 </table>
@@ -2431,7 +2529,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Facilities available with the scheme/ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ಸೌಲಭ್ಯಗಳು (Multiple Items)</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Facilities available with the scheme/ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ಸೌಲಭ್ಯಯಗಳು (Multiple Items)</h4>
               </div>
                 
                 <table>
@@ -2502,7 +2600,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Eligibility to reap the benefits of the scheme/ಯೋಜನೆಯ ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳು(Multiple Items)</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Eligibility to reap the benefits of the scheme/ಯೋಜನೆಯ ಲಾಭ ಪಡೆಯಲು ಇರಬೇಕಾದ ಅರ್ಹತೆಗಳು/ಮಾನದಂಡಗಳ(Multiple Items)</h4>
               </div>
                 <table>
                     <tr>
@@ -2800,7 +2898,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Contact Office/ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ(Multiple Office)</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Contact Office/ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದ ಕಛೇರಿ(Multiple Office)</h4>
               </div>
                 
                 <table>
@@ -3085,7 +3183,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Additional Contact Information/ ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಸಂಪರ್ಕಿಸಬೇಕಾದವರು (Multiple numbers can be added)</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Additional Contact Information/ ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗೆ ಸಂಪರ್ಕಿಸಬೇಕಾದವರು (Multiple numbers can be added)</h4>
               </div>
                 
                  <table>
@@ -3249,7 +3347,7 @@ table {
             
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Subsidies/ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ರಿಯಾಯಿತಿಗಳ</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Subsidies/ಯೋಜನೆಯಿಂದ ದೊರೆಯುವ ರಿಯಾಯತಿಗಳ</h4>
               </div>
                 
                 <table>
@@ -3336,7 +3434,7 @@ table {
             <br>
             <div class="card card-login">
               <div class="card-header card-header-rose text-center">
-                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Subsidies Example/ರಿಯಾಯಿತಿ - ಉದಾಹರಣೆ</h4>
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Subsidies Example/ರಿಯಾಯತಿ - ಉದಾಹರಣೆ</h4>
               </div>
                 
                 <table>
@@ -3446,6 +3544,22 @@ table {
             <br>
             <br>
             
+            
+            <div class="card card-login">
+              <div class="card-header card-header-rose text-center">
+                <h4 class="card-title" style="padding-left: 3%; padding-right: 3%;">Themes</h4>
+              </div>
+                
+                <table>
+                    <tr>
+                        <td>
+                            Please select the relevant theme(s) to which the sceheme belongs to
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+            
             <div name="themesDiv" id="themesDiv">
             <table id="themesTable" name="themesTable">
                     <tr>
@@ -3461,19 +3575,23 @@ table {
                         
                         <td>
                         <input type="checkbox" id="theme1" name="theme1" value="theme1">
-                            <label for="theme1"> Financial aid (Loan, Subsidy, Incentive etc.)/ ಧನ ಸಹಾಯ</label><br>
+                            <label for="theme1"> Financial aid (Loan, Subsidy, Incentive etc.)</label><br>
                         <br>
                         <input type="checkbox" id="theme2" name="theme2" value="theme2">
-                             <label for="theme2">Free/ ಉಚಿತ</label><br>
+                             <label for="theme2"> Free</label><br>
                         <br>
                         <input type="checkbox" id="theme3" name="theme3" value="theme3">
-                             <label for="theme3"> Training/Education / ಶಿಕ್ಷಣ/ತರಬೇತಿ</label><br>
+                             <label for="theme3"> Training/Education</label><br>
                         <br>
                             <input type="checkbox" id="theme4" name="theme4" value="theme4">
-                             <label for="theme4">  Facility/Supply/Distribution / ಸೌಲಭ್ಯ/ಪೂರೈಕೆ/ವಿತರಣೆ</label><br>
+                             <label for="theme4">  Facility/Supply/Distribution</label><br>
                         <br>
                             <input type="checkbox" id="theme5" name="theme5" value="theme5">
-                             <label for="theme5">  Registration/Renewal / ನೋಂದಣಿ/ನವೀಕರಣ</label><br>
+                             <label for="theme5">  Registration/Renewal</label><br>
+                        <br>
+                            
+                              <input type="checkbox" id="theme6" name="theme6" value="theme6">
+                             <label for="theme6">  Job/Self-Employment/ ಸ್ವ-ಉದ್ಯೋಗ/ಉದ್ಯೋಗಾವಕಾಶ</label><br>
                         <br>
                             
                         </td>
@@ -3491,6 +3609,7 @@ table {
             </div>
             
             <br>
+            
             
             <center><p style="padding-left: 15px; font-size: 1.2em;"><span id="link"></span></p></center>
             
