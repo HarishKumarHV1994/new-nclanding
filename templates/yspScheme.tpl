@@ -1946,7 +1946,7 @@ table {
                             <input type="radio" id="flagshipTrue" name="flagship" value="true" > <label for="Y" >YES</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="flagshipFalse" name="flagship" value="false" checked=true><label for="N">NO</label>
                         </td>
                         <td>
-                            Flagship scheme will appear in the Banner
+                            Flagship scheme will appear in the Banner of the Yuvakanaja website
                         </td>
                         
                     </tr>
@@ -1960,7 +1960,7 @@ table {
                             <input type="radio" id="keySchemeTrue" name="keyScheme" value="true" > <label for="Y" >YES</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="keySchemeFalse" name="keyScheme" value="false" checked=true><label for="N">NO</label>
                         </td>
                         <td>
-                           Key Schemes will appear in the top for that theme or for that department
+                           Key Schemes will appear in the top for that theme or for that department/board
                         </td>
                         
                     </tr>
